@@ -1,0 +1,21 @@
+.page-header.navbar .page-logo .logo-default {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.page-header.navbar .page-logo>.logo-image, .page-header.navbar .page-logo>a {
+    display: unset !important;
+    float: none !important;
+}
+
+.page-header.navbar .page-logo .logo-default {
+    margin: 0 !important;
+}
+
+.page-header.navbar .page-logo {
+    text-align: center;
+}
+
+iframe{
+    border: none;
+}
