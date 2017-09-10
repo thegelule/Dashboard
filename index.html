@@ -48,7 +48,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="css/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
         <link href="css/custom.min.css" rel="stylesheet" type="text/css" />
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="images/icon.ico" /> </head>
+        <link rel="shortcut icon" href="images/icon.ico" />
+        <script src="js/dashboard.js"></script>
+    </head>
     <!-- END HEAD -->
 
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
@@ -111,7 +113,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                     
-                                    <span class="title">Campaigns</span>
+                                    <span class="title">Campagnes</span>
                                     <span class="selected"></span>
                                     <span class="arrow open"></span>
                                 </a>
@@ -126,14 +128,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <li class="nav-item">
                                                 <a href="" class="nav-link ">
                                                     
-                                                    <span class="title">Story</span>
+                                                    <span class="title">Histoire</span>
                                                     
                                                 </a>
                                             </li>
                                             <li class="nav-item ">
-                                                <a href="" class="nav-link ">
+                                                <a onclick="OpenCampaignCharacters('GITS');" class="nav-link ">
                                                     
-                                                    <span class="title">Characters</span>
+                                                    <span class="title">Personnages</span>
                                                     <span class="badge badge-success">6</span>
                                                     <span class="selected"></span>
                                                 </a>
@@ -141,7 +143,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <li class="nav-item ">
                                                 <a href="" class="nav-link ">
                                                     
-                                                    <span class="title">Pictures</span>
+                                                    <span class="title">Photos</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -155,20 +157,20 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <li class="nav-item">
                                                 <a href="" class="nav-link ">
                                                     
-                                                    <span class="title">Story</span>
+                                                    <span class="title">Histoire</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item ">
                                                 <a href="" class="nav-link ">
                                                     
-                                                    <span class="title">Characters</span>
+                                                    <span class="title">Personnages</span>
                                                     <span class="badge badge-success">4</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item ">
                                                 <a href="" class="nav-link ">
                                                     
-                                                    <span class="title">Pictures</span>
+                                                    <span class="title">Photos</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -178,7 +180,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                     
-                                    <span class="title">Character Sheet Templates</span>
+                                    <span class="title">Templates de Fiches de personnages</span>
                                     <span class="selected"></span>
                                     <span class="arrow open"></span>
                                 </a>
@@ -186,44 +188,44 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li class="nav-item">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Aesir - Norse</span>
+                                            <span class="title">Aesir - Scandinave</span>
                                             <span class="selected"></span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Amatsukami - Japanese</span>
+                                            <span class="title">Amatsukami - Japonais</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Ayllus - Incan</span>
+                                            <span class="title">Ayllus - Inca</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Bogi Lyudei - Slavic</span>
+                                            <span class="title">Bogi Lyudei - Slave</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Celestial Bureaucracy - Chinese</span>
+                                            <span class="title">Bureaucratie Céleste - Chinois</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Deva - Hindu</span>
+                                            <span class="title">Deva - Hindou</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Neter - Egyptian</span>
+                                            <span class="title">Neter - Egyptien</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
@@ -235,25 +237,31 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Orisha - West African</span>
+                                            <span class="title">Orisha - Africain</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Theoi - Greek</span>
+                                            <span class="title">Theoi - Grec</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Teotl - Aztec</span>
+                                            <span class="title">Teotl - Aztèque</span>
                                         </a>
                                     </li>
                                     <li class="nav-item ">
                                         <a href="" class="nav-link nav-toggle">
                                             
-                                            <span class="title">Tuatha Dé Danaan - Celt</span>
+                                            <span class="title">Tuatha Dé Danaan - Celte</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ">
+                                        <a href="" class="nav-link nav-toggle">
+                                            
+                                            <span class="title">Template Neutre</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -268,7 +276,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="page-content-wrapper">
                     <!-- BEGIN CONTENT BODY -->
                     <div class="page-content">
-                        <iframe src="" id="ContentDisplayFrame"></iframe>                    
+                        <iframe src="" id="ContentDisplayFrame" frameborder="0" scrolling="no"></iframe>                    
                     </div>
                     <!-- END CONTENT BODY -->
                 </div>
