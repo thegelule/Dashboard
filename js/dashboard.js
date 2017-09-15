@@ -14,5 +14,5 @@ function OpenCampaignCharacters(campString){
 }
 
 function resizeIframe(obj) {
-    obj.style.height = getComputedStyle(obj.contentWindow.document.body).inlineSize;
+    obj.style.height = window.getComputedStyle(obj.contentWindow.document.body).inlineSize;
   }
