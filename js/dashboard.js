@@ -41,7 +41,7 @@ function FetchNumberofCharacters(pageName){
 		url : urlToFetch,
 		type: "GET",
 		success : function(result){
-			var count = result.match(/mt-card-item/g) || []).length;
+			var count = (result.match(/mt-card-item/g) || []).length;
 			document.getElementById(campName + "CharacNb").innerText = count;
 		}
 	});
