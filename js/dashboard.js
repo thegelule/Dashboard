@@ -34,7 +34,7 @@ function DisplayNumbersInMenu(){
 
 function FetchNumberofCharacters(pageName){
 	var urlToFetch = "https://thegelule.github.io/Dashboard/pages/" + pageName;
-	var tab = pageName.slice("_");
+	var tab = pageName.split("_");
 	var campName = tab[0];
 	
 	$.ajax({
