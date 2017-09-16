@@ -8,7 +8,8 @@ function OpenCampaignCharacters(campString){
         case "GITS":
             //frame.src = "pages/GITS_characters.html";
 			$.ajax({
-				url : "/pages/GITS_characters.html",
+				url : "https://thegelule.github.io/Dashboard/pages/GITS_characters.html",
+				type: "GET",
 				success : function(result){
 					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
 					asyncContentContainer.innerHTML = result;
