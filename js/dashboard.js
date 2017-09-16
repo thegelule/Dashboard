@@ -46,9 +46,3 @@ function FetchNumberofCharacters(pageName){
 		}
 	});
 }
-
-function CountOccurencesInString(string, subString){
-	var result = null;
-	
-	(
-}
