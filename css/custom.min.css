@@ -16,7 +16,20 @@
     text-align: center;
 }
 
-iframe{
-    border: none;
-    width: 100%;
+
+#ContentDisplayContainer .page-content-wrapper .page-content {
+	margin-left: 0 !important;
+	margin-top: 0;
+	min-height: 0px !important;
+	padding: 25px 20px 10px;
+}
+
+.mt-element-overlay .mt-overlay-1 img {
+	width: auto !important;
+	height: auto !important;
+	margin: auto !important;
+}
+
+#ContentDisplayContainer .page-header-fixed .page-container {
+	margin-top: 0;
 }
