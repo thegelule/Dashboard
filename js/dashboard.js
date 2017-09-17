@@ -11,13 +11,13 @@ function OpenCampaignCharacters(campString){
 					asyncContentContainer.innerHTML = result;
 				}
 			});
-            break;
+		break;
     }
     
     
 }
 
-function OpenCampaignCharacters(campString){
+function OpenCampaignPictures(campString){
     
     switch(campString){
         
@@ -30,7 +30,7 @@ function OpenCampaignCharacters(campString){
 					asyncContentContainer.innerHTML = result;
 				}
 			});
-            break;
+		break;
     }
     
     
