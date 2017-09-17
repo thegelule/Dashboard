@@ -1,14 +1,29 @@
 function OpenCampaignCharacters(campString){
-    var frame = document.getElementById("ContentDisplayFrame");
-    
-    //resizeIframe(frame);
     
     switch(campString){
         
         case "GITS":
-            //frame.src = "pages/GITS_characters.html";
 			$.ajax({
 				url : "https://thegelule.github.io/Dashboard/pages/GITS_characters.html",
+				type: "GET",
+				success : function(result){
+					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+					asyncContentContainer.innerHTML = result;
+				}
+			});
+            break;
+    }
+    
+    
+}
+
+function OpenCampaignCharacters(campString){
+    
+    switch(campString){
+        
+        case "GITS":
+			$.ajax({
+				url : "https://thegelule.github.io/Dashboard/pages/GITS_pictures.html",
 				type: "GET",
 				success : function(result){
 					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
