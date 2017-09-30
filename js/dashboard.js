@@ -1,3 +1,8 @@
+function LoadingContent(){
+    LoadAnalytics();
+    DisplayNumbersInMenu();
+}
+
 function OpenCampaignCharacters(campString){
     var urlToRequest = "https://thegelule.github.io/Dashboard/pages/" + campString + "_characters.html"
     $.ajax({
@@ -66,4 +71,15 @@ function FetchNumberofCharacters(pageName){
 			document.getElementById(campName + "CharacNb").innerText = count;
 		}
 	});
+}
+
+function LoadAnalytics(){
+    $.ajax({
+       url: "https://thegelule.github.io/Dashboard/pages/IntroPage.html",
+        type: "GET",
+        success : function(result){
+            var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+            asyncContentContainer.innerHTML = result;
+        }
+    });
 }
