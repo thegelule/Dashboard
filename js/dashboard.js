@@ -35,7 +35,8 @@ function OpenCampaignStory(campString){
         success : function(result){
             var asyncContentContainer = document.getElementById("ContentDisplayContainer");
             asyncContentContainer.innerHTML = result;
-        }
+        },
+        processData: false
     });
     
 }
