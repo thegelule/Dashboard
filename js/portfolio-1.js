@@ -1,4 +1,4 @@
-(function($, window, document, undefined) {
+function InitPortfolio($, window, document, undefined) {
     'use strict';
 
     // init cubeportfolio
@@ -62,4 +62,4 @@
         },
     });
     
-})(jQuery, window, document);
+};
