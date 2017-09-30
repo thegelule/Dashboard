@@ -1,41 +1,47 @@
 function OpenCampaignCharacters(campString){
-    
-    switch(campString){
-        
-        case "GITS":
-			$.ajax({
-				url : "https://thegelule.github.io/Dashboard/pages/GITS_characters.html",
-				type: "GET",
-				success : function(result){
-					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
-					asyncContentContainer.innerHTML = result;
-				}
-			});
-		break;
-    }
+    var urlToRequest = "https://thegelule.github.io/Dashboard/pages/" + campString + "_characters.html"
+    $.ajax({
+        url : urlToRequest,
+        type: "GET",
+        success : function(result){
+            var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+            asyncContentContainer.innerHTML = result;
+        }
+    });
     
     
 }
 
 function OpenCampaignPictures(campString){
-    
-    switch(campString){
-        
-        case "GITS":
-			$.ajax({
-				url : "https://thegelule.github.io/Dashboard/pages/GITS_pictures.html",
-				type: "GET",
-				success : function(result){
-					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
-					asyncContentContainer.innerHTML = result;
-                    InitPortfolio(jQuery, window, document)
-				}
-			});
-		break;
-    }
-    
+    var urlToRequest = "https://thegelule.github.io/Dashboard/pages/" + campString + "_pictures.html"
+    $.ajax({
+        url : urlToRequest,
+        type: "GET",
+        success : function(result){
+            var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+            asyncContentContainer.innerHTML = result;
+            InitPortfolio(jQuery, window, document)
+        }
+    });
     
 }
+
+
+function OpenCampaignStory(campString){
+    var urlToRequest = "https://thegelule.github.io/Dashboard/pages/" + campString + "_story.html"
+    $.ajax({
+        url : urlToRequest,
+        type: "GET",
+        success : function(result){
+            var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+            asyncContentContainer.innerHTML = result;
+            InitPortfolio(jQuery, window, document)
+        }
+    });
+    
+}
+
+
 
 function resizeIframe(obj) {
 	var pageContentHeight = window.getComputedStyle(document.getElementsByClassName("page-content")[0]).height.replace("px","");
