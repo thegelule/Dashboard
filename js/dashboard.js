@@ -28,6 +28,7 @@ function OpenCampaignPictures(campString){
 				success : function(result){
 					var asyncContentContainer = document.getElementById("ContentDisplayContainer");
 					asyncContentContainer.innerHTML = result;
+                    InitPortfolio(jQuery, window, document)
 				}
 			});
 		break;
