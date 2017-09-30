@@ -1,5 +1,5 @@
 function LoadingContent(){
-    //LoadAnalytics();
+    LoadHomePage();
     DisplayNumbersInMenu();
 }
 
@@ -73,7 +73,7 @@ function FetchNumberofCharacters(pageName){
 	});
 }
 
-function LoadAnalytics(){
+function LoadHomePage(){
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/IntroPage.html",
         type: "GET",
