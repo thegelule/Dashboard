@@ -1,5 +1,5 @@
 function LoadingContent(){
-    LoadAnalytics();
+    //LoadAnalytics();
     DisplayNumbersInMenu();
 }
 
