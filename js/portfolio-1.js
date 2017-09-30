@@ -62,4 +62,4 @@ function InitPortfolio($, window, document, undefined) {
         },
     });
     
-};
+}
