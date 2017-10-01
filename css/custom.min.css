@@ -65,3 +65,17 @@
 ul.dropdown-menu-list{
     list-style: none;
 }
+
+ul{
+    -webkit-padding-start: 0;
+}
+
+li.aspect{
+    user-select: none;
+    cursor: default;
+}
+
+.skills{
+    border: 1px solid #EFF2F6!important;
+    height: 34px;
+}

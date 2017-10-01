@@ -143,7 +143,7 @@ function FillSkills(e,skills){
            var skillElement = skillsElements[j];
            
            if(skill != undefined){
-               $(skillElement).val(skill);
+               skillElement.innerText = skill;
            }
        } 
     }
