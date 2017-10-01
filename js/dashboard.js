@@ -95,8 +95,9 @@ function OpenCharacterDialog(element){
         success : function(result){
             bufferElement = document.createElement("div");
             bufferElement.innerHTML = result; 
+            FillForms($(bufferElement), character); 
             bootbox.alert(bufferElement.innerHTML);
-            FillForms(bufferElement, character); 
+            
         }
     });    
     
@@ -104,19 +105,19 @@ function OpenCharacterDialog(element){
 }
 
 function FillForms(e,ch){
-    FillAspects(e.getElementsByClassName("AspectsContainer")[0],ch.aspects);
-    FillSkills(e.getElementsByClassName("SkillsContainer")[0],ch.skills);
-    FillStunts(e.getElementsByClassName("StuntsContainer")[0],ch.stunts);
-    FillAbilities(e.getElementsByClassName("AbilitiesContainer")[0],ch.abilities);
+    FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
+    FillSkills(e.find(".SkillsContainer")[0],ch.skills);
+    FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
+    FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
 }
 
 function FillAspects(e,aspects){
-    var aspectContainers = e.getElementsByClassName("aspect");
+    var aspectContainers = e.find(".aspect");
     
     for(var i = 0; i < aspects.length; i++){
         var aspectElement = aspectContainers[i];
         var aspectText = aspects[i];
-        $(aspectElement).val(aspectText);
+        aspectElement.val(aspectText);
     }
 }
 
@@ -124,23 +125,23 @@ function FillSkills(e,skills){
     for(var i = 0; i < skills.length; i++){
         var skillLevelTab = skills[i];
         var increment = 5 - (i+1);
-        var level = "level" + increment;
-        var levelContainerElement = e.getElementsByClassName(level);
-        var skillsElements = levelContainerElement[0].getElementsByClassName("skills");
+        var level = ".level" + increment;
+        var levelContainerElement = e.find(level);
+        var skillsElements = levelContainerElement[0].find(".skills");
         
        for(var j = 0; j < skillLevelTab.length; j++){
            var skill = skillLevelTab[j];
            var skillElement = skillsElements[j];
            
            if(skill != undefined){
-               $(skillElement).val(skill);
+               skillElement.val(skill);
            }
        } 
     }
 }
 
 function FillStunts(e,stunts){
-    var formStunts = e.getElementsByClassName("form")[0];
+    var formStunts = e.find(".form")[0];
     
     for(var i = 0; i < stunts.length; i++){
         var stunt = stunts[i];
@@ -152,9 +153,9 @@ function FillStunts(e,stunts){
 function FillAbilities(e,abilities){
     for(var i = 0; i < abilities.length; i++){
         var levelTab = abilities[i];
-        var classParameter = "AbilityLevel" + (i+1);
-        var levelElement = document.getElementsByClassName(classParameter)[0];
-        var abilitiesContainer = levelElement.getElementsByClassName("form")[0];
+        var classParameter = ".AbilityLevel" + (i+1);
+        var levelElement = e.find(classParameter)[0];
+        var abilitiesContainer = levelElement.find(".form")[0];
         
         for(var j = 0; j < levelTab.length; j++){
             var ability = levelTab[j];
