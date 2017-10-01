@@ -204,7 +204,7 @@ function NewStuntElement(stunt){
     textContainer.innerHTML = stunt.text;
     
     textContainerParent.appendChild(textContainer);
-    formGroup.appendChild(label);
+    textContainerParent.appendChild(label);
     formGroup.appendChild(textContainerParent);
     
     return formGroup;

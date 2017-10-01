@@ -55,6 +55,7 @@
     font-size: 13px;
     padding: 16px 15px 18px;
     text-shadow: none;
+    padding-left: 5px;
 }
 
 .dropdown-menu-list>li>div {
@@ -64,11 +65,9 @@
 
 ul.dropdown-menu-list{
     list-style: none;
-}
-
-ul{
     -webkit-padding-start: 0;
 }
+
 
 li.aspect{
     user-select: none;
@@ -76,6 +75,30 @@ li.aspect{
 }
 
 .skills{
-    border: 1px solid #EFF2F6!important;
+    border: 1px solid #dddddd!important;
     height: 34px;
+    text-align: center;
+    padding: 5px;
 }
+
+.row{
+    margin-bottom: 2px;
+}
+
+label.stuntTitle {
+    font-weight: 700;
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden !important;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+    overflow-y: auto;
+    max-height: calc(100vh - 117px);
+}
+
+    max-height: calc(100vh - 50px);
