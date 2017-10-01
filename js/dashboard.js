@@ -116,7 +116,7 @@ function FillAspects(e,aspects){
     for(var i = 0; i < aspects.length; i++){
         var formGroup = document.createElement("div");
         var inputContainer = document.createElement("div");
-        var aspectElement = document.create("input");
+        var aspectElement = document.createElement("input");
         var aspectText = aspects[i];
         
         formGroup.classList.add("form-group");
