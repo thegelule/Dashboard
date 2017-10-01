@@ -104,7 +104,7 @@ function OpenCharacterDialog(element){
 }
 
 function FillForms(e,ch){
-    FillName(e.find(".name"),ch.name);
+    FillName(e.find(".name")[0],ch.name);
     FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
     FillSkills(e.find(".SkillsContainer")[0],ch.skills);
     FillStunts(e.find(".StuntsContainer")[0],ch.stunts);

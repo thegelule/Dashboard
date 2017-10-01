@@ -101,4 +101,6 @@ label.stuntTitle {
     max-height: calc(100vh - 117px);
 }
 
-    max-height: calc(100vh - 50px);
+.form-control, .form{
+    height: auto;
+}
