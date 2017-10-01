@@ -123,7 +123,7 @@ function FillSkills(e,skills){
         var increment = 5 - (i+1);
         var level = "level" + increment;
         var levelContainerElement = e.getElementsByClassName(level);
-        var skillsElements = levelContainerElement.getElementsByClassName("skills");
+        var skillsElements = levelContainerElement[0].getElementsByClassName("skills");
         
        for(var j = 0; j < skillLevelTab.length; j++){
            var skill = skillLevelTab[j];
