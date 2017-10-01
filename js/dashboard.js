@@ -203,8 +203,8 @@ function NewStuntElement(stunt){
     textContainer.classList.add("stuntText");
     textContainer.innerHTML = stunt.text;
     
-    textContainerParent.appendChild(textContainer);
     textContainerParent.appendChild(label);
+    textContainerParent.appendChild(textContainer);
     formGroup.appendChild(textContainerParent);
     
     return formGroup;
