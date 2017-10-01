@@ -94,8 +94,8 @@ function OpenCharacterDialog(element){
         success : function(result){
             var bufferElement = document.createElement("div");
             bufferElement.innerHTML = result;
-            FillForms(bufferElement, character);
             bootbox.alert(bufferElement.innerHTML);
+            FillForms(bufferElement, character);           
         }
     });
 }
