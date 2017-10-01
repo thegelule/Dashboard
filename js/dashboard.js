@@ -96,10 +96,11 @@ function OpenCharacterDialog(element){
             bufferElement = document.createElement("div");
             bufferElement.innerHTML = result; 
             bootbox.alert(bufferElement.innerHTML);
+            FillForms(bufferElement, character); 
         }
     });    
     
-    FillForms(bufferElement, character); 
+    
 }
 
 function FillForms(e,ch){
