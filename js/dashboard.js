@@ -101,12 +101,14 @@ function OpenCharacterDialog(element){
         }
     });    
     
+    FillAspects($(".AspectsContainer")[0],character.aspects);
+    FillSkills($(".SkillsContainer")[0],character.skills);
     
 }
 
 function FillForms(e,ch){
-    FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
-    FillSkills(e.find(".SkillsContainer")[0],ch.skills);
+    //FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
+    //FillSkills(e.find(".SkillsContainer")[0],ch.skills);
     FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
     FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
 }
