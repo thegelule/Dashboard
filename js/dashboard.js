@@ -111,7 +111,7 @@ function FillForms(e,ch){
 }
 
 function FillAspects(e,aspects){
-    var ulElement = $(e).find(".dropdown-menu")[0];
+    var ulElement = $(e).find(".dropdown-menu-list")[0];
     
     for(var i = 0; i < aspects.length; i++){
         var listItemElement = document.createElement("li");
