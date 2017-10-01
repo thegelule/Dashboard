@@ -209,7 +209,6 @@ function NewAbilityElement(ability){
     textContainer.innerHTML = ability;
     
     textContainerParent.appendChild(textContainer);
-    formGroup.appendChild(label);
     formGroup.appendChild(textContainerParent);
     
     return formGroup;
