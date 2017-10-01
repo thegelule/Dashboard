@@ -149,7 +149,7 @@ function FillStunts(e,stunts){
 function FillAbilities(e,abilities){
     for(var i = 0; i < abilities.length; i++){
         var levelTab = abilities[i];
-        var classParameter = "level" + (i+1);
+        var classParameter = "AbilityLevel" + (i+1);
         var levelElement = document.getElementsByClassName(classParameter)[0];
         var abilitiesContainer = levelElement.getElementsByClassName("form")[0];
         
