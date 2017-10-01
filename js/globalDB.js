@@ -162,8 +162,8 @@ var globalDB = {
             text: "Les aspects créés avec Mort - Horreur donnent un bonus de +4 à chaque invocation."
         },{
             title:"Les coulisses du pouvoir",
-            text: "A chaque utilisation de Druidisme Runique, création de l'aspect 'Contrôle Runique' avec 2 IG.
+            text: "A chaque utilisation de Druidisme Runique, création de l'aspect 'Contrôle Runique' avec 2 IG."
         }],
-        abilities:[["Mort - Horreur", "Magie des âmes - Shamanisme", "Druidisme Runique"],["Vision du Wyrd<br><ul><li>Prophétie</li><li>Mystère</li></ul>", "invocation : Nuit<br><ul><li>Vide</li><li>Voile</li></ul>"],[]]
+        abilities:[["Mort - Horreur", "Magie des âmes - Shamanisme", "Druidisme Runique"],["Vision du Wyrd<br><ul><li>Prophétie</li><li>Mystère</li></ul>", "Invocation : Nuit<br><ul><li>Vide</li><li>Voile</li></ul>"],[]]
     }]
 }
