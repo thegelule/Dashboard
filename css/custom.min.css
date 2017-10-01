@@ -41,3 +41,23 @@
         padding-top: 7px;
     }
 }
+
+.dropdown-menu>li>div:hover {
+    background: #f8f9fa;
+}
+
+.dropdown-menu-list>li>div {
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 20px;
+    white-space: normal;
+    font-size: 13px;
+    padding: 16px 15px 18px;
+    text-shadow: none;
+}
+
+.dropdown-menu-list>li>div {
+    border-bottom: 1px solid #EFF2F6!important;
+    color: #888;
+}

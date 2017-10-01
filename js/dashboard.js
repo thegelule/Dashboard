@@ -111,27 +111,21 @@ function FillForms(e,ch){
 }
 
 function FillAspects(e,aspects){
-    var aspectsContainer = $(e).find(".form")[0];
     
     for(var i = 0; i < aspects.length; i++){
-        var formGroup = document.createElement("div");
-        var inputContainer = document.createElement("div");
-        var aspectElement = document.createElement("input");
+        var listItemElement = document.createElement("li");
+        var itemContainer = document.createElement("div");
+        var itemTextContainer = document.createElement("span");
         var aspectText = aspects[i];
         
-        formGroup.classList.add("form-group");
-        inputContainer.classList.add("col-md-12");
-        aspectElement.type = "text";
-        aspectElement.classList.add("form-control");
-        aspectElement.classList.add("aspect");
-        aspectElement.value = aspectText;
-        aspectElement.readOnly = true; 
+        listItemElement.classList.add("aspect");
+        itemTextContainer.innerText = aspectText; 
         
-        inputContainer.appendChild(aspectElement);
-        formGroup.appendChild(inputContainer);
-        aspectsContainer.appendChild(formGroup);
+        itemContainer.appendChild(itemTextContainer);
+        listItemElement.appendChild(itemContainer);
     }
 }
+
 
 
 function FillSkills(e,skills){    
