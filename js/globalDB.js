@@ -115,7 +115,7 @@ var globalDB = {
             title:"La poudre et la foudre",
             text: "Peut utiliser Ciel - Destruction dans restrictions d'utilisations avec un jet normal seulement pour créer un aspect avec son canon scié. Gagne +2 Tir supplémentaires lors de la prochaine utilisation du fusil."
         }],
-        abilities:[["Druidisme Runique", "Enech - Punition des impies<br><ul><li>Ordre - Loi</li><ul>"],["Physiologie Epique<br><ul><li>Résistance</li><li>Force</li></ul>"],["Invocation : Ciel<br><ul><li>Destruction</li><li>Pluie</li></ul>"]]
+        abilities:[["Druidisme Runique", "Enech - Punition des impies<br><ul><li>Ordre - Loi</li><ul>"],["Physiologie Epique<br><ul><li>Résistance</li><li>Force</li></ul>", "Invocation : Ciel<br><ul><li>Destruction</li><li>Pluie</li></ul>"],[]]
     },{
         playerID: 5,
         name: "Ljubomir 'Mimir' Uspešno",
@@ -147,7 +147,7 @@ var globalDB = {
         divineParent: "http://wyrdwalkers-fr.wikidot.com/hades",
         charWikiLink: "http://wyrdwalkers-fr.wikidot.com/sullivan-oneill",
         aspects: ["Etudiant devin", "Naïeveté de la jeunesse", "L'horreur c'est bien, à deux c'est mieux", "Esprit Stratégique", "Parce-que c'est notre projet !!!"],
-        skills: [["Perception"], ["Ressources", "Manipulation"],["Rapport","Premiers secours","Présence"],["Furtivité","Volonté","Athlétisme","Physique"]],
+        skills: [["Perception"], ["Ressources", "Manipulation"],["Rapport","Anatomie","Présence"],["Furtivité","Volonté","Athlétisme","Physique"]],
         stunts:[{
             title:"Eminence grise",
             text: "+1 Volonté pour les attaques mentales"
