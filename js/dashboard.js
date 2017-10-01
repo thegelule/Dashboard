@@ -99,29 +99,40 @@ function OpenCharacterDialog(element){
             bootbox.alert(bufferElement.innerHTML);
             
         }
-    });    
-    
-    FillAspects($(".AspectsContainer")[0],character.aspects);
-    FillSkills($(".SkillsContainer")[0],character.skills);
+    });
     
 }
 
 function FillForms(e,ch){
-    //FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
-    //FillSkills(e.find(".SkillsContainer")[0],ch.skills);
+    FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
+    FillSkills(e.find(".SkillsContainer")[0],ch.skills);
     FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
     FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
 }
 
 function FillAspects(e,aspects){
-    var aspectContainers = $(e).find(".aspect");
+    var aspectsContainer = $(e).find(".form")[0];
     
     for(var i = 0; i < aspects.length; i++){
-        var aspectElement = aspectContainers[i];
+        var formGroup = document.createElement("div");
+        var inputContainer = document.createElement("div");
+        var aspectElement = document.create("input");
         var aspectText = aspects[i];
-        $(aspectElement).val(aspectText);
+        
+        formGroup.classList.add("form-group");
+        inputContainer.classList.add("col-md-12");
+        aspectElement.type = "text";
+        aspectElement.classList.add("form-control");
+        aspectElement.classList.add("aspect");
+        aspectElement.readOnly = true; 
+        aspectElement.value = aspectText;
+        
+        inputContainer.appendChild(aspectElement);
+        formGroup.appendChild(inputContainer);
+        aspectsContainer.appendChild(formGroup);
     }
 }
+
 
 function FillSkills(e,skills){    
     for(var i = 0; i < skills.length; i++){
