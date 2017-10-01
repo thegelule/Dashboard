@@ -42,7 +42,7 @@
     }
 }
 
-.dropdown-menu>li>div:hover {
+.dropdown-menu-list>li>div:hover {
     background: #f8f9fa;
 }
 
@@ -60,4 +60,8 @@
 .dropdown-menu-list>li>div {
     border-bottom: 1px solid #EFF2F6!important;
     color: #888;
+}
+
+ul.dropdown-menu-list{
+    list-style: none;
 }
