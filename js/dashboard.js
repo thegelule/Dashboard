@@ -104,6 +104,7 @@ function OpenCharacterDialog(element){
 }
 
 function FillForms(e,ch){
+    FillName(e.find(".name"),ch.name);
     FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
     FillSkills(e.find(".SkillsContainer")[0],ch.skills);
     FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
@@ -172,6 +173,10 @@ function FillAbilities(e,abilities){
             abilitiesContainer.appendChild(abilityElement);
         }
     }
+}
+
+function FillName(e,name){
+    e.innerText = name;
 }
 
 function RetrieveCharacterFromID(ID){
