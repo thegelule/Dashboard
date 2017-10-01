@@ -33,3 +33,11 @@
 #ContentDisplayContainer .page-container {
 	margin-top: 0;
 }
+
+@media (min-width: 768px){
+    .form-horizontal .control-label {
+        text-align: left !important;
+        margin-bottom: 0;
+        padding-top: 7px;
+    }
+}
