@@ -94,17 +94,17 @@ function OpenCharacterDialog(element){
         success : function(result){
             var bufferElement = document.createElement("div");
             bufferElement.innerHTML = result;
-            FillForms(character);
+            FillForms(bufferElement, character);
             bootbox.alert(bufferElement.innerHTML);
         }
     });
 }
 
-function FillForms(ch){
-    FillAspects(document.getElementById("AspectsContainer"),ch.aspects);
-    FillSkills(document.getElementById("SkillsContainer"),ch.skills);
-    FillStunts(document.getElementById("StuntsContainer"),ch.stunts);
-    FillAbilities(document.getElementById("AbilitiesContainer"),ch.abilities);
+function FillForms(e,ch){
+    FillAspects(e.getElementsByClassName("AspectsContainer")[0],ch.aspects);
+    FillSkills(e.getElementsByClassName("SkillsContainer")[0],ch.skills);
+    FillStunts(e.getElementsByClassName("StuntsContainer")[0],ch.stunts);
+    FillAbilities(e.getElementsByClassName("AbilitiesContainer")[0],ch.abilities);
 }
 
 function FillAspects(e,aspects){
