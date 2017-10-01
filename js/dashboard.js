@@ -87,17 +87,19 @@ function LoadHomePage(){
 function OpenCharacterDialog(element){
     var characID = element.getAttribute("data-id");
     var character = RetrieveCharacterFromID(characID);
+    var bufferElement = null;
     
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/CharacterSheet.html",
         type: "GET",
         success : function(result){
-            var bufferElement = document.createElement("div");
-            bufferElement.innerHTML = result;
+            bufferElement = document.createElement("div");
+            bufferElement.innerHTML = result; 
             bootbox.alert(bufferElement.innerHTML);
-            FillForms(bufferElement, character);           
         }
-    });
+    });    
+    
+    FillForms(bufferElement, character); 
 }
 
 function FillForms(e,ch){
