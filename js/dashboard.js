@@ -124,8 +124,8 @@ function FillAspects(e,aspects){
         aspectElement.type = "text";
         aspectElement.classList.add("form-control");
         aspectElement.classList.add("aspect");
-        aspectElement.readOnly = true; 
         aspectElement.value = aspectText;
+        aspectElement.readOnly = true; 
         
         inputContainer.appendChild(aspectElement);
         formGroup.appendChild(inputContainer);
