@@ -117,7 +117,7 @@ function FillAspects(e,aspects){
     for(var i = 0; i < aspects.length; i++){
         var aspectElement = aspectContainers[i];
         var aspectText = aspects[i];
-        aspectElement.val(aspectText);
+        $(aspectElement).val(aspectText);
     }
 }
 
@@ -134,7 +134,7 @@ function FillSkills(e,skills){
            var skillElement = skillsElements[j];
            
            if(skill != undefined){
-               skillElement.val(skill);
+               $(skillElement).val(skill);
            }
        } 
     }
