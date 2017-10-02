@@ -114,3 +114,7 @@ label.stuntTitle {
     padding: 15px;
     margin-bottom: 10px;
 }
+
+.row .caption-subject {
+    padding-left: 15px;
+}
