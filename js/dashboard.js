@@ -198,17 +198,20 @@ function NewStuntElement(stunt){
     var formGroup = document.createElement("div");
     var label = document.createElement("label");
     var textContainerParent = document.createElement("div");
-    var textContainer = document.createElement("p");
+    var textContainer = document.createElement("div");
+    var textBreak = document.createElement("br");
     
     formGroup.classList.add("form-group");
     label.classList.add("stuntTitle");
     label.innerHTML = stunt.title;
-    textContainerParent.classList.add("col-md-4");
+    textContainerParent.classList.add("col-md-12");
+    textContainerParent.classList.add("StuntContainer");
     textContainer.classList.add("form-control-static");
     textContainer.classList.add("stuntText");
     textContainer.innerHTML = stunt.text;
     
     textContainerParent.appendChild(label);
+    textContainerParent.appendChild(textBreak);
     textContainerParent.appendChild(textContainer);
     formGroup.appendChild(textContainerParent);
     

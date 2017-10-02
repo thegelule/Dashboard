@@ -108,3 +108,9 @@ label.stuntTitle {
 .name {
     padding-left: 15px;
 }
+
+.StuntContainer {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+}
