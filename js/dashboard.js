@@ -56,6 +56,7 @@ function resizeIframe(obj) {
   
 function DisplayNumbersInMenu(){
 	FetchNumberofCharacters("GITS_characters.html");
+    FetchNumberofCharacters("WOC_characters.html");
 }
 
 function FetchNumberofCharacters(pageName){

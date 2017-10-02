@@ -165,5 +165,76 @@ var globalDB = {
             text: "A chaque utilisation de Druidisme Runique, création de l'aspect 'Contrôle Runique' avec 2 IG."
         }],
         abilities:[["Mort - Horreur", "Magie des âmes - Shamanisme", "Druidisme Runique"],["Vision du Wyrd<br><ul><li>Prophétie</li><li>Mystère</li></ul>", "Invocation : Nuit<br><ul><li>Vide</li><li>Voile</li></ul>"],[]]
+    },{
+        playerID: 7,
+        name: "Bryan Stewart",
+        level: 1,
+        earnedXP: 0,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/aphrodite",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/bryan-stewart",
+        aspects: ["C'est moi le plus beau", "C'est moi la star", "Faites l'amour, pas la guerre", "Séducteur invétéré", "Qui s'y frotte s'y pique"],
+        skills: [[""], ["Présence", ""],["Rapport","Volonté",""],["Manipulation","Technologie","Tir",""]],
+        stunts:[{
+            title:"T'as de beaux yeux tu sais",
+            text: "Une fois par scène, Bryan crée sur une cible l'aspect 'Sous le charme de Bryan'"
+        },{
+            title:"Bourreau des coeurs",
+            text: "+2 en Tir sur les cibles possédant l'aspect 'Sous le charme de Bryan'"
+        },{
+            title:"L'amour rend aveugle",
+            text: "+2 Manipulation sur les cibles possédant l'aspect 'Sous le charme de Bryan'"
+        }],
+        abilities:[["Physiologie Epique - Beauté", "Ordre - Contrôle", "Heku"],[],[]]
+    },{
+        playerID: 8,
+        name: "Mina Luminara",
+        level: 1,
+        earnedXP: 0,
+        divineParent: "",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/mina-luminara",
+        aspects: ["'With great powers come great responsibilities'", "'Witness me !'", "'Do or do not. There is no try'", "'It's not who you are underneath, it's what you do that defines you'", "'You shall not pass !'"],
+        skills: [[""], ["Volonté", ""],["Perception","Présence",""],["Rapport","Technologie","Athlétisme",""]],
+        stunts:[{
+            title:"Always a hero to save the day",
+            text: "Jet de Volonté au lieu de Combat lors d'un combat. Invoque des personnages de film pour frapper ou encaisser. Le personnage disparaît sitôt l'action effectuée. La statistique principale du personnage est égale à la volonté du lanceur au moment de l’invocation. La première invocation de chaque scène crée l'aspect de situation ‘Inspiration des Muses‘ avec une utilisation gratuite."
+        }],
+        abilities:[["Lumière - Brillance", "Vision du Wyrd - Prophétie", "Taiyi - Flot"],[],[]]
+    },{
+        playerID: 9,
+        name: "Serge Molatof",
+        level: 1,
+        earnedXP: 0,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/jarilo",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/serge-molatof",
+        aspects: ["Voyageur Indécis", "Lâche Laxiste", "Planificateur Expérimenté", "Près de sa fortune", "Présence Brejnevienne"],
+        skills: [[""], ["Présence", ""],["Rapport","Perception",""],["Athlétisme","Savoir","Ressources",""]],
+        stunts:[{
+            title:"Instinct de survie",
+            text: "+2 Présence pour forcer à la fuite des enemis (hostiles)"
+        },{
+            title:"Errance Légendaire",
+            text: "Serge n'est jamais perdu à moins qu'il le veuille"
+        },{
+            title:"Pilier de barre",
+            text: "Un allié qui suit les recommandations de Serge gagne l'aspect 'Soutiendu' avec 1 IG"
+        }],
+        abilities:[["Physiologie Epique - Présence", "Ordre - Loi", "Terre - Etendue"],[],[]]
+    },{
+        playerID: 10,
+        name: "Serge Molatof",
+        level: 1,
+        earnedXP: 0,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/tsuki-yomi",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/etsuko",
+        aspects: ["Eternelle Séductrice", "Souffle au coeur", "Beauté Divine"],
+        skills: [[""], ["Rapport", ""],["Volonté","Présence",""],["Athlétisme","Anatomie","Manipulation",""]],
+        stunts:[{
+            title:"Bon baiser nippon <sup>(*)</sup>",
+            text: "Dès qu’Etsuko embrasse une cible de niveau inférieur au sien, jet normal de Chwal avec Rapport sans limite d’utilisation."
+        },{
+            title:"Moonraker",
+            text: "+2 Volonté pour créer des Illusions la nuit avec Nuit- Lune"
+        }],
+        abilities:[["Chwal - Marionnettiste", "Nuit - Lune", "Terre - Vie"],[],[]]
     }]
 }
