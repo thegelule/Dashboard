@@ -221,12 +221,12 @@ var globalDB = {
         abilities:[["Physiologie Epique - Présence", "Ordre - Loi", "Terre - Etendue"],[],[]]
     },{
         playerID: 10,
-        name: "Serge Molatof",
+        name: "Etsuko",
         level: 1,
         earnedXP: 0,
         divineParent: "http://wyrdwalkers-fr.wikidot.com/tsuki-yomi",
         charWikiLink: "http://wyrdwalkers-fr.wikidot.com/etsuko",
-        aspects: ["Eternelle Séductrice", "Souffle au coeur", "Beauté Divine"],
+        aspects: ["Eternelle Séductrice", "La Face claire de la Lune", "Beauté Divine", "Mère de la Nuit", "Conceptrice immaculée"],
         skills: [[""], ["Rapport", ""],["Volonté","Présence",""],["Athlétisme","Anatomie","Manipulation",""]],
         stunts:[{
             title:"Bon baiser nippon <sup>(*)</sup>",
