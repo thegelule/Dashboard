@@ -104,6 +104,18 @@ function OpenCharacterDialog(element){
     
 }
 
+function OpenGMaker(){
+    $.ajax({
+       url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
+        type: "GET",
+        success : function(result){
+            var asyncContentContainer = document.getElementById("ContentDisplayContainer");
+            asyncContentContainer.innerHTML = result;
+            
+        }
+    });
+}
+
 function FillForms(e,ch){
     FillName(e.find(".name")[0],ch.name);
     FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
@@ -234,4 +246,9 @@ function NewAbilityElement(ability){
     formGroup.appendChild(textContainerParent);
     
     return formGroup;
+}
+
+/*****************Godborn Maker***************/
+function OpenWikiPage(element){
+    
 }

@@ -1,0 +1,458 @@
+<script>
+    function InitSkillTable(){
+        $("#SkillTable").Datatable({
+            "oLanguage": {
+					"sLengthMenu": "Afficher _MENU_ lignes par page",
+					"sZeroRecords": "Aucun enregistrement &agrave; afficher",
+					"sInfo": "Enregistrement de _START_ &agrave; _END_ sur _TOTAL_ enregistrements",
+					"sInfoEmpty": "Pas d'enregistrement",
+					"sInfoFiltered": "(_MAX_ au total)",
+					"sDom": 'r<"H"lf><"datatable-scroll"t><"F"ip>',
+					"sSearch": "Chercher",
+					"oPaginate": {
+						"sFirst": "Premier",
+						"sPrevious": "Pr&eacute;c&eacute;dent",
+						"sNext": "Suivant",
+						"sLast": "Dernier"
+					}
+				},
+                "searching": false,
+				"bPaginate": false,
+				"deferRender": true,
+				"bServerSide": false,
+				"aoColumns": [
+					null,
+					null
+				]
+        });
+    }
+</script>
+<div class="row">
+    <div class="note note-info">
+        <span>Powered by <a href="www.github.com/Ellil1" target="_blank">Ellil1</a> on Github</span>
+    </div>	
+</div>
+<hr>
+<div class="row">
+    <button type="button" onclick="characterSheetSpawn()" class="btn btn-info">Spawn Character Sheet</button>	
+</div>
+<div class="row">
+    <h2>
+        <a class="one" href="http://wyrdwalkers.wikidot.com/Character-Creation" target="_blank">Guidance for Character Creation</a>
+    </h2>
+</div>
+<div class="row">
+    <div class="form-group">
+        <label>Character Name:</label>
+        <input type="text" id="inputFileNameToSaveAs" class="form-control" placeholder="Character Name"/>
+    </div>
+    <div class="form-group">
+        <label>Character Picture URL:</label>
+        <input type="text" id="CharacterImageURL" class="form-control" placeholder="Picture URL"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN Portlet PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title tabbable-line">
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a> 
+                </div>
+                <div class="caption">
+                    <i class="icon-pin font-yellow-crusta"></i>
+                    <span class="caption-subject bold font-yellow-crusta uppercase"> God/Legendary Abilities Finder </span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a href="#portlet_tab1" data-toggle="tab"> God Finder </a>
+                    </li>
+                    <li>
+                        <a href="#portlet_tab2" data-toggle="tab"> Abilities Finder </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="portlet_tab1">
+                        <div class="slimScrollDiv" ><div class="scroller">
+                            <h4>Find a Mythological God</h4>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="approaches">Choose an Approach</label>	   
+                                    <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
+                                        <option value="noPreference" selected="selected">No Preference</option> 
+                                        <option value="Careful">Careful</option>
+                                        <option value="Clever">Clever</option>
+                                        <option value="Flashy">Flashy</option>
+                                        <option value="Forceful">Forceful</option>
+                                        <option value="Quick">Quick</option>
+                                        <option value="Sneaky">Sneaky</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="domains">Choose a Domain</label>	   
+                                    <select id="domains" name="domains" onchange="godRecommender();" class="selectpicker">
+                                        <option value="noPreference" selected="selected">No Preference</option> 
+                                        <option value="Crafting Deity">Crafting</option>
+                                        <option value="Darkness Deity">Darkness</option>
+                                        <option value="Death Deity">Death</option>
+                                        <option value="Earth Deity">Earth</option>
+                                        <option value="Fertility Deity">Fertility</option>
+                                        <option value="Fire Deity">Fire</option>
+                                        <option value="Justice Deity">Justice</option>
+                                        <option value="Knowledge Deity">Knowledge</option>
+                                        <option value="Leader of the Gods">Leader</option>
+                                        <option value="Love Deity">Love</option>
+                                        <option value="Moon Deity">Moon</option>
+                                        <option value="Nature Deity">Nature</option>
+                                        <option value="Order Deity">Order</option>
+                                        <option value="Progenitor of the Gods">Progenitor</option>
+                                        <option value="Sky Deity">Sky</option>
+                                        <option value="Sun Deity">Sun</option>
+                                        <option value="Travel Deity">Travel</option>
+                                        <option value="War Deity">War</option>
+                                        <option value="Water Deity">Water</option>
+                                        <option value="Wisdom Deity">Wisdom</option>
+                                        <option value="Wit Deity">Wit</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="personality">Choose a Personality</label>	   
+                                    <select id="personality" name="personality" onchange="godRecommender();" class="selectpicker" >
+                                        <option value="noPreference" selected="selected">No Preference</option> 
+                                        <option value="General">General</option>
+                                        <option value="Politician">Politician</option>
+                                        <option value="Free Spirit">Free Spirit</option>
+                                        <option value="King">King</option>
+                                        <option value="Mother">Mother</option>
+                                        <option value="Thinker">Thinker</option>
+                                        <option value="Harmonizer">Harmonizer</option>
+                                        <option value="Prince">Prince</option>
+                                        <option value="Enforcer">Enforcer</option>
+                                        <option value="Manipulator">Manipulator</option>
+                                        <option value="Trickster">Trickster</option>
+                                        <option value="Diplomat">Diplomat</option>
+                                        <option value="Protector">Protector</option>
+                                        <option value="Hunter">Hunter</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="origins">Choose an Origin</label>	   
+                                    <select id="origins" name="origins" onchange="godRecommender();" class="selectpicker">
+                                        <option value="noPreference" selected="selected">No Preference</option> 
+                                        <optgroup label="Gods">
+                                            <option value="African">African</option>
+                                            <option value="Aztec">Aztec</option>
+                                            <option value="Celtic">Celtic</option> 
+                                            <option value="Chinese">Chinese</option>
+                                            <option value="Egyptian">Egyptian</option>
+                                            <option value="Greek">Greek</option>
+                                            <option value="Inca">Inca</option>
+                                            <option value="Indian">Indian</option>
+                                            <option value="Japanese">Japanese</option>
+                                            <option value="Maori">Maori</option>
+                                            <option value="Norse">Norse</option>
+                                            <option value="Slavic">Slavic</option>
+                                        </optgroup>
+                                        <optgroup label="Titanrealms">
+                                            <option value="Death">Death</option>
+                                            <option value="Depths">Depths</option>
+                                            <option value="Fire">Fire</option> 
+                                            <option value="Light">Light</option>
+                                            <option value="Night">Night</option>
+                                            <option value="Ocean">Ocean</option>
+                                            <option value="Order">Order</option>
+                                            <option value="Sky">Sky</option>
+                                            <option value="World">World</option>
+                                        </optgroup>
+                                        <optgroup label="Otherworlds">
+                                            <option value="Dark Forest">Dark Forest</option>
+                                            <option value="Jade Sea">Jade Sea</option>
+                                            <option value="Shambhala">Shambhala</option>
+                                            <option value="Summer Court">Summer Court</option>
+                                            <option value="Utopia">Utopia</option>	
+                                            <option value="Winter Court">Winter Court</option>
+                                        </optgroup>
+                                        <optgroup label="Secret Societies">
+                                            <option value="Cabal">Cabal</option>	
+                                            <option value="Illuminati">Illuminati</option>
+                                            <option value="Order of the Jade Fist">Order of the Jade Fist</option>
+                                            <option value="Circle of Merlin">Circle of Merlin</option>	
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div id="noMatch"></div>
+                                <div id="FoundGodsContainer"></div>
+                            </div>
+                        </div><div class="slimScrollBar"></div><div class="slimScrollRail" ></div></div>
+                    </div>
+                    <div class="tab-pane" id="portlet_tab2">
+                        <div class="slimScrollDiv">
+                            <h4>Find a Legendary Ability</h4>
+                            <div id="notGodFinder">
+                                <h4>Skill Recommendations</h4>
+                                <div class="form-group">
+                                    <label for="mainRole">Select Main Role</label>
+                                    <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
+                                        <option selected value="empty">Select Role</option>
+                                        <option value="Meat Shield"> Meat Shield</option>
+                                        <option value="Damage Dealer">Damage Dealer</option>
+                                        <option value="Party Face">Party Face</option>
+                                        <option value="Skill Monkey">Skill Monkey</option>
+                                        <option value="Support-Controller">Support/Controller</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="secondRole">Select a Second Role</label>
+                                    <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
+                                        <option value="empty">Select a Second Role</option> 
+                                    </select>
+                                </div>
+                                <div id="LegendaryAbilitiesContainer" class="col-md-6">
+                                    <div class="LegendaryAbility" id="LegendaryFound1"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound2"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound3"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound4"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound5"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound6"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound7"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound8"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound9"></div>
+                                    <div class="LegendaryAbility" id="LegendaryFound10"></div>
+                                </div>
+                                <div id="SkillsContainer" class="col-md-6">
+                                    <div class="Skill" id="SkillFound1"></div>
+                                    <div class="Skill" id="SkillFound2"></div>
+                                    <div class="Skill" id="SkillFound3"></div>
+                                    <div class="Skill" id="SkillFound4"></div>
+                                    <div class="Skill" id="SkillFound5"></div>
+                                    <div class="Skill" id="SkillFound6"></div>
+                                    <div class="Skill" id="SkillFound7"></div>
+                                    <div class="Skill" id="SkillFound8"></div>
+                                    <div class="Skill" id="SkillFound9"></div>
+                                    <div class="Skill" id="SkillFound10"></div>
+                                </div>
+                                <br>
+                                <a id="hoverer2"> </a>
+                            </div>
+                        </div><div class="slimScrollBar"></div><div class="slimScrollRail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN Portlet PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title tabbable-line">
+                <div class="actions">
+                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a> 
+                </div>
+                <div class="caption">
+                    <i class="icon-pin font-yellow-crusta"></i>
+                    <span class="caption-subject bold font-yellow-crusta uppercase">Aspects, Skills and Stunts Builder</span>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a href="#portlet_tab1" data-toggle="tab"> Aspects </a>
+                    </li>
+                    <li>
+                        <a href="#portlet_tab2" data-toggle="tab"> Skills </a>
+                    </li>
+                    <li>
+                        <a href="#portlet_tab3" data-toggle="tab"> Stunts </a>
+                    </li>
+                    <li>
+                        <a href="#portlet_tab4" data-toggle="tab"> Abilities </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="portlet_tab1">
+                        <h1 class="two">Aspects</h1>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <a class="one" href="http://fate-srd.com/fate-core/making-good-aspect" target="_blank">Guidance on creating Character Aspects</a>
+                            <br>
+                            <a class="one" href="https://wiki.rpg.net/index.php/Aspects_List#Character_Aspects" target="_blank">Ideas for Character Aspects</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="highConcept" placeholder="High Concept">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="trouble" placeholder="Trouble">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="aspect1" placeholder="First Aspect">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="aspect2" placeholder="Second Aspect">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="aspect3" placeholder="Third Aspect">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="portlet_tab2">
+                        <h1 class="two">Skills</h1>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-3 col-sm-3 col lg-3">
+                                        <input type="text" id="Skill_4_1" placeholder="Skill" class="form-control SkillInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_3_1" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_3_2" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_2_1" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_2_2" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_2_3" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_1_1" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_1_2" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_1_3" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col lg-3">
+                                    <input type="text" id="Skill_1_4" placeholder="Skill" class="form-control SkillInput">
+                                </div>
+                            </div>                                    
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <table width="100%" id="SkillTable" class="SkillTable table table-striped table-bordered table-hover dt-responsive dataTable no-footer dtr-inline collapsed">
+                                <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                        <th>Use</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Athletics</td>
+                                        <td><div style="display:inline-block;">Jump over a wall</div>,&nbsp;<div style="display:inline-block;">Run a sprint</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fight</td>
+                                        <td><div style="display:inline-block;">Swing a sword</div>,&nbsp;<div style="display:inline-block;">Throw a punch</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Marksmanship</td>
+                                        <td><div style="display:inline-block;">Shoot a bow</div>,&nbsp;<div style="display:inline-block;">Throw a fireball with accuracy</div></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stealth</td>
+                                        <td><div style="display:inline-block;">Skulk unnoticed</div>,&nbsp;<div style="display:inline-block;">Pickpocket a target</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Will</td>
+                                        <td><div style="display:inline-block;">Resist mental attacks</div>,&nbsp;<div style="display:inline-block;">Control magical powers by sheer will</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Physique</td>
+                                        <td><div style="display:inline-block;">Run a marathon</div>,&nbsp;<div style="display:inline-block;">Withstand physical trauma</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Technology</td>
+                                        <td><div style="display:inline-block;">Hack a computer</div>,&nbsp;<div style="display:inline-block;">Build a grenade</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Notice</td>
+                                        <td><div style="display:inline-block;">Find clues</div>,&nbsp;<div style="display:inline-block;">Get the drop on an enemy</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>First Aid</td>
+                                        <td><div style="display:inline-block;">Patch a wound</div>,&nbsp;<div style="display:inline-block;">Find the antidote to a poison</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Lore</td>
+                                        <td><div style="display:inline-block;">Know ancient history</div>,&nbsp;<div style="display:inline-block;">Know a magical incantation</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Manipulation</td>
+                                        <td><div style="display:inline-block;">Trick an enemy</div>,&nbsp;<div style="display:inline-block;">Talk your way past an annoying bouncer</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Presence</td>
+                                        <td><div style="display:inline-block;">Interrogate a suspect</div>,&nbsp;<div style="display:inline-block;">Order soldiers</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Rapport</td>
+                                        <td><div style="display:inline-block;">Make friends at a bar</div>,&nbsp;<div style="display:inline-block;">Mediate a negotiation</div></td>
+                                   </tr>
+                                    <tr>
+                                        <td>Resources</td>
+                                        <td><div style="display:inline-block;">Buy a car</div>,&nbsp;<div style="display:inline-block;">Hire mercenaries</div></td>
+                                   </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="portlet_tab3">
+                        <h1 class="two">Stunts</h1>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <a class="one" href="http://fate-srd.com/fate-core/building-stunts" target="_blank">Guidance on creating Stunts</a>
+                            <br>
+                            <a class="one" href="http://evilhat.wikidot.com/fate-core-stunts" target="_blank">Ideas for Normal Stunts</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class='form-group'>
+                                <textarea id="stunt1" rows="4" cols="30" placeholder="Stunt" class="form-control"></textarea>
+                            </div>
+                            <div class='form-group'>
+                                <textarea id="stunt2" rows="4" cols="30" placeholder="Stunt" class="form-control"></textarea>
+                            </div>
+                            <div class='form-group'>
+                                <textarea id="stunt3" rows="4" cols="30" placeholder="Stunt" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="portlet_tab4">
+                        <h1 class="two">Legendary Abilities</h1>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <a href="http://wyrdwalkers.wikidot.com/legendary-disciplines" target="_blank">Explanations of the Legendary Skills and Stunts</a> <br>
+                            <a href="http://wyrdwalkers.wikidot.com/legendary-abilities" target="_blank">List of Legendary Abilities, with Examples for Legendary Skills and Stunts.</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class='form-group'>
+                                <textarea id="legend1" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control"></textarea>
+                            </div>
+                            <div class='form-group'>
+                                <textarea id="legend2" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control"></textarea>
+                            </div>
+                            <div class='form-group'>
+                                <textarea id="legend3" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    InitSkillTable();
+</script>

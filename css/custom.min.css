@@ -118,3 +118,8 @@ label.stuntTitle {
 .row .caption-subject {
     padding-left: 15px;
 }
+
+.actions{
+    margin-right: 10px;
+    float: left;
+}

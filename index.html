@@ -32,6 +32,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/datatables.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <link href="css/daterangepicker.min.css" rel="stylesheet" type="text/css" />
@@ -54,6 +56,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <link rel="shortcut icon" href="images/icon.ico" />
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/datatable.min.js" type="text/javascript"></script>
+        <script src="js/datatables.all.min.js" type="text/javascript"></script>
+        <script src="js/datatables.bootstrap.js" type="text/javascript"></script>
         <script src="js/js.cookie.min.js" type="text/javascript"></script>
         <script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
         <script src="js/jquery.blockui.min.js" type="text/javascript"></script>
@@ -63,6 +68,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="js/bootbox.min.js"></script>       
         <script src="js/globalDB.js"></script>
         <script src="js/dashboard.js"></script>
+        <script src="GM_CalculatorFunctions.js"></script>
     </head>
     <!-- END HEAD -->
 
@@ -123,7 +129,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <li class="heading">
                                 <h3 class="uppercase">Wyrdwalkers</h3>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active open start">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                     
                                     <span class="title">Campagnes</span>
@@ -244,11 +250,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </ul>
                             </li>
                             <li class="nav-item">
+                                <a onclick="OpenGMaker();" class="nav-link nav-toggle">
+                                    
+                                    <span class="title">Godborn Maker</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="javascript:;" class="nav-link nav-toggle">
                                     
                                     <span class="title">Templates Sheets</span>
                                     <span class="selected"></span>
-                                    <span class="arrow open"></span>
+                                    <span class="arrow close"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
