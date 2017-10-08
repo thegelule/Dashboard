@@ -136,3 +136,7 @@ label.stuntTitle {
 a.btn.btn-circle.btn-default {
     margin-bottom: 5px;
 }
+
+.form-group label.FirstPanelLabel {
+    width: 140px;
+}

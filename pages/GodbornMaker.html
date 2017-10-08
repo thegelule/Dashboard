@@ -74,9 +74,11 @@
             <div class="portlet-body">
                 <div class="row"> 
                     <div class="col-md-6">
-                        <h5>Find a Mythological God or Creature</h5>
+                        <div class="row">
+                            <h5>Find a Mythological God or Creature</h5>
+                        </div>
                         <div class="form-group">
-                            <label for="approaches">Choose an Approach</label>	   
+                            <label for="approaches" class="FirstPanelLabel">Choose an Approach</label>	   
                             <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="Careful">Careful</option>
@@ -88,7 +90,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="domains">Choose a Domain</label>	   
+                            <label for="domains" class="FirstPanelLabel">Choose a Domain</label>	   
                             <select id="domains" name="domains" onchange="godRecommender();" class="selectpicker">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="Crafting Deity">Crafting</option>
@@ -115,7 +117,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="personality">Choose a Personality</label>	   
+                            <label for="personality" class="FirstPanelLabel">Choose a Personality</label>	   
                             <select id="personality" name="personality" onchange="godRecommender();" class="selectpicker" >
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="General">General</option>
@@ -135,7 +137,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="origins">Choose an Origin</label>	   
+                            <label for="origins" class="FirstPanelLabel">Choose an Origin</label>	   
                             <select id="origins" name="origins" onchange="godRecommender();" class="selectpicker">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <optgroup label="Gods">
@@ -182,54 +184,60 @@
                     </div>
                     <div id="FoundGodsContainer" class="col-md-6"></div>
                 </div>
+                <hr>
                 <div id="noMatch" class="col-md-12"></div> 
                 <div class="row">
                     <div id="notGodFinder">
-                        <div class="form-group">
-                            <label for="mainRole">Select Main Role</label>
-                            <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
-                                <option selected value="empty">Select Role</option>
-                                <option value="Meat Shield"> Meat Shield</option>
-                                <option value="Damage Dealer">Damage Dealer</option>
-                                <option value="Party Face">Party Face</option>
-                                <option value="Skill Monkey">Skill Monkey</option>
-                                <option value="Support-Controller">Support/Controller</option>
-                            </select>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <h5>Find Skills and Legendary Abilities</h5>
+                            </div>
+                            <div class="form-group">
+                                <label for="mainRole" class="FirstPanelLabel">Select Main Role</label>
+                                <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
+                                    <option selected value="empty">Select Role</option>
+                                    <option value="Meat Shield"> Meat Shield</option>
+                                    <option value="Damage Dealer">Damage Dealer</option>
+                                    <option value="Party Face">Party Face</option>
+                                    <option value="Skill Monkey">Skill Monkey</option>
+                                    <option value="Support-Controller">Support/Controller</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="secondRole" class="FirstPanelLabel">Select a Second Role</label>
+                                <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
+                                    <option value="empty">Select a Second Role</option> 
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="secondRole">Select a Second Role</label>
-                            <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
-                                <option value="empty">Select a Second Role</option> 
-                            </select>
-                        </div>
-                        <div id="LegendaryAbilitiesContainer" class="col-md-6">
-                            <h5>Legendary Abilities Recommandation</h5>
-                            <div class="LegendaryAbility" id="LegendaryFound1"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound2"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound3"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound4"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound5"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound6"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound7"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound8"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound9"></div>
-                            <div class="LegendaryAbility" id="LegendaryFound10"></div>
-                        </div>
-                        <div id="SkillsContainer" class="col-md-6">
-                            <h5>Skill Recommendations</h5>
-                            <div class="Skill" id="SkillFound1"></div>
-                            <div class="Skill" id="SkillFound2"></div>
-                            <div class="Skill" id="SkillFound3"></div>
-                            <div class="Skill" id="SkillFound4"></div>
-                            <div class="Skill" id="SkillFound5"></div>
-                            <div class="Skill" id="SkillFound6"></div>
-                            <div class="Skill" id="SkillFound7"></div>
-                            <div class="Skill" id="SkillFound8"></div>
-                            <div class="Skill" id="SkillFound9"></div>
-                            <div class="Skill" id="SkillFound10"></div>
-                        </div>
-                        <br>
-                        
+                        <div class="col-md-6">
+                            <div id="LegendaryAbilitiesContainer" class="col-md-6">
+                                <h5>Legendary Abilities Recommandation</h5>
+                                <div class="LegendaryAbility" id="LegendaryFound1"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound2"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound3"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound4"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound5"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound6"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound7"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound8"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound9"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound10"></div>
+                            </div>
+                            <div id="SkillsContainer" class="col-md-6">
+                                <h5>Skill Recommendations</h5>
+                                <div class="Skill" id="SkillFound1"></div>
+                                <div class="Skill" id="SkillFound2"></div>
+                                <div class="Skill" id="SkillFound3"></div>
+                                <div class="Skill" id="SkillFound4"></div>
+                                <div class="Skill" id="SkillFound5"></div>
+                                <div class="Skill" id="SkillFound6"></div>
+                                <div class="Skill" id="SkillFound7"></div>
+                                <div class="Skill" id="SkillFound8"></div>
+                                <div class="Skill" id="SkillFound9"></div>
+                                <div class="Skill" id="SkillFound10"></div>
+                            </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
