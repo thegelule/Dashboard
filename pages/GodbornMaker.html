@@ -77,168 +77,166 @@
             <div class="portlet-body">
                 <div class="tab-content">
                     <div class="tab-pane active" id="portlet_tab1">
-                        <div class="slimScrollDiv" ><div class="scroller">
-                            <h1>Find a Mythological God or Creature</h1>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="approaches">Choose an Approach</label>	   
-                                    <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
-                                        <option value="noPreference" selected="selected">No Preference</option> 
-                                        <option value="Careful">Careful</option>
-                                        <option value="Clever">Clever</option>
-                                        <option value="Flashy">Flashy</option>
-                                        <option value="Forceful">Forceful</option>
-                                        <option value="Quick">Quick</option>
-                                        <option value="Sneaky">Sneaky</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="domains">Choose a Domain</label>	   
-                                    <select id="domains" name="domains" onchange="godRecommender();" class="selectpicker">
-                                        <option value="noPreference" selected="selected">No Preference</option> 
-                                        <option value="Crafting Deity">Crafting</option>
-                                        <option value="Darkness Deity">Darkness</option>
-                                        <option value="Death Deity">Death</option>
-                                        <option value="Earth Deity">Earth</option>
-                                        <option value="Fertility Deity">Fertility</option>
-                                        <option value="Fire Deity">Fire</option>
-                                        <option value="Justice Deity">Justice</option>
-                                        <option value="Knowledge Deity">Knowledge</option>
-                                        <option value="Leader of the Gods">Leader</option>
-                                        <option value="Love Deity">Love</option>
-                                        <option value="Moon Deity">Moon</option>
-                                        <option value="Nature Deity">Nature</option>
-                                        <option value="Order Deity">Order</option>
-                                        <option value="Progenitor of the Gods">Progenitor</option>
-                                        <option value="Sky Deity">Sky</option>
-                                        <option value="Sun Deity">Sun</option>
-                                        <option value="Travel Deity">Travel</option>
-                                        <option value="War Deity">War</option>
-                                        <option value="Water Deity">Water</option>
-                                        <option value="Wisdom Deity">Wisdom</option>
-                                        <option value="Wit Deity">Wit</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="personality">Choose a Personality</label>	   
-                                    <select id="personality" name="personality" onchange="godRecommender();" class="selectpicker" >
-                                        <option value="noPreference" selected="selected">No Preference</option> 
-                                        <option value="General">General</option>
-                                        <option value="Politician">Politician</option>
-                                        <option value="Free Spirit">Free Spirit</option>
-                                        <option value="King">King</option>
-                                        <option value="Mother">Mother</option>
-                                        <option value="Thinker">Thinker</option>
-                                        <option value="Harmonizer">Harmonizer</option>
-                                        <option value="Prince">Prince</option>
-                                        <option value="Enforcer">Enforcer</option>
-                                        <option value="Manipulator">Manipulator</option>
-                                        <option value="Trickster">Trickster</option>
-                                        <option value="Diplomat">Diplomat</option>
-                                        <option value="Protector">Protector</option>
-                                        <option value="Hunter">Hunter</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="origins">Choose an Origin</label>	   
-                                    <select id="origins" name="origins" onchange="godRecommender();" class="selectpicker">
-                                        <option value="noPreference" selected="selected">No Preference</option> 
-                                        <optgroup label="Gods">
-                                            <option value="African">African</option>
-                                            <option value="Aztec">Aztec</option>
-                                            <option value="Celtic">Celtic</option> 
-                                            <option value="Chinese">Chinese</option>
-                                            <option value="Egyptian">Egyptian</option>
-                                            <option value="Greek">Greek</option>
-                                            <option value="Inca">Inca</option>
-                                            <option value="Indian">Indian</option>
-                                            <option value="Japanese">Japanese</option>
-                                            <option value="Maori">Maori</option>
-                                            <option value="Norse">Norse</option>
-                                            <option value="Slavic">Slavic</option>
-                                        </optgroup>
-                                        <optgroup label="Titanrealms">
-                                            <option value="Death">Death</option>
-                                            <option value="Depths">Depths</option>
-                                            <option value="Fire">Fire</option> 
-                                            <option value="Light">Light</option>
-                                            <option value="Night">Night</option>
-                                            <option value="Ocean">Ocean</option>
-                                            <option value="Order">Order</option>
-                                            <option value="Sky">Sky</option>
-                                            <option value="World">World</option>
-                                        </optgroup>
-                                        <optgroup label="Otherworlds">
-                                            <option value="Dark Forest">Dark Forest</option>
-                                            <option value="Jade Sea">Jade Sea</option>
-                                            <option value="Shambhala">Shambhala</option>
-                                            <option value="Summer Court">Summer Court</option>
-                                            <option value="Utopia">Utopia</option>	
-                                            <option value="Winter Court">Winter Court</option>
-                                        </optgroup>
-                                        <optgroup label="Secret Societies">
-                                            <option value="Cabal">Cabal</option>	
-                                            <option value="Illuminati">Illuminati</option>
-                                            <option value="Order of the Jade Fist">Order of the Jade Fist</option>
-                                            <option value="Circle of Merlin">Circle of Merlin</option>	
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div id="noMatch" class="col-md-12"></div>  
+                        <h5>Find a Mythological God or Creature</h5>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="approaches">Choose an Approach</label>	   
+                                <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
+                                    <option value="noPreference" selected="selected">No Preference</option> 
+                                    <option value="Careful">Careful</option>
+                                    <option value="Clever">Clever</option>
+                                    <option value="Flashy">Flashy</option>
+                                    <option value="Forceful">Forceful</option>
+                                    <option value="Quick">Quick</option>
+                                    <option value="Sneaky">Sneaky</option>
+                                </select>
                             </div>
-                            <div id="FoundGodsContainer" class="col-md-6"></div>
+                            <div class="form-group">
+                                <label for="domains">Choose a Domain</label>	   
+                                <select id="domains" name="domains" onchange="godRecommender();" class="selectpicker">
+                                    <option value="noPreference" selected="selected">No Preference</option> 
+                                    <option value="Crafting Deity">Crafting</option>
+                                    <option value="Darkness Deity">Darkness</option>
+                                    <option value="Death Deity">Death</option>
+                                    <option value="Earth Deity">Earth</option>
+                                    <option value="Fertility Deity">Fertility</option>
+                                    <option value="Fire Deity">Fire</option>
+                                    <option value="Justice Deity">Justice</option>
+                                    <option value="Knowledge Deity">Knowledge</option>
+                                    <option value="Leader of the Gods">Leader</option>
+                                    <option value="Love Deity">Love</option>
+                                    <option value="Moon Deity">Moon</option>
+                                    <option value="Nature Deity">Nature</option>
+                                    <option value="Order Deity">Order</option>
+                                    <option value="Progenitor of the Gods">Progenitor</option>
+                                    <option value="Sky Deity">Sky</option>
+                                    <option value="Sun Deity">Sun</option>
+                                    <option value="Travel Deity">Travel</option>
+                                    <option value="War Deity">War</option>
+                                    <option value="Water Deity">Water</option>
+                                    <option value="Wisdom Deity">Wisdom</option>
+                                    <option value="Wit Deity">Wit</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="personality">Choose a Personality</label>	   
+                                <select id="personality" name="personality" onchange="godRecommender();" class="selectpicker" >
+                                    <option value="noPreference" selected="selected">No Preference</option> 
+                                    <option value="General">General</option>
+                                    <option value="Politician">Politician</option>
+                                    <option value="Free Spirit">Free Spirit</option>
+                                    <option value="King">King</option>
+                                    <option value="Mother">Mother</option>
+                                    <option value="Thinker">Thinker</option>
+                                    <option value="Harmonizer">Harmonizer</option>
+                                    <option value="Prince">Prince</option>
+                                    <option value="Enforcer">Enforcer</option>
+                                    <option value="Manipulator">Manipulator</option>
+                                    <option value="Trickster">Trickster</option>
+                                    <option value="Diplomat">Diplomat</option>
+                                    <option value="Protector">Protector</option>
+                                    <option value="Hunter">Hunter</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="origins">Choose an Origin</label>	   
+                                <select id="origins" name="origins" onchange="godRecommender();" class="selectpicker">
+                                    <option value="noPreference" selected="selected">No Preference</option> 
+                                    <optgroup label="Gods">
+                                        <option value="African">African</option>
+                                        <option value="Aztec">Aztec</option>
+                                        <option value="Celtic">Celtic</option> 
+                                        <option value="Chinese">Chinese</option>
+                                        <option value="Egyptian">Egyptian</option>
+                                        <option value="Greek">Greek</option>
+                                        <option value="Inca">Inca</option>
+                                        <option value="Indian">Indian</option>
+                                        <option value="Japanese">Japanese</option>
+                                        <option value="Maori">Maori</option>
+                                        <option value="Norse">Norse</option>
+                                        <option value="Slavic">Slavic</option>
+                                    </optgroup>
+                                    <optgroup label="Titanrealms">
+                                        <option value="Death">Death</option>
+                                        <option value="Depths">Depths</option>
+                                        <option value="Fire">Fire</option> 
+                                        <option value="Light">Light</option>
+                                        <option value="Night">Night</option>
+                                        <option value="Ocean">Ocean</option>
+                                        <option value="Order">Order</option>
+                                        <option value="Sky">Sky</option>
+                                        <option value="World">World</option>
+                                    </optgroup>
+                                    <optgroup label="Otherworlds">
+                                        <option value="Dark Forest">Dark Forest</option>
+                                        <option value="Jade Sea">Jade Sea</option>
+                                        <option value="Shambhala">Shambhala</option>
+                                        <option value="Summer Court">Summer Court</option>
+                                        <option value="Utopia">Utopia</option>	
+                                        <option value="Winter Court">Winter Court</option>
+                                    </optgroup>
+                                    <optgroup label="Secret Societies">
+                                        <option value="Cabal">Cabal</option>	
+                                        <option value="Illuminati">Illuminati</option>
+                                        <option value="Order of the Jade Fist">Order of the Jade Fist</option>
+                                        <option value="Circle of Merlin">Circle of Merlin</option>	
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div id="noMatch" class="col-md-12"></div>  
                         </div>
+                        <div id="FoundGodsContainer" class="col-md-6"></div>
                     </div>
+                </div>
+                <div class="tab-content">
                     <div class="tab-pane" id="portlet_tab2">
-                        <div class="slimScrollDiv">
-                            <h1>Find a Legendary Ability</h1>
-                            <div id="notGodFinder">
-                                <h4>Skill Recommendations</h4>
-                                <div class="form-group">
-                                    <label for="mainRole">Select Main Role</label>
-                                    <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
-                                        <option selected value="empty">Select Role</option>
-                                        <option value="Meat Shield"> Meat Shield</option>
-                                        <option value="Damage Dealer">Damage Dealer</option>
-                                        <option value="Party Face">Party Face</option>
-                                        <option value="Skill Monkey">Skill Monkey</option>
-                                        <option value="Support-Controller">Support/Controller</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="secondRole">Select a Second Role</label>
-                                    <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
-                                        <option value="empty">Select a Second Role</option> 
-                                    </select>
-                                </div>
-                                <div id="LegendaryAbilitiesContainer" class="col-md-6">
-                                    <div class="LegendaryAbility" id="LegendaryFound1"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound2"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound3"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound4"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound5"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound6"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound7"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound8"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound9"></div>
-                                    <div class="LegendaryAbility" id="LegendaryFound10"></div>
-                                </div>
-                                <div id="SkillsContainer" class="col-md-6">
-                                    <div class="Skill" id="SkillFound1"></div>
-                                    <div class="Skill" id="SkillFound2"></div>
-                                    <div class="Skill" id="SkillFound3"></div>
-                                    <div class="Skill" id="SkillFound4"></div>
-                                    <div class="Skill" id="SkillFound5"></div>
-                                    <div class="Skill" id="SkillFound6"></div>
-                                    <div class="Skill" id="SkillFound7"></div>
-                                    <div class="Skill" id="SkillFound8"></div>
-                                    <div class="Skill" id="SkillFound9"></div>
-                                    <div class="Skill" id="SkillFound10"></div>
-                                </div>
-                                <br>
-                                <a id="hoverer2"> </a>
+                        <h5>Find a Legendary Ability</h5>
+                        <div id="notGodFinder">
+                            <h6>Skill Recommendations</h6>
+                            <div class="form-group">
+                                <label for="mainRole">Select Main Role</label>
+                                <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
+                                    <option selected value="empty">Select Role</option>
+                                    <option value="Meat Shield"> Meat Shield</option>
+                                    <option value="Damage Dealer">Damage Dealer</option>
+                                    <option value="Party Face">Party Face</option>
+                                    <option value="Skill Monkey">Skill Monkey</option>
+                                    <option value="Support-Controller">Support/Controller</option>
+                                </select>
                             </div>
-                        </div><div class="slimScrollBar"></div><div class="slimScrollRail"></div>
+                            <div class="form-group">
+                                <label for="secondRole">Select a Second Role</label>
+                                <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
+                                    <option value="empty">Select a Second Role</option> 
+                                </select>
+                            </div>
+                            <div id="LegendaryAbilitiesContainer" class="col-md-6">
+                                <div class="LegendaryAbility" id="LegendaryFound1"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound2"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound3"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound4"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound5"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound6"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound7"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound8"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound9"></div>
+                                <div class="LegendaryAbility" id="LegendaryFound10"></div>
+                            </div>
+                            <div id="SkillsContainer" class="col-md-6">
+                                <div class="Skill" id="SkillFound1"></div>
+                                <div class="Skill" id="SkillFound2"></div>
+                                <div class="Skill" id="SkillFound3"></div>
+                                <div class="Skill" id="SkillFound4"></div>
+                                <div class="Skill" id="SkillFound5"></div>
+                                <div class="Skill" id="SkillFound6"></div>
+                                <div class="Skill" id="SkillFound7"></div>
+                                <div class="Skill" id="SkillFound8"></div>
+                                <div class="Skill" id="SkillFound9"></div>
+                                <div class="Skill" id="SkillFound10"></div>
+                            </div>
+                            <br>
+                            <a id="hoverer2"> </a>
+                        </div>
                     </div>
                 </div>
             </div>
