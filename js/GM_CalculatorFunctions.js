@@ -530,7 +530,7 @@ function FilterDomains(array){
     }
 }
 
-function FilterPersonalities(newSecondOriginArray)(array){
+function FilterPersonalities(array){
     var personnalityOptions = document.getElementById("personality").options;
     var personnalityIndex = document.getElementById("personality").selectedIndex;
     
