@@ -505,10 +505,10 @@ function FilterOrigins(array){
                 }
             }
         }
-        else if(originsOptions[originsIndex].value === "SecretSocieties"){
+        else if(originsOptions[originsIndex].value === "Enlightened"){
             for(var i = 0; i < array.length; i++){
                 var arrayObject = array[i];
-                if(arrayObject.originVar.type == "SecretSocieties"){
+                if(arrayObject.originVar.type == "Enlightened"){
                     resultArray.push(arrayObject);
                 }
             }
@@ -625,6 +625,13 @@ function DisplayNoteInformation(message){
     }
 }
 
+function OpenWikiPage(element){
+    var type = element.getAttribute("data-group");
+    var personaName = element.getAtribute("data-page");
+    
+    RequestInfoFromWiki(personaName);
+}
+
 function CreateButton(GodParams){
     var resultsContainer = document.getElementById("FoundGodsContainer");
     var colContainer = document.createElement("div");
@@ -642,7 +649,7 @@ function CreateButton(GodParams){
     var legendActionIcon = document.createElement("i");
     var legendActionLabel = document.createElement("span");
     
-    $(colContainer).addClass("col-md-4 col-sm-6 col-lg-4");
+    $(colContainer).addClass("col-md-3 col-sm-6 col-lg-3");
     $(globalButtonContainer).addClass("btn-group");
     globalButtonContainer.style.marginBottom = "5px";
     globalButtonContainer.style.width = "100%";
@@ -659,6 +666,7 @@ function CreateButton(GodParams){
     $(infoActionIcon).addClass("fa fa-info-circle");
     infoActionLabel.innerHTML = "More information";
     openDialogInfoAction.setAttribute("data-page", GodParams.name);
+    openDialogInfoAction.setAttribute("data-group", GodParams.originVar.type);
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
