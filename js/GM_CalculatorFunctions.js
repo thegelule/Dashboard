@@ -595,7 +595,7 @@ function CreateButton(GodParams){
     var legendActionIcon = document.createElement("i");
     var legendActionLabel = document.createElement("span");
     
-    $(colContainer).addClass("col-md-4 col-sm-12 col-lg-3");
+    $(colContainer).addClass("col-md-4 col-sm-6 col-lg-4");
     $(globalButtonContainer).addClass("btn-group");
     globalButtonContainer.style.marginBottom = "5px";
     globalButtonContainer.style.width = "100%";
