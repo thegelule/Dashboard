@@ -600,11 +600,13 @@ function DisplayGodFinderErrorMessage(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    messageSpan.innerHTML = message;
-    messageNoteElement.classList.add("note");
-    messageNoteElement.classList.add("note-danger");
-    messageNoteElement.appendChild(messageSpan);
-    messageContainer.appendChild(messageNoteElement);
+    if(messageContainer.innerHTML != ""){
+        messageSpan.innerHTML = message;
+        messageNoteElement.classList.add("note");
+        messageNoteElement.classList.add("note-danger");
+        messageNoteElement.appendChild(messageSpan);
+        messageContainer.appendChild(messageNoteElement);
+    }
 }
 
 function DisplayNoteInformation(message){
@@ -612,11 +614,13 @@ function DisplayNoteInformation(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    messageSpan.innerHTML = message;
-    messageNoteElement.classList.add("note");
-    messageNoteElement.classList.add("note-info");
-    messageNoteElement.appendChild(messageSpan);
-    messageContainer.appendChild(messageNoteElement);
+    if(messageContainer.innerHTML != ""){
+        messageSpan.innerHTML = message;
+        messageNoteElement.classList.add("note");
+        messageNoteElement.classList.add("note-info");
+        messageNoteElement.appendChild(messageSpan);
+        messageContainer.appendChild(messageNoteElement);
+    }
 }
 
 function CreateButton(GodParams){
@@ -656,6 +660,7 @@ function CreateButton(GodParams){
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
+    openLegendariesAction.setAttribute("data-init", true);
     
     
     dropButton.appendChild(godName);
@@ -673,12 +678,17 @@ function CreateButton(GodParams){
     colContainer.appendChild(globalButtonContainer);
     resultsContainer.appendChild(colContainer);
     
-    openLegendariesAction.onclick = ComputeLegendaries(GodParams);
+    openLegendariesAction.onclick = ComputeLegendaries(this,GodParams);
 }
 
-function ComputeLegendaries(GodParams){
-    ChosenGod = GodParams.name;
-    LegendaryMakerTotal();
+function ComputeLegendaries(e,GodParams){
+    if(e.getAttribute("data-init") == true){
+        e.setAttribute("data-init", false);
+    }
+    else{
+        ChosenGod = GodParams.name;
+        LegendaryMakerTotal();
+    }
 }
 
 function ComputeNewAbilities(element){
