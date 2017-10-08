@@ -248,6 +248,13 @@ function NewAbilityElement(ability){
     return formGroup;
 }
 
+function InitSelects(){
+    $(".selectpicker").selectpicker({
+      style: 'btn-info',
+      size: 4
+    });
+}
+
 /*****************Godborn Maker***************/
 function OpenWikiPage(element){
     
