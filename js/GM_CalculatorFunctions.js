@@ -481,7 +481,7 @@ function FilterOrigins(array){
         if(originsOptions[originsIndex].value === "Gods"){
             array = array.filter(function (entry) { 
                 return entry.originVar.type ===  "God";
-            }):
+            });
         }
         else if(originsOptions[originsIndex].value === "Titans"){
             array = array.filter(function (entry) { 
