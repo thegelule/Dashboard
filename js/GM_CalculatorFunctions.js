@@ -656,9 +656,7 @@ function CreateButton(GodParams){
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
-    openLegendariesAction.on("click",GodParams, function(params){
-     ComputeLegendaries(params);   
-    });
+    openLegendariesAction.onclick = ComputeLegendaries(params)
     
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
