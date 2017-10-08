@@ -601,9 +601,7 @@ function CreateButton(GodParams){
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
-    openLegendariesAction.href = "#portlet_tab2";
     openLegendariesAction.onclick = ComputeLegendaries(GodParams);
-    openLegendariesAction.setAttribute("data-toggle","tab");
     
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
@@ -1059,7 +1057,7 @@ function destroyClickedElement(event){
     document.body.removeChild(event.target);
 }
 
-bootbox.confirm({
+/*bootbox.confirm({
     message: "This is a confirm with custom button text and color! Do you like it?",
     buttons: {
         confirm: {
@@ -1074,4 +1072,4 @@ bootbox.confirm({
     callback: function (result) {
         console.log('This was logged in the callback: ' + result);
     }
-});
+});*/
