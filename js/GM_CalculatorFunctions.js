@@ -678,7 +678,7 @@ function CreateButton(GodParams){
     colContainer.appendChild(globalButtonContainer);
     resultsContainer.appendChild(colContainer);
     
-    openLegendariesAction.onclick = ComputeLegendaries(this,GodParams);
+    openLegendariesAction.onclick = ComputeLegendaries(openLegendariesAction,GodParams);
 }
 
 function ComputeLegendaries(e,GodParams){
