@@ -1083,12 +1083,13 @@ function rolesChange(selectObj2) {
         newOption = document.createElement("option"); 
         newOption.value = cList2[i]; // assumes option string and value are the same 
         newOption.text=cList2[i]; 
-        try { 
-            cSelect.add(newOption); // this will fail in DOM browsers but is needed for IE 
+        cSelect.appendChild(newOption);
+        /*try { 
+            //cSelect.add(newOption); // this will fail in DOM browsers but is needed for IE 
         } 
         catch (e) { 
             cSelect.appendChild(newOption); 
-        } 
+        } */
     } 
 } 
 
