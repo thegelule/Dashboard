@@ -473,84 +473,87 @@ function compare(a,b) {
   return 0;
 }
 
-function FilterOrigins(array){
+function FilterOrigins(){
     var originsOptions = document.getElementById("origins").options;
     var originsIndex = document.getElementById("origins").selectedIndex;
     
     if(originsOptions[originsIndex].value != "noPreference"){
         if(originsOptions[originsIndex].value === "Gods"){
-            array = array.filter(function (entry) { 
+            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
                 return entry.originVar.type ===  "God";
             });
         }
         else if(originsOptions[originsIndex].value === "Titans"){
-            array = array.filter(function (entry) { 
+            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
                 return entry.originVar.type ===  "Titan";
             });
         }
         else if(originsOptions[originsIndex].value === "Otherworlds"){
-            array = array.filter(function (entry) { 
+            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
                 return entry.originVar.type === "Otherworld";
             });
         }
         else if(originsOptions[originsIndex].value === "SecretSocieties"){
-            array = array.filter(function (entry) { 
+            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
                 return entry.originVar.type === "Enlightened" ;
             });
         }
-        else{array = array.filter(function (entry) { 
-            return entry.originVar.name === originsOptions[originsIndex].value; })}
+        else{
+            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+                return entry.originVar.name === originsOptions[originsIndex].value; 
+            });
+        }
     }
 }
 
-function FilterApproaches(array){
+function FilterApproaches(){
     var approachOptions = document.getElementById("approaches").options;
     var approachIndex = document.getElementById("approaches").selectedIndex;
     var resultArray = [];
     
     if(approachOptions[approachIndex].value != "noPreference"){
-        for(var i = 0; i < array.length; i++){
-            var arrayObject = array[i];
+        for(var i = 0; i < newSecondOriginArray.length; i++){
+            var arrayObject = newSecondOriginArray[i];
             if(arrayObject.approaches[0].name === approachOptions[approachIndex].value || arrayObject.approaches[1].name === approachOptions[approachIndex].value || arrayObject.approaches[2].name === approachOptions[approachIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        array = resultArray;
+        newSecondOriginArray = resultArray;
     }
 }
 
-function FilterDomains(array){
+function FilterDomains(){
     var domainOptions = document.getElementById("domains").options;
     var domainIndex = document.getElementById("domains").selectedIndex;
     var resultArray = [];
     
     if(domainOptions[domainIndex].value != "noPreference"){
-        for(var i = 0; i < array.length; i++){
-            var arrayObject = array[i];
+        for(var i = 0; i < newSecondOriginArray.length; i++){
+            var arrayObject = newSecondOriginArray[i];
             if(arrayObject.approaches[0].name === domainOptions[domainIndex].value || arrayObject.approaches[1].name === domainOptions[domainIndex].value || arrayObject.approaches[2].name === domainOptions[domainIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        array = resultArray;
+        newSecondOriginArray = resultArray;
     }
 }
 
-function FilterPersonalities(array){
+function FilterPersonalities(){
     var personnalityOptions = document.getElementById("personality").options;
     var personnalityIndex = document.getElementById("personality").selectedIndex;
     var resultArray = [];
     
     if(personnalityOptions[personnalityIndex].value != "noPreference"){
-        for(var i = 0; i < array.length; i++){
-            var arrayObject = array[i];
+        for(var i = 0; i < newSecondOriginArray.length; i++){
+            var arrayObject = newSecondOriginArray[i];
             if(arrayObject.approaches[0].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[1].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[2].name === personnalityOptions[personnalityIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        array = resultArray;
+        newSecondOriginArray = resultArray;
     }
 }
 
@@ -615,9 +618,9 @@ function CreateButton(GodParams){
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
-    openLegendariesAction.addEventListener("click",(function(params){
+    openLegendariesAction.on("click",GodParams, function(params){
      ComputeLegendaries(params);   
-    })(GodParams));
+    });
     
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
@@ -674,16 +677,16 @@ function godRecommender(){
         domainOptions[domainIndex].value != "noPreference" || personnalityOptions[personnalityIndex].value != "noPreference"){
 
         // Filters the Origins
-        FilterOrigins(newSecondOriginArray);
+        FilterOrigins();
 
         // Filter the Approaches
-        FilterApproaches(newSecondOriginArray);
+        FilterApproaches();
 
         // Filters the Domains
-        FilterDomains(newSecondOriginArray);
+        FilterDomains();
 
         // Filter the Personalities
-        FilterPersonalities(newSecondOriginArray);
+        FilterPersonalities();
     
 
         
@@ -692,16 +695,6 @@ function godRecommender(){
         }
         else{
             DisplayNoteInformation("Click on a result for more information");
-        }
-        
-
-
-        if(newSecondOriginArray.length % 3 === 1){
-            newSecondOriginArray.push(Default = new secondOrigin(""));
-        }
-        else if(newSecondOriginArray.length % 3 === 2){
-            newSecondOriginArray.push(Default = new secondOrigin(""));
-            newSecondOriginArray.push(Default = new secondOrigin(""));
         }
 
         for(var i = 0; i < newSecondOriginArray.length; i++){
