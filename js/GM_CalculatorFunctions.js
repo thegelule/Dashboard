@@ -571,6 +571,7 @@ function DisplayNoteInformation(message){
 }
 
 function CreateButton(GodParams){
+    var resultsContainer = document.getElementById("FoundGodsContainer");
     var colContainer = document.createElement("div");
     var globalButtonContainer = document.createElement("div");
     var dropButton = document.createElement("a");
@@ -617,6 +618,7 @@ function CreateButton(GodParams){
     globalButtonContainer.appendChild(dropButton);
     globalButtonContainer.appendChild(actionslist);
     colContainer.appendChild(globalButtonContainer);
+    resultsContainer.appendChild(colContainer);
 }
 
 function ComputeLegendaries(GodParams){
