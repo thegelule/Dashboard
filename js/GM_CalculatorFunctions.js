@@ -603,6 +603,7 @@ function CreateButton(GodParams){
     legendActionLabel.innerHTML = "See associated Abilities";
     openLegendariesAction.href = "#portlet_tab2";
     openLegendariesAction.onclick = ComputeLegendaries(GodParams);
+    openLegendariesAction.setAttribute("data-toggle","tab");
     
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
