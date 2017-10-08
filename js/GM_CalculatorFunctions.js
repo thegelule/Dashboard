@@ -523,32 +523,34 @@ function FilterApproaches(array){
 function FilterDomains(array){
     var domainOptions = document.getElementById("domains").options;
     var domainIndex = document.getElementById("domains").selectedIndex;
+    var resultArray = [];
     
     if(domainOptions[domainIndex].value != "noPreference"){
-        array = array.filter((function (entry) {
-            if(entry.domains.length === 1){
-                return entry.domains[0].name === domainOptions[domainIndex].value;
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
+            if(arrayObject.approaches[0].name === domainOptions[domainIndex].value || arrayObject.approaches[1].name === domainOptions[domainIndex].value || arrayObject.approaches[2].name === domainOptions[domainIndex].value){
+                resultArray.push(arrayObject);
             }
-            if(entry.domains.length === 2){
-                return entry.domains[0].name === domainOptions[domainIndex].value || entry.domains[1].name === domainOptions[domainIndex].value;
-            }
-        })(approachOptions[approachIndex]));
+        }
+        
+        array = resultArray;
     }
 }
 
 function FilterPersonalities(array){
     var personnalityOptions = document.getElementById("personality").options;
     var personnalityIndex = document.getElementById("personality").selectedIndex;
+    var resultArray = [];
     
     if(personnalityOptions[personnalityIndex].value != "noPreference"){
-        array = array.filter((function (entry) {
-            if(entry.roles.length === 1){
-                return entry.roles[0].name === personnalityOptions[personnalityIndex].value; 
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
+            if(arrayObject.approaches[0].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[1].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[2].name === personnalityOptions[personnalityIndex].value){
+                resultArray.push(arrayObject);
             }
-            if(entry.roles.length === 2){
-                return entry.roles[0].name === personnalityOptions[personnalityIndex].value || entry.roles[1].name === personnalityOptions[personnalityIndex].value;
-            }
-        })(approachOptions[approachIndex]));
+        }
+        
+        array = resultArray;
     }
 }
 
