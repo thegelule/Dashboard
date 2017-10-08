@@ -598,11 +598,15 @@ function CreateButton(GodParams){
     $(colContainer).addClass("col-md-4 col-sm-12 col-lg-3");
     $(globalButtonContainer).addClass("btn-group");
     globalButtonContainer.style.marginBottom = "5px";
+    globalButtonContainer.style.width = "100%";
     $(dropButton).addClass("btn btn-square btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
+    dropButton.style.width = "100%";
     godName.innerHTML = GodParams.name;
     godName.style.marginRight = "5px";
+    godName.style.float = "left";
     $(godArrowDown).addClass("fa fa-chevron-down");
+    godArrowDown.style.float = "right";
     $(actionslist).addClass("dropdown-menu");
     actionslist.setAttribute("role","menu");
     $(infoActionIcon).addClass("fa fa-info-circle");
