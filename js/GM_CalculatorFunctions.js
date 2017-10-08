@@ -740,6 +740,7 @@ function godRecommender(){
             godCounter+=1;
             
             if(godCounter <= maxGodResults){
+                document.getElementById("FoundGodsContainer").innerHTML = "";
                 CreateGodContainer(currentGodParams);
             }
         }
