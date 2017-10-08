@@ -111,7 +111,7 @@ function OpenGMaker(){
         success : function(result){
             var asyncContentContainer = document.getElementById("ContentDisplayContainer");
             asyncContentContainer.innerHTML = result;
-            
+            InitSelects();
         }
     });
 }
