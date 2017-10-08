@@ -677,16 +677,16 @@ function godRecommender(){
         domainOptions[domainIndex].value != "noPreference" || personnalityOptions[personnalityIndex].value != "noPreference"){
 
         // Filters the Origins
-        FilterOrigins();
+        newSecondOriginArray = FilterOrigins(newSecondOriginArray);
 
         // Filter the Approaches
-        FilterApproaches();
+        newSecondOriginArray = FilterApproaches(newSecondOriginArray);
 
         // Filters the Domains
-        FilterDomains();
+        newSecondOriginArray = FilterDomains(newSecondOriginArray);
 
         // Filter the Personalities
-        FilterPersonalities();
+        newSecondOriginArray = FilterPersonalities(newSecondOriginArray);
     
 
         
