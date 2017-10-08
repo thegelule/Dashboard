@@ -587,20 +587,20 @@ function CreateButton(GodParams){
     var legendActionIcon = document.createElement("i");
     var legendActionLabel = document.createElement("span");
     
-    colContainer.classList.add("col-md-3 col-sm-12 col-lg-2");
-    globalButtonContainer.classList.add("btn-group");
-    dropButton.classList.add("btn btn-circle btn-default");
+    $(colContainer).addClass("col-md-3 col-sm-12 col-lg-2");
+    $(globalButtonContainer).addClass("btn-group");
+    $(dropButton).addClass("btn btn-circle btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
-    godIcon.classList.add("fa fa-male");
+    $(godIcon).addClass("fa fa-male");
     godName.innerHTML = GodParams.name;
-    godArrowDown.classList.add("fa fa-arrow-down");
-    actionslist.classList.add("dropdown-menu");
+    $(godArrowDown).addClass("fa fa-arrow-down");
+    $(actionslist).addClass("dropdown-menu");
     actionslist.setAttribute("role","menu");
-    infoActionIcon.classList.add("fa fa-info-circle");
+    $(infoActionIcon).addClass("fa fa-info-circle");
     infoActionLabel.innerHTML = "More information";
     openDialogInfoAction.setAttribute("data-page", GodParams.name);
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
-    legendActionIcon.classList.add("fa fa-flash");
+    $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
     openLegendariesAction.href = "#portlet_tab2";
     openLegendariesAction.onclick = ComputeLegendaries(GodParams);
