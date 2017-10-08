@@ -33,8 +33,8 @@
     </div>	
 </div>
 <hr>
-<div class="row">
-    <button type="button" onclick="characterSheetSpawn()" class="btn btn-info">Spawn Character Sheet</button>	
+<div class="row FloatingButton">
+    <button type="button" onclick="characterSheetSpawn()" class="btn btn-default">Spawn Character Sheet</button>	
 </div>
 <div class="row">
     <h2>
@@ -42,26 +42,28 @@
     </h2>
 </div>
 <div class="row">
-    <div class="form-group">
-        <label>Character Name:</label>
-        <input type="text" id="inputFileNameToSaveAs" class="form-control" placeholder="Character Name"/>
-    </div>
-    <div class="form-group">
-        <label>Character Picture URL:</label>
-        <input type="text" id="CharacterImageURL" class="form-control" placeholder="Picture URL"/>
+    <div class="cold-md-4 col-lg-3 col-sm-12">
+        <div class="form-group">
+            <label>Character Name:</label>
+            <input type="text" id="inputFileNameToSaveAs" class="form-control" placeholder="Character Name"/>
+        </div>
+        <div class="form-group">
+            <label>Character Picture URL:</label>
+            <input type="text" id="CharacterImageURL" class="form-control" placeholder="Picture URL"/>
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
         <!-- BEGIN Portlet PORTLET-->
-        <div class="portlet light">
+        <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="actions">
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a> 
                 </div>
                 <div class="caption">
-                    <i class="icon-pin font-yellow-crusta"></i>
-                    <span class="caption-subject bold font-yellow-crusta uppercase"> God/Legendary Abilities Finder </span>
+                    <i class="icon-pin"></i>
+                    <span class="caption-subject bold uppercase"> God/Legendary Abilities Finder </span>
                 </div>
                 <ul class="nav nav-tabs">
                     <li>
@@ -76,7 +78,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="portlet_tab1">
                         <div class="slimScrollDiv" ><div class="scroller">
-                            <h4>Find a Mythological God</h4>
+                            <h1>Find a Mythological God or Creature</h1>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="approaches">Choose an Approach</label>	   
@@ -189,7 +191,7 @@
                     </div>
                     <div class="tab-pane" id="portlet_tab2">
                         <div class="slimScrollDiv">
-                            <h4>Find a Legendary Ability</h4>
+                            <h1>Find a Legendary Ability</h1>
                             <div id="notGodFinder">
                                 <h4>Skill Recommendations</h4>
                                 <div class="form-group">
@@ -247,14 +249,14 @@
 <div class="row">
     <div class="col-md-12">
         <!-- BEGIN Portlet PORTLET-->
-        <div class="portlet light">
+        <div class="portlet light bordered">
             <div class="portlet-title tabbable-line">
                 <div class="actions">
                     <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;"> </a> 
                 </div>
                 <div class="caption">
-                    <i class="icon-pin font-yellow-crusta"></i>
-                    <span class="caption-subject bold font-yellow-crusta uppercase">Aspects, Skills and Stunts Builder</span>
+                    <i class="icon-pin "></i>
+                    <span class="caption-subject bold  uppercase">Aspects, Skills and Stunts Builder</span>
                 </div>
                 <ul class="nav nav-tabs">
                     <li>

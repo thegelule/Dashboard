@@ -123,3 +123,12 @@ label.stuntTitle {
     margin-right: 10px;
     float: left;
 }
+
+.FloatingButton{
+    position: fixed;
+    z-index: 2;
+    right: 25px;
+    top: 55px;
+    padding: 25px;
+    background-color: rgba(87, 142, 190,0.6);
+}
