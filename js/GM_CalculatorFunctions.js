@@ -519,7 +519,12 @@ function FilterApproaches(array){
             }
         }
         
-        array = resultArray;
+        if(resultArray.length == 0){
+            return array;
+        }
+        else{
+            return resultArray;
+        }
     }
 }
 
@@ -536,7 +541,12 @@ function FilterDomains(array){
             }
         }
         
-        return resultArray;
+        if(resultArray.length == 0){
+            return array;
+        }
+        else{
+            return resultArray;
+        }
     }
 }
 
@@ -553,7 +563,13 @@ function FilterPersonalities(array){
             }
         }
         
-        return resultArray;
+        if(resultArray.length == 0){
+            return array;
+        }
+        else{
+            return resultArray;
+        }
+        
     }
 }
 
