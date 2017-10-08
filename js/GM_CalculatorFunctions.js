@@ -654,8 +654,8 @@ function godRecommender(){
     var godCounter = 0;
     var maxGodResults = 30;
 
-    if(originsOptions[originsIndex].value != "noPreference" || approachOrigins[approachIndex].value != "noPreference" ||
-        domainOrigins[domainIndex].value != "noPreference" || personnalityOptions[personnalityIndex].value != "noPreference"){
+    if(originsOptions[originsIndex].value != "noPreference" || approachOptions[approachIndex].value != "noPreference" ||
+        domainOptions[domainIndex].value != "noPreference" || personnalityOptions[personnalityIndex].value != "noPreference"){
 
         // Filters the Origins
         FilterOrigins(newSecondOriginArray);
