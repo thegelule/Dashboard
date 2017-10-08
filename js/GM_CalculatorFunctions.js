@@ -1,3 +1,5 @@
+var GodParams = null;
+
 var LegendaryAbility = function(name,description,legendaries) {
   this.name = name;
   this.description = description;
@@ -661,7 +663,6 @@ function CreateButton(GodParams){
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
     openLegendariesAction.setAttribute("data-init", true);
-    openLegendariesAction.setAttribute("data-god", GodParams);
     
     
     dropButton.appendChild(godName);
@@ -680,7 +681,6 @@ function CreateButton(GodParams){
     resultsContainer.appendChild(colContainer);
     
     openLegendariesAction.addEventListener("click",function(){
-        var GodParams = this.getAttribute("data-god");
         ComputeLegendaries(this,GodParams);
     });
 }
@@ -752,11 +752,11 @@ function godRecommender(){
         document.getElementById("FoundGodsContainer").innerHTML = ""; //On vide le résultat de la recherche entre deux changements de filtres
         
         for(var i = 0; i < newSecondOriginArray.length; i++){
-            var currentGodParams = newSecondOriginArray[i];
+            GodParams = newSecondOriginArray[i];
             godCounter+=1;
             
             if(godCounter <= maxGodResults){
-                CreateGodContainer(currentGodParams);
+                CreateGodContainer(GodParams);
             }
         }
     }
