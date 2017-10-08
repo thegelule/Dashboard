@@ -597,6 +597,7 @@ function CreateButton(GodParams){
     
     $(colContainer).addClass("col-md-4 col-sm-12 col-lg-3");
     $(globalButtonContainer).addClass("btn-group");
+    globalButtonContainer.style.marginBottom = "5px";
     $(dropButton).addClass("btn btn-square btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
     godName.innerHTML = GodParams.name;
