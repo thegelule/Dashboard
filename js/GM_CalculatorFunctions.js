@@ -587,7 +587,7 @@ function CreateButton(GodParams){
     var legendActionIcon = document.createElement("i");
     var legendActionLabel = document.createElement("span");
     
-    $(colContainer).addClass("col-md-3 col-sm-12 col-lg-2");
+    $(colContainer).addClass("col-md-4 col-sm-12 col-lg-3");
     $(globalButtonContainer).addClass("btn-group");
     $(dropButton).addClass("btn btn-circle btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
@@ -606,10 +606,12 @@ function CreateButton(GodParams){
     
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
-    openLegendaries.appendChild(legendActionIcon);
-    openLegendaries.appendChild(legendActionLabel);
-    openDialogInfo.appendChild(infoActionIcon);
-    openDialogInfo.appendChild(infoActionLabel);
+    openLegendariesAction.appendChild(legendActionIcon);
+    openLegendariesAction.appendChild(legendActionLabel);
+    openLegendaries.appendChild(openLegendariesAction);
+    openDialogInfoAction.appendChild(infoActionIcon);
+    openDialogInfoAction.appendChild(infoActionLabel);
+    openDialogInfo.appendChild(openDialogInfoAction);
     actionslist.appendChild(openLegendaries);
     actionslist.appendChild(openDialogInfo);
     globalButtonContainer.appendChild(dropButton);
