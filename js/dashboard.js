@@ -255,8 +255,14 @@ function InitSelects(){
 /*****************Godborn Maker***************/
 function RequestInfoFromWiki(wikiPage){
     var requestURL = "http://www.wyrdwalkers.wikidot.com/" + wikiPage;
+    var boxMessage = "<iframe src='" + requestURL + "'></iframe>";
     
-    $.ajax({
+    bootbox.alert({
+        message: boxMessage,
+        size: "large"
+    });
+    
+    /*$.ajax({
        url: requestURL,
         type: "GET",
         success : function(result){
@@ -269,5 +275,5 @@ function RequestInfoFromWiki(wikiPage){
             });
             
         }
-    });
+    });*/
 }

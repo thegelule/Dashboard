@@ -602,7 +602,7 @@ function DisplayGodFinderErrorMessage(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    if(messageContainer.innerHTML == "" || messageContainer.find(".note-info")){
+    if(messageContainer.innerHTML == "" || $(messageContainer).find(".note-info")){
         messageSpan.innerHTML = message;
         messageNoteElement.classList.add("note");
         messageNoteElement.classList.add("note-danger");
@@ -616,7 +616,7 @@ function DisplayNoteInformation(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    if(messageContainer.innerHTML == ""  || messageContainer.find(".note-danger")){
+    if(messageContainer.innerHTML == ""  || $(messageContainer).find(".note-danger")){
         messageSpan.innerHTML = message;
         messageNoteElement.classList.add("note");
         messageNoteElement.classList.add("note-info");
@@ -627,7 +627,7 @@ function DisplayNoteInformation(message){
 
 function OpenWikiPage(element){
     var type = element.getAttribute("data-group");
-    var personaName = element.getAtribute("data-page");
+    var personaName = element.getAttribute("data-page");
     
     RequestInfoFromWiki(personaName);
 }
