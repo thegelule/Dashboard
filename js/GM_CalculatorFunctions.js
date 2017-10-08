@@ -734,13 +734,14 @@ function godRecommender(){
         else{
             DisplayNoteInformation("Click on a result for more information");
         }
-
+        
+        document.getElementById("FoundGodsContainer").innerHTML = ""; //On vide le résultat de la recherche entre deux changements de filtres
+        
         for(var i = 0; i < newSecondOriginArray.length; i++){
             var currentGodParams = newSecondOriginArray[i];
             godCounter+=1;
             
             if(godCounter <= maxGodResults){
-                document.getElementById("FoundGodsContainer").innerHTML = "";
                 CreateGodContainer(currentGodParams);
             }
         }
