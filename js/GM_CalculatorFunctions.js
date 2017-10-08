@@ -506,11 +506,17 @@ function FilterOrigins(array){
 function FilterApproaches(array){
     var approachOptions = document.getElementById("approaches").options;
     var approachIndex = document.getElementById("approaches").selectedIndex;
+    var resultArray = [];
     
     if(approachOptions[approachIndex].value != "noPreference"){
-        array = array.filter((function (entry) {
-            return entry.approaches[0].name === approachOptions[approachIndex].value || entry.approaches[1].name === approachOptions[approachIndex].value || entry.approaches[2].name === approachOptions[approachIndex].value;
-        })(approachOptions[approachIndex]));
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
+            if(arrayObject.approaches[0].name === approachOptions[approachIndex].value || arrayObject.approaches[1].name === approachOptions[approachIndex].value || arrayObject.approaches[2].name === approachOptions[approachIndex].value){
+                resultArray.push(arrayObject);
+            }
+        }
+        
+        array = resultArray;
     }
 }
 
