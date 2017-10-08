@@ -795,7 +795,7 @@ function LegendaryMakerTotal(){
     roleFound2 = rolesChoiceArray.filter(function (entry) { return entry.name === ChosenSecondRole; })[0]
     wyrdbornFound = secondOriginArray.filter(function (entry) { return entry.name === ChosenWyrdborn; })[0]  
     exampleLegendaryMaker();  
-    document.getElementById("hoverer2").innerHTML = "Hover over a Legendary Ability or Skill for extra information !"
+    //document.getElementById("hoverer2").innerHTML = "Hover over a Legendary Ability or Skill for extra information !" -> Element removed
 }
 
 
