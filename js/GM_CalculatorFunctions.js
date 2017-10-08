@@ -473,87 +473,87 @@ function compare(a,b) {
   return 0;
 }
 
-function FilterOrigins(){
+function FilterOrigins(array){
     var originsOptions = document.getElementById("origins").options;
     var originsIndex = document.getElementById("origins").selectedIndex;
     
     if(originsOptions[originsIndex].value != "noPreference"){
         if(originsOptions[originsIndex].value === "Gods"){
-            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+            array = array.filter(function (entry) { 
                 return entry.originVar.type ===  "God";
             });
         }
         else if(originsOptions[originsIndex].value === "Titans"){
-            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+            array = array.filter(function (entry) { 
                 return entry.originVar.type ===  "Titan";
             });
         }
         else if(originsOptions[originsIndex].value === "Otherworlds"){
-            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+            array = array.filter(function (entry) { 
                 return entry.originVar.type === "Otherworld";
             });
         }
         else if(originsOptions[originsIndex].value === "SecretSocieties"){
-            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+            array = array.filter(function (entry) { 
                 return entry.originVar.type === "Enlightened" ;
             });
         }
         else{
-            newSecondOriginArray = newSecondOriginArray.filter(function (entry) { 
+            array = array.filter(function (entry) { 
                 return entry.originVar.name === originsOptions[originsIndex].value; 
             });
         }
     }
 }
 
-function FilterApproaches(){
+function FilterApproaches(array){
     var approachOptions = document.getElementById("approaches").options;
     var approachIndex = document.getElementById("approaches").selectedIndex;
     var resultArray = [];
     
     if(approachOptions[approachIndex].value != "noPreference"){
-        for(var i = 0; i < newSecondOriginArray.length; i++){
-            var arrayObject = newSecondOriginArray[i];
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
             if(arrayObject.approaches[0].name === approachOptions[approachIndex].value || arrayObject.approaches[1].name === approachOptions[approachIndex].value || arrayObject.approaches[2].name === approachOptions[approachIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        newSecondOriginArray = resultArray;
+        array = resultArray;
     }
 }
 
-function FilterDomains(){
+function FilterDomains(array){
     var domainOptions = document.getElementById("domains").options;
     var domainIndex = document.getElementById("domains").selectedIndex;
     var resultArray = [];
     
     if(domainOptions[domainIndex].value != "noPreference"){
-        for(var i = 0; i < newSecondOriginArray.length; i++){
-            var arrayObject = newSecondOriginArray[i];
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
             if(arrayObject.approaches[0].name === domainOptions[domainIndex].value || arrayObject.approaches[1].name === domainOptions[domainIndex].value || arrayObject.approaches[2].name === domainOptions[domainIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        newSecondOriginArray = resultArray;
+        return resultArray;
     }
 }
 
-function FilterPersonalities(){
+function FilterPersonalities(array){
     var personnalityOptions = document.getElementById("personality").options;
     var personnalityIndex = document.getElementById("personality").selectedIndex;
     var resultArray = [];
     
     if(personnalityOptions[personnalityIndex].value != "noPreference"){
-        for(var i = 0; i < newSecondOriginArray.length; i++){
-            var arrayObject = newSecondOriginArray[i];
+        for(var i = 0; i < array.length; i++){
+            var arrayObject = array[i];
             if(arrayObject.approaches[0].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[1].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[2].name === personnalityOptions[personnalityIndex].value){
                 resultArray.push(arrayObject);
             }
         }
         
-        newSecondOriginArray = resultArray;
+        return resultArray;
     }
 }
 
