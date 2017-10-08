@@ -563,13 +563,13 @@ function FilterDomains(array){
                 resultArray.push(arrayObject);
             }
         }
-        
-        if(resultArray.length == 0){
-            return array;
-        }
-        else{
-            return resultArray;
-        }
+    }
+    
+    if(resultArray.length == 0){
+        return array;
+    }
+    else{
+        return resultArray;
     }
 }
 
