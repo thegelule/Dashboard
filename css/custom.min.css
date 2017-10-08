@@ -83,6 +83,7 @@ li.aspect{
 
 .row{
     margin-bottom: 2px;
+    margin-left: 0px !important;
 }
 
 label.stuntTitle {
