@@ -584,15 +584,14 @@ function FilterPersonalities(array){
             if(arrayObject.approaches[0].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[1].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[2].name === personnalityOptions[personnalityIndex].value){
                 resultArray.push(arrayObject);
             }
-        }
-        
-        if(resultArray.length == 0){
-            return array;
-        }
-        else{
-            return resultArray;
-        }
-        
+        }        
+    }
+    
+    if(resultArray.length == 0){
+        return array;
+    }
+    else{
+        return resultArray;
     }
 }
 
