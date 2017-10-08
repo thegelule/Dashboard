@@ -661,6 +661,7 @@ function CreateButton(GodParams){
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
     openLegendariesAction.setAttribute("data-init", true);
+    openLegendariesAction.setAttribute("data-god", GodParams);
     
     
     dropButton.appendChild(godName);
@@ -678,7 +679,10 @@ function CreateButton(GodParams){
     colContainer.appendChild(globalButtonContainer);
     resultsContainer.appendChild(colContainer);
     
-    openLegendariesAction.onclick = ComputeLegendaries(openLegendariesAction,GodParams);
+    openLegendariesAction.addEventListener("click",function(){
+        var GodParams = this.getAttribute("data-god");
+        ComputeLegendaries(this,GodParams);
+    });
 }
 
 function ComputeLegendaries(e,GodParams){
