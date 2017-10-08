@@ -667,7 +667,6 @@ function CreateButton(GodParams){
     infoActionLabel.innerHTML = "More information";
     openDialogInfoAction.setAttribute("data-page", GodParams.name);
     openDialogInfoAction.setAttribute("data-group", GodParams.originVar.type);
-    openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
     //openLegendariesAction.setAttribute("data-init", true);
@@ -690,6 +689,10 @@ function CreateButton(GodParams){
     
     openLegendariesAction.addEventListener("click",function(){
         ComputeLegendaries(this,GodParams);
+    });
+    
+    openDialogInfoAction.addEventListener("click",function(){
+        OpenWikiPage(this);
     });
 }
 
