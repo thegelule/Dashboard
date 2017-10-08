@@ -476,33 +476,56 @@ function compare(a,b) {
 function FilterOrigins(array){
     var originsOptions = document.getElementById("origins").options;
     var originsIndex = document.getElementById("origins").selectedIndex;
+    var resultArray = [];
     
     if(originsOptions[originsIndex].value != "noPreference"){
         if(originsOptions[originsIndex].value === "Gods"){
-            array = array.filter(function (entry) { 
-                return entry.originVar.type ===  "God";
-            });
+            for(var i = 0; i < array.length; i++){
+                var arrayObject = array[i];
+                if(arrayObject.originVar.type == "God"){
+                    resultArray.push(arrayObject);
+                }
+            }
         }
         else if(originsOptions[originsIndex].value === "Titans"){
-            array = array.filter(function (entry) { 
-                return entry.originVar.type ===  "Titan";
-            });
+            for(var i = 0; i < array.length; i++){
+                var arrayObject = array[i];
+                if(arrayObject.originVar.type == "Titans"){
+                    resultArray.push(arrayObject);
+                }
+            }
         }
         else if(originsOptions[originsIndex].value === "Otherworlds"){
-            array = array.filter(function (entry) { 
-                return entry.originVar.type === "Otherworld";
-            });
+            for(var i = 0; i < array.length; i++){
+                var arrayObject = array[i];
+                if(arrayObject.originVar.type == "Otherworlds"){
+                    resultArray.push(arrayObject);
+                }
+            }
         }
         else if(originsOptions[originsIndex].value === "SecretSocieties"){
-            array = array.filter(function (entry) { 
-                return entry.originVar.type === "Enlightened" ;
-            });
+            for(var i = 0; i < array.length; i++){
+                var arrayObject = array[i];
+                if(arrayObject.originVar.type == "SecretSocieties"){
+                    resultArray.push(arrayObject);
+                }
+            }
         }
         else{
-            array = array.filter(function (entry) { 
-                return entry.originVar.name === originsOptions[originsIndex].value; 
-            });
+            for(var i = 0; i < array.length; i++){
+                var arrayObject = array[i];
+                if(arrayObject.originVar.name == originsOptions[originsIndex].value){
+                    resultArray.push(arrayObject);
+                }
+            }
         }
+    }
+    
+    if(resultArray.length == 0){
+        return array;
+    }
+    else{
+        return resultArray;
     }
 }
 
