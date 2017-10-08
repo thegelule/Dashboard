@@ -249,10 +249,7 @@ function NewAbilityElement(ability){
 }
 
 function InitSelects(){
-    $(".selectpicker").selectpicker({
-      style: 'btn-info',
-      size: 4
-    });
+    $(".selectpicker").selectpicker();
 }
 
 /*****************Godborn Maker***************/
