@@ -682,8 +682,8 @@ function CreateButton(GodParams){
 }
 
 function ComputeLegendaries(e,GodParams){
-    if(e.getAttribute("data-init") == true){
-        e.setAttribute("data-init", false);
+    if(e.getAttribute("data-init") == "true"){
+        e.setAttribute("data-init", "false");
     }
     else{
         ChosenGod = GodParams.name;
