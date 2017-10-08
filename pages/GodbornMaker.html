@@ -72,9 +72,9 @@
                 </div>
             </div>
             <div class="portlet-body">
-                <div class="row">
-                    <h5>Find a Mythological God or Creature</h5>
+                <div class="row"> 
                     <div class="col-md-6">
+                        <h5>Find a Mythological God or Creature</h5>
                         <div class="form-group">
                             <label for="approaches">Choose an Approach</label>	   
                             <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
@@ -178,15 +178,13 @@
                                     <option value="Circle of Merlin">Circle of Merlin</option>	
                                 </optgroup>
                             </select>
-                        </div>
-                        <div id="noMatch" class="col-md-12"></div>  
+                        </div>  
                     </div>
                     <div id="FoundGodsContainer" class="col-md-6"></div>
                 </div>
+                <div id="noMatch" class="col-md-12"></div> 
                 <div class="row">
-                    <h5>Find a Legendary Ability</h5>
                     <div id="notGodFinder">
-                        <h6>Skill Recommendations</h6>
                         <div class="form-group">
                             <label for="mainRole">Select Main Role</label>
                             <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
@@ -205,6 +203,7 @@
                             </select>
                         </div>
                         <div id="LegendaryAbilitiesContainer" class="col-md-6">
+                            <h5>Legendary Abilities Recommandation</h5>
                             <div class="LegendaryAbility" id="LegendaryFound1"></div>
                             <div class="LegendaryAbility" id="LegendaryFound2"></div>
                             <div class="LegendaryAbility" id="LegendaryFound3"></div>
@@ -217,6 +216,7 @@
                             <div class="LegendaryAbility" id="LegendaryFound10"></div>
                         </div>
                         <div id="SkillsContainer" class="col-md-6">
+                            <h5>Skill Recommendations</h5>
                             <div class="Skill" id="SkillFound1"></div>
                             <div class="Skill" id="SkillFound2"></div>
                             <div class="Skill" id="SkillFound3"></div>
@@ -229,7 +229,7 @@
                             <div class="Skill" id="SkillFound10"></div>
                         </div>
                         <br>
-                        <a id="hoverer2"> </a>
+                        
                     </div>
                 </div>
             </div>

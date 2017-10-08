@@ -597,9 +597,10 @@ function CreateButton(GodParams){
     
     $(colContainer).addClass("col-md-4 col-sm-12 col-lg-3");
     $(globalButtonContainer).addClass("btn-group");
-    $(dropButton).addClass("btn btn-circle btn-default");
+    $(dropButton).addClass("btn btn-square btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
     godName.innerHTML = GodParams.name;
+    godName.style.marginRight = "5px";
     $(godArrowDown).addClass("fa fa-chevron-down");
     $(actionslist).addClass("dropdown-menu");
     actionslist.setAttribute("role","menu");

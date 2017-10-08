@@ -132,3 +132,7 @@ label.stuntTitle {
     padding: 25px;
     background-color: rgba(87, 142, 190,0.6);
 }
+
+a.btn.btn-circle.btn-default {
+    margin-bottom: 5px;
+}
