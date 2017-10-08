@@ -77,7 +77,7 @@
                         <h5>Find a Mythological God or Creature</h5>
                         <div class="form-group">
                             <label for="approaches">Choose an Approach</label>	   
-                            <select id="approaches" name="approaches" onchange="godRecommender();" class="selectpicker">
+                            <select id="approaches" name="approaches" onchange="godRecommender();" class="bs-select form-control">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="Careful">Careful</option>
                                 <option value="Clever">Clever</option>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group">
                             <label for="domains">Choose a Domain</label>	   
-                            <select id="domains" name="domains" onchange="godRecommender();" class="selectpicker">
+                            <select id="domains" name="domains" onchange="godRecommender();" class="bs-select form-control">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="Crafting Deity">Crafting</option>
                                 <option value="Darkness Deity">Darkness</option>
@@ -116,7 +116,7 @@
                         </div>
                         <div class="form-group">
                             <label for="personality">Choose a Personality</label>	   
-                            <select id="personality" name="personality" onchange="godRecommender();" class="selectpicker" >
+                            <select id="personality" name="personality" onchange="godRecommender();" class="bs-select form-control" >
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <option value="General">General</option>
                                 <option value="Politician">Politician</option>
@@ -136,7 +136,7 @@
                         </div>
                         <div class="form-group">
                             <label for="origins">Choose an Origin</label>	   
-                            <select id="origins" name="origins" onchange="godRecommender();" class="selectpicker">
+                            <select id="origins" name="origins" onchange="godRecommender();" class="bs-select form-control">
                                 <option value="noPreference" selected="selected">No Preference</option> 
                                 <optgroup label="Gods">
                                     <option value="African">African</option>
@@ -187,7 +187,7 @@
                     <div id="notGodFinder">
                         <div class="form-group">
                             <label for="mainRole">Select Main Role</label>
-                            <select id="mainRole" onchange="ComputeNewAbilities(this);" class="selectpicker">
+                            <select id="mainRole" onchange="ComputeNewAbilities(this);" class="bs-select form-control">
                                 <option selected value="empty">Select Role</option>
                                 <option value="Meat Shield"> Meat Shield</option>
                                 <option value="Damage Dealer">Damage Dealer</option>
@@ -198,7 +198,7 @@
                         </div>
                         <div class="form-group">
                             <label for="secondRole">Select a Second Role</label>
-                            <select id="secondRole" onchange = "AdjustAbilities(this);" class="selectpicker">
+                            <select id="secondRole" onchange = "AdjustAbilities(this);" class="bs-select form-control">
                                 <option value="empty">Select a Second Role</option> 
                             </select>
                         </div>
