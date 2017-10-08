@@ -575,7 +575,6 @@ function CreateButton(GodParams){
     var colContainer = document.createElement("div");
     var globalButtonContainer = document.createElement("div");
     var dropButton = document.createElement("a");
-    var godIcon = document.createElement("i");
     var godName = document.createElement("span");
     var godArrowDown = document.createElement("i");
     var actionslist = document.createElement("ul");
@@ -592,9 +591,8 @@ function CreateButton(GodParams){
     $(globalButtonContainer).addClass("btn-group");
     $(dropButton).addClass("btn btn-circle btn-default");
     dropButton.setAttribute("data-toggle", "dropdown");
-    $(godIcon).addClass("fa fa-male");
     godName.innerHTML = GodParams.name;
-    $(godArrowDown).addClass("fa fa-arrow-down");
+    $(godArrowDown).addClass("fa fa-chevron-down");
     $(actionslist).addClass("dropdown-menu");
     actionslist.setAttribute("role","menu");
     $(infoActionIcon).addClass("fa fa-info-circle");
@@ -606,11 +604,10 @@ function CreateButton(GodParams){
     openLegendariesAction.href = "#portlet_tab2";
     openLegendariesAction.onclick = ComputeLegendaries(GodParams);
     
-    dropButton.appendChild(godIcon);
     dropButton.appendChild(godName);
     dropButton.appendChild(godArrowDown);
-    openLegendaries.appendChild(infoActionIcon);
-    openLegendaries.appendChild(infoActionLabel);
+    openLegendaries.appendChild(legendActionIcon);
+    openLegendaries.appendChild(legendActionLabel);
     openDialogInfo.appendChild(infoActionIcon);
     openDialogInfo.appendChild(infoActionLabel);
     actionslist.appendChild(openLegendaries);
