@@ -602,7 +602,7 @@ function DisplayGodFinderErrorMessage(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    if(messageContainer.innerHTML != ""){
+    if(messageContainer.innerHTML == "" || messageContainer.find(".note-info")){
         messageSpan.innerHTML = message;
         messageNoteElement.classList.add("note");
         messageNoteElement.classList.add("note-danger");
@@ -616,7 +616,7 @@ function DisplayNoteInformation(message){
     var messageNoteElement = document.createElement("div");
     var messageSpan= document.createElement("span");
     
-    if(messageContainer.innerHTML != ""){
+    if(messageContainer.innerHTML == ""  || messageContainer.find(".note-danger")){
         messageSpan.innerHTML = message;
         messageNoteElement.classList.add("note");
         messageNoteElement.classList.add("note-info");
@@ -662,7 +662,7 @@ function CreateButton(GodParams){
     openDialogInfoAction.onclick = "OpenWikiPage(this);"
     $(legendActionIcon).addClass("fa fa-flash");
     legendActionLabel.innerHTML = "See associated Abilities";
-    openLegendariesAction.setAttribute("data-init", true);
+    //openLegendariesAction.setAttribute("data-init", true);
     
     
     dropButton.appendChild(godName);
@@ -686,13 +686,16 @@ function CreateButton(GodParams){
 }
 
 function ComputeLegendaries(e,GodParams){
-    if(e.getAttribute("data-init") == "true"){
+    /*if(e.getAttribute("data-init") == "true"){
         e.setAttribute("data-init", "false");
     }
     else{
         ChosenGod = GodParams.name;
         LegendaryMakerTotal();
-    }
+    }*/
+    
+    ChosenGod = GodParams.name;
+    LegendaryMakerTotal();
 }
 
 function ComputeNewAbilities(element){
