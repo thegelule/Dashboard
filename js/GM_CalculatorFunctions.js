@@ -508,9 +508,9 @@ function FilterApproaches(array){
     var approachIndex = document.getElementById("approaches").selectedIndex;
     
     if(approachOptions[approachIndex].value != "noPreference"){
-        array = array.filter(function (entry) {
+        array = array.filter((function (entry) {
             return entry.approaches[0].name === approachOptions[approachIndex].value || entry.approaches[1].name === approachOptions[approachIndex].value || entry.approaches[2].name === approachOptions[approachIndex].value;
-        });
+        })(array));
     }
 }
 
@@ -519,14 +519,14 @@ function FilterDomains(array){
     var domainIndex = document.getElementById("domains").selectedIndex;
     
     if(domainOptions[domainIndex].value != "noPreference"){
-        array = array.filter(function (entry) {
+        array = array.filter((function (entry) {
             if(entry.domains.length === 1){
                 return entry.domains[0].name === domainOptions[domainIndex].value;
             }
             if(entry.domains.length === 2){
                 return entry.domains[0].name === domainOptions[domainIndex].value || entry.domains[1].name === domainOptions[domainIndex].value;
             }
-        });
+        })(array));
     }
 }
 
@@ -535,14 +535,14 @@ function FilterPersonalities(array){
     var personnalityIndex = document.getElementById("personality").selectedIndex;
     
     if(personnalityOptions[personnalityIndex].value != "noPreference"){
-        array = array.filter(function (entry) {
+        array = array.filter((function (entry) {
             if(entry.roles.length === 1){
                 return entry.roles[0].name === personnalityOptions[personnalityIndex].value; 
             }
             if(entry.roles.length === 2){
                 return entry.roles[0].name === personnalityOptions[personnalityIndex].value || entry.roles[1].name === personnalityOptions[personnalityIndex].value;
             }
-        });
+        })(array));
     }
 }
 
