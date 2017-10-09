@@ -1160,9 +1160,18 @@ function SaveCharacterAsText(){
 }
 
 function saveTextAsFile(text){
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value + ".txt";
-    var textFileAsBlob = new Blob([text], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
-    saveAs(textFileAsBlob);
+    var characterName = document.getElementById("inputFileNameToSaveAs").value;
+    
+    if(characterName != ""){
+        var fileNameToSaveAs =  + ".txt";
+        var textFileAsBlob = new Blob([text], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
+        saveAs(textFileAsBlob);
+    }
+    else{
+        bootbox.alert("Please give a name to your character");
+        //document.getElementById("inputFileNameToSaveAs").parentElement.classList.add("has-error");
+    }
+    
 }
 
 function destroyClickedElement(event){
