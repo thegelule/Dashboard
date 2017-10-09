@@ -532,15 +532,28 @@ function FilterOrigins(array){
     }
 }
 
+function GM_IsCategoryOK(obj,value){
+    var result = false;
+    
+    for(var i = 0; i < obj.length; i++){
+        var domainName = obj[i].name;
+        result = result || (domainName === value);
+    }
+    
+    return result;
+}
+
 function FilterApproaches(array){
     var approachOptions = document.getElementById("approaches").options;
     var approachIndex = document.getElementById("approaches").selectedIndex;
+    var checkValue = approachOptions[approachIndex].value;
     var resultArray = [];
     
-    if(approachOptions[approachIndex].value != "noPreference"){
+    if(checkValue != "noPreference"){
         for(var i = 0; i < array.length; i++){
             var arrayObject = array[i];
-            if(arrayObject.approaches[0].name === approachOptions[approachIndex].value || arrayObject.approaches[1].name === approachOptions[approachIndex].value || arrayObject.approaches[2].name === approachOptions[approachIndex].value){
+            var condition = GM_IsCategoryOK(arrayObject.approaches, checkValue);
+            if(condition){
                 resultArray.push(arrayObject);
             }
         }
@@ -557,12 +570,14 @@ function FilterApproaches(array){
 function FilterDomains(array){
     var domainOptions = document.getElementById("domains").options;
     var domainIndex = document.getElementById("domains").selectedIndex;
+    var checkValue = domainOptions[domainIndex].value;
     var resultArray = [];
     
-    if(domainOptions[domainIndex].value != "noPreference"){
+    if(checkValue != "noPreference"){
         for(var i = 0; i < array.length; i++){
             var arrayObject = array[i];
-            if(arrayObject.domains[0].name === domainOptions[domainIndex].value || arrayObject.domains[1].name === domainOptions[domainIndex].value || arrayObject.domains[2].name === domainOptions[domainIndex].value){
+            var condition = GM_IsCategoryOK(arrayObject.domains, checkValue);
+            if(condition){
                 resultArray.push(arrayObject);
             }
         }
@@ -576,15 +591,18 @@ function FilterDomains(array){
     }
 }
 
+
 function FilterPersonalities(array){
     var personnalityOptions = document.getElementById("personality").options;
     var personnalityIndex = document.getElementById("personality").selectedIndex;
+    var checkValue = personnalityOptions[personnalityIndex].value;
     var resultArray = [];
     
-    if(personnalityOptions[personnalityIndex].value != "noPreference"){
+    if(checkValue != "noPreference"){
         for(var i = 0; i < array.length; i++){
             var arrayObject = array[i];
-            if(arrayObject.roles[0].name === personnalityOptions[personnalityIndex].value || arrayObject.roles[1].name === personnalityOptions[personnalityIndex].value || arrayObject.roles[2].name === personnalityOptions[personnalityIndex].value){
+            var condition = GM_IsCategoryOK(arrayObject.roles, checkValue);
+            if(condition){
                 resultArray.push(arrayObject);
             }
         }        
