@@ -1,5 +1,5 @@
 var GodParams = null;
-var TextToDL = "";
+
 
 var LegendaryAbility = function(name,description,legendaries) {
   this.name = name;
@@ -1103,7 +1103,7 @@ value+=1
 }
 
 function characterSheetSpawn() {
-
+    var TextToDL = "";
     var aspects = $(".CustomAspect");
     var stunts = $(".CustomStunt");
     var abilities = $(".CustomAbility");
@@ -1150,16 +1150,18 @@ function characterSheetSpawn() {
         var ability = abilities[i].innerText;
         TextToDL += ability + "\n";
     }
+    
+    return TextToDL;
 }
 
 function SaveCharacterAsText(){
-    characterSheetSpawn();
-    saveTextAsFile();
+    var TextToDL = characterSheetSpawn();
+    saveTextAsFile(TextToDL);
 }
 
-function saveTextAsFile(){
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
-    var textFileAsBlob = new Blob([TextToDL], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
+function saveTextAsFile(text){
+    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value + ".txt";
+    var textFileAsBlob = new Blob([text], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
     saveAs(textFileAsBlob);
 }
 
