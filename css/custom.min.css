@@ -141,3 +141,7 @@ a.btn.btn-circle.btn-default {
 .form-group label.FirstPanelLabel {
     width: 140px;
 }
+
+.slimScrollDiv {
+    overflow: auto;
+}
