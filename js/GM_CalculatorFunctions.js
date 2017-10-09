@@ -1163,7 +1163,7 @@ function saveTextAsFile(text){
     var characterName = document.getElementById("inputFileNameToSaveAs").value;
     
     if(characterName != ""){
-        var fileNameToSaveAs =  + ".txt";
+        var fileNameToSaveAs = characterName + ".txt";
         var textFileAsBlob = new Blob([text], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
         saveAs(textFileAsBlob);
     }
