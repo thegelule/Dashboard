@@ -145,3 +145,7 @@ a.btn.btn-circle.btn-default {
 .slimScrollDiv {
     overflow: auto;
 }
+
+.picture{
+    max-width: 100px;
+}

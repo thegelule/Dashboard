@@ -1,4 +1,5 @@
 var GodParams = null;
+var TextToDL = "";
 
 var LegendaryAbility = function(name,description,legendaries) {
   this.name = name;
@@ -1103,33 +1104,63 @@ value+=1
 
 function characterSheetSpawn() {
 
+    var aspects = $(".CustomAspect");
+    var stunts = $(".CustomStunt");
+    var abilities = $(".CustomAbility");
+    
+    TextToDL += "Aspects:\n";
+        
+    for(var i = 0; i < aspects.length;i++){
+        var aspect = aspects[i].value;
+        TextToDL += aspect + "\n";
+    }
+    
+    TextToDL += "\n\n";
+    TextToDL += "\n\n";
+    
+    TextToDL += "Skills:\n";
+        
+    for(var i = 4; i > 0; i--){
+        TextToDL += "+" + i + ":";
+        for(var j = 1; j < 5; j++){
+            if((i+j) <= 5){ 
+                var fetchID = "Skill_" + i + "_" + j;
+                TextToDL += document.getElementById(fetchID).value + "\t";
+            }   
+        }
+        TextToDL += "\n";
+    }
+    
+    TextToDL += "\n\n";
+    TextToDL += "\n\n";
+    
+    TextToDL += "Stunts:\n";
+        
+    for(var i = 0; i < stunts.length;i++){
+        var stunt = stunts[i].innerText;
+        TextToDL += stunt + "\n";
+    }
+    
+    TextToDL += "\n\n";
+    TextToDL += "\n\n";
+    
+    TextToDL += "Abilities:\n";
+        
+    for(var i = 0; i < abilities.length;i++){
+        var ability = abilities[i].innerText;
+        TextToDL += ability + "\n";
+    }
+}
 
-
-document.getElementById('inputTextToSave').value = "Aspects:     " +"\n" + document.getElementById('highConcept').value + "\n " + document.getElementById('trouble').value + "\n " + document.getElementById('aspect1').value + "\n " + document.getElementById('aspect2').value +"\n " + document.getElementById('aspect3').value + "\n     \n" + "Skills: \n+3: " + document.getElementById('31').value + "\n+2: " + document.getElementById('21').value + ", " + document.getElementById('22').value + "\n+1: " + document.getElementById('11').value +", " + document.getElementById('12').value +", " + document.getElementById('13').value + "\n     \n" + "Stunts: " + "\n" + document.getElementById('stunt1').value + "\n " + document.getElementById('stunt2').value + "\n " + document.getElementById('stunt3').value + "\n     \n" + "Legendary Abilities: " + "\n " + document.getElementById('legend1').value + "\n " + document.getElementById('legend2').value + "\n " + document.getElementById('legend3').value + "\n\n "
+function SaveCharacterAsText(){
+    characterSheetSpawn();
+    saveTextAsFile();
 }
 
 function saveTextAsFile(){
-    var textToWrite = document.getElementById("inputTextToSave").value.replace(/\n/g, "\r\n") 
-    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
-    var downloadLink = document.createElement("a");
-    downloadLink.download = fileNameToSaveAs;
-    downloadLink.innerHTML = "Download File";
-    if (window.webkitURL != null){
-        // Chrome allows the link to be clicked
-        // without actually adding it to the DOM.
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-    }
-    else{
-        // Firefox requires the link to be added to the DOM
-        // before it can be clicked.
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-    }
-
-    downloadLink.click();
+    var textFileAsBlob = new Blob([TextToDL], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
+    saveAs(textFileAsBlob);
 }
 
 function destroyClickedElement(event){

@@ -104,6 +104,42 @@ function OpenCharacterDialog(element){
     
 }
 
+function GM_OpenCharacterDialog(element){
+    var characID = element.getAttribute("data-id");
+    var character = RetrieveCharacterFromID(characID);
+    var bufferElement = null;
+    
+    $.ajax({
+       url: "https://thegelule.github.io/Dashboard/pages/GM_CharacterSheet.html",
+        type: "GET",
+        success : function(result){
+            bufferElement = document.createElement("div");
+            bufferElement.innerHTML = result; 
+            GM_FillForms($(bufferElement), character); 
+            bootbox.confirm({
+                message: bufferElement.innerHTML,
+                buttons: {
+                    confirm: {
+                        label: 'Download',
+                        className: 'btn-info'
+                    },
+                    cancel: {
+                        label: 'Cancel',
+                        className: 'btn-default'
+                    }
+                },
+                callback: function (result) {
+                    if(result){
+                        SaveCharacterAsText();
+                    }
+                }
+            });
+            
+        }
+    });
+    
+}
+
 function OpenGMaker(){
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
@@ -124,6 +160,19 @@ function FillForms(e,ch){
     FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
 }
 
+function GM_FillForms(e,ch){
+    FillName(e.find(".name")[0],$("#inputFileNameToSaveAs"));
+    GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL"));
+    GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
+    GM_FillSkills(e.find(".SkillsContainer")[0],$(".SkillInput"));
+    GM_FillStunts(e.find(".StuntsContainer")[0],$(".CustomStunt"));
+    GM_FillAbilities(e.find(".AbilitiesContainer")[0],$(".CustomAbility"));
+}
+
+function GM_FillPicture(e,url){
+    e.src = url;
+}
+
 function FillAspects(e,aspects){
     var ulElement = $(e).find(".dropdown-menu-list")[0];
     
@@ -132,6 +181,24 @@ function FillAspects(e,aspects){
         var itemContainer = document.createElement("div");
         var itemTextContainer = document.createElement("span");
         var aspectText = aspects[i];
+        
+        listItemElement.classList.add("aspect");
+        itemTextContainer.innerText = aspectText; 
+        
+        itemContainer.appendChild(itemTextContainer);
+        listItemElement.appendChild(itemContainer);
+        ulElement.appendChild(listItemElement);
+    }
+}
+
+function GM_FillAspects(e,aspects){
+    var ulElement = $(e).find(".dropdown-menu-list")[0];
+    
+    for(var i = 0; i < aspects.length; i++){
+        var listItemElement = document.createElement("li");
+        var itemContainer = document.createElement("div");
+        var itemTextContainer = document.createElement("span");
+        var aspectText = aspects[i].value;
         
         listItemElement.classList.add("aspect");
         itemTextContainer.innerText = aspectText; 
@@ -163,6 +230,42 @@ function FillSkills(e,skills){
     }
 }
 
+function GM_FillSkills(e,skills){ 
+    
+    var skillLevelTab = [];
+    
+    //On recrée le tableau de la DB
+    for(var i = 4; i > 0; i--){
+        for(var j = 1; j < 5; j++){
+            if((i+j) <= 5){
+                var tab = [];
+                var fetchID = "Skill_" + i + "_" + j;
+                tab.push(document.getElementById(fetchID).value);
+                skillLevelTab.push(tab);
+            }
+            
+        }
+    }
+    
+    //On reboucle ensuite sur ce qui a été fait pour les fiches de persos
+    for(var i = 0; i < skills.length; i++){
+        var skillLevelTab = skills[i];
+        var increment = 5 - (i+1);
+        var level = ".level" + increment;
+        var levelContainerElement = $(e).find(level);
+        var skillsElements = $(levelContainerElement[0]).find(".skills");
+        
+       for(var j = 0; j < skillLevelTab.length; j++){
+           var skill = skillLevelTab[j];
+           var skillElement = skillsElements[j];
+           
+           if(skill != undefined){
+               skillElement.innerText = skill;
+           }
+       } 
+    }
+}
+
 function FillStunts(e,stunts){
     var formStunts = $(e).find(".form")[0];
     
@@ -170,6 +273,26 @@ function FillStunts(e,stunts){
         var stunt = stunts[i];
         var stuntElement = NewStuntElement(stunt);
         formStunts.appendChild(stuntElement);
+    }
+}
+
+function GM_FillStunts(e,stunts){
+    var formStunts = $(e).find(".form")[0];
+    
+    for(var i = 0; i < stunts.length; i++){
+        var stunt = stunts[i].innerText;
+        var stuntElement = GM_NewStuntOrAbilityElement(stunt.innerText);
+        formStunts.appendChild(stuntElement);
+    }
+}
+
+function GM_FillAbilities(e,abilities){
+    var formAbilities = $(e).find(".form")[0];
+    
+    for(var i = 0; i < abilities.length; i++){
+        var ability = abilities[i].innerText;
+        var abilityElement = GM_NewStuntOrAbilityElement(ability.innerText);
+        formAbilities.appendChild(abilityElement);
     }
 }
 
@@ -224,6 +347,26 @@ function NewStuntElement(stunt){
     textContainer.innerHTML = stunt.text;
     
     textContainerParent.appendChild(label);
+    textContainerParent.appendChild(textBreak);
+    textContainerParent.appendChild(textContainer);
+    formGroup.appendChild(textContainerParent);
+    
+    return formGroup;
+}
+
+function GM_NewStuntOrAbilityElement(text){
+    var formGroup = document.createElement("div");
+    var textContainerParent = document.createElement("div");
+    var textContainer = document.createElement("div");
+    var textBreak = document.createElement("br");
+    
+    formGroup.classList.add("form-group");
+    textContainerParent.classList.add("col-md-12");
+    textContainerParent.classList.add("StuntContainer");
+    textContainer.classList.add("form-control-static");
+    textContainer.classList.add("stuntText");
+    textContainer.innerHTML = text;
+    
     textContainerParent.appendChild(textBreak);
     textContainerParent.appendChild(textContainer);
     formGroup.appendChild(textContainerParent);
