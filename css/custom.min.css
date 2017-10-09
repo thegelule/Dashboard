@@ -149,3 +149,7 @@ a.btn.btn-circle.btn-default {
 .picture{
     max-width: 100px;
 }
+
+.bootstrap-select.btn-group .dropdown-menu.inner {
+    max-height: 250px !important;
+}
