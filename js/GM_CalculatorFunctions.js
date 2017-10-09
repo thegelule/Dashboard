@@ -1084,6 +1084,7 @@ function rolesChange(selectObj2) {
         newOption.value = cList2[i]; // assumes option string and value are the same 
         newOption.text=cList2[i]; 
         cSelect.appendChild(newOption);
+        $(cSelect).selectpicker('refresh');
         /*try { 
             //cSelect.add(newOption); // this will fail in DOM browsers but is needed for IE 
         } 
