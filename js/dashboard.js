@@ -1,5 +1,11 @@
 function LoadingContent(){
-    LoadHomePage();
+    if(window.location.href.indexOf("#Godborn-Maker") > -1) {
+       OpenGMaker();
+    }
+    else{
+        LoadHomePage();
+    }
+    
     DisplayNumbersInMenu();
 }
 
