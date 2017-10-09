@@ -1164,8 +1164,8 @@ function saveTextAsFile(text){
     
     if(characterName != ""){
         var fileNameToSaveAs = characterName + ".txt";
-        var textFileAsBlob = new Blob([text], fileNameToSaveAs,{type:'text/plain;charset=utf-8'});
-        saveAs(textFileAsBlob);
+        var textFileAsBlob = new Blob([text],{type:'text/plain;charset=utf-8'});
+        saveAs(textFileAsBlob, fileNameToSaveAs);
     }
     else{
         bootbox.alert("Please give a name to your character");
