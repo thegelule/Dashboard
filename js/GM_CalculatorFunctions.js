@@ -562,7 +562,7 @@ function FilterDomains(array){
     if(domainOptions[domainIndex].value != "noPreference"){
         for(var i = 0; i < array.length; i++){
             var arrayObject = array[i];
-            if(arrayObject.approaches[0].name === domainOptions[domainIndex].value || arrayObject.approaches[1].name === domainOptions[domainIndex].value || arrayObject.approaches[2].name === domainOptions[domainIndex].value){
+            if(arrayObject.domains[0].name === domainOptions[domainIndex].value || arrayObject.domains[1].name === domainOptions[domainIndex].value || arrayObject.domains[2].name === domainOptions[domainIndex].value){
                 resultArray.push(arrayObject);
             }
         }
@@ -584,7 +584,7 @@ function FilterPersonalities(array){
     if(personnalityOptions[personnalityIndex].value != "noPreference"){
         for(var i = 0; i < array.length; i++){
             var arrayObject = array[i];
-            if(arrayObject.approaches[0].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[1].name === personnalityOptions[personnalityIndex].value || arrayObject.approaches[2].name === personnalityOptions[personnalityIndex].value){
+            if(arrayObject.roles[0].name === personnalityOptions[personnalityIndex].value || arrayObject.roles[1].name === personnalityOptions[personnalityIndex].value || arrayObject.roles[2].name === personnalityOptions[personnalityIndex].value){
                 resultArray.push(arrayObject);
             }
         }        
