@@ -1,5 +1,5 @@
 function LoadingContent(){
-    if(window.location.href.indexOf("Godborn-Maker") > -1) {
+    if(window.location.href.indexOf("#Godborn-Maker") > -1) {
        OpenGMaker();
     }
     else{
