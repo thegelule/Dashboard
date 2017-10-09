@@ -1108,17 +1108,17 @@ function characterSheetSpawn() {
     var stunts = $(".CustomStunt");
     var abilities = $(".CustomAbility");
     
-    TextToDL += "Aspects:\n";
+    TextToDL += "Aspects:\r\n";
         
     for(var i = 0; i < aspects.length;i++){
         var aspect = aspects[i].value;
         TextToDL += aspect + "\n";
     }
     
-    TextToDL += "\n\n";
-    TextToDL += "\n\n";
+    TextToDL += "\r\n";
+    TextToDL += "\r\n";
     
-    TextToDL += "Skills:\n";
+    TextToDL += "Skills:\r\n";
         
     for(var i = 4; i > 0; i--){
         TextToDL += "+" + i + ":";
@@ -1128,27 +1128,27 @@ function characterSheetSpawn() {
                 TextToDL += document.getElementById(fetchID).value + "\t";
             }   
         }
-        TextToDL += "\n";
+        TextToDL += "\r\n";
     }
     
-    TextToDL += "\n\n";
-    TextToDL += "\n\n";
+    TextToDL += "\r\n";
+    TextToDL += "\r\n";
     
-    TextToDL += "Stunts:\n";
+    TextToDL += "Stunts:\r\n";
         
     for(var i = 0; i < stunts.length;i++){
         var stunt = stunts[i].innerText;
         TextToDL += stunt + "\n";
     }
     
-    TextToDL += "\n\n";
-    TextToDL += "\n\n";
+    TextToDL += "\r\n";
+    TextToDL += "\r\n";
     
-    TextToDL += "Abilities:\n";
+    TextToDL += "Abilities:\r\n";
         
     for(var i = 0; i < abilities.length;i++){
         var ability = abilities[i].innerText;
-        TextToDL += ability + "\n";
+        TextToDL += ability + "\r\n";
     }
     
     return TextToDL;
