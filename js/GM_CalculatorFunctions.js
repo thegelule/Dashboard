@@ -1107,6 +1107,11 @@ function characterSheetSpawn() {
     var aspects = $(".CustomAspect");
     var stunts = $(".CustomStunt");
     var abilities = $(".CustomAbility");
+    var pic = $("#CharacterImageURL").val();
+    var name = $("#inputFileNameToSaveAs").val();
+    
+    TextToDL += "Name: " + name + "\r\n";
+    TextToDL += "Picture: " + pic + "\r\n";
     
     TextToDL += "Aspects:\r\n";
         

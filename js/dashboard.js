@@ -164,7 +164,7 @@ function FillForms(e,ch){
 
 function GM_FillForms(e){
     FillName(e.find(".name")[0],$("#inputFileNameToSaveAs").val());
-    GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL"));
+    GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL").val());
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
     GM_FillSkills(e.find(".SkillsContainer")[0],$(".SkillInput"));
     GM_FillStunts(e.find(".StuntsContainer")[0],$(".CustomStunt"));
