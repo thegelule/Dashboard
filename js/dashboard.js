@@ -104,18 +104,14 @@ function OpenCharacterDialog(element){
     
 }
 
-function GM_OpenCharacterDialog(element){
-    var characID = element.getAttribute("data-id");
-    var character = RetrieveCharacterFromID(characID);
-    var bufferElement = null;
-    
+function GM_OpenCharacterDialog(){    
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GM_CharacterSheet.html",
         type: "GET",
         success : function(result){
             bufferElement = document.createElement("div");
             bufferElement.innerHTML = result; 
-            GM_FillForms($(bufferElement), character); 
+            GM_FillForms($(bufferElement)); 
             bootbox.confirm({
                 message: bufferElement.innerHTML,
                 buttons: {
@@ -160,7 +156,7 @@ function FillForms(e,ch){
     FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
 }
 
-function GM_FillForms(e,ch){
+function GM_FillForms(e){
     FillName(e.find(".name")[0],$("#inputFileNameToSaveAs"));
     GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL"));
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
