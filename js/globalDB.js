@@ -106,16 +106,16 @@ var globalDB = {
             title:"Sovereign",
             text: "<i>Epée Légendaire</i>. Devient éthérée lorsque la cible est jugée innocente. Le jugement se fait sur un jet de Savoir. +2 en Combat si la cible est jugée coupable."
         },{
-            title:"La poudre et le fer",
-            text: "<i>Canon scié</i>. +1 en Tir au corps-à-corps, -1 en Tir à longue distance."
+            title:"La poudre et le fer<sup>(4)</sup>",
+            text: "<i>Canon scié</i>. +1 en Tir au corps-à-corps, -1 en Tir à longue distance.<br>Peut utiliser Ciel - Destruction dans restrictions d'utilisations avec un jet normal seulement pour créer un aspect avec son canon scié. Gagne +2 Tir supplémentaires lors de la prochaine utilisation du fusil. <br>Après un jet de Ciel - Destruction, le bonus du fusil passe à +2 au càc et -1 à longue portée."
         },{
             title:"La loi c'est moi",
             text: "Principe moral : Punition divine. +1 en Présence pour convaincre d'autres personnes de suivre ce principe moral"
         },{
-            title:"La poudre et la foudre",
-            text: "Peut utiliser Ciel - Destruction dans restrictions d'utilisations avec un jet normal seulement pour créer un aspect avec son canon scié. Gagne +2 Tir supplémentaires lors de la prochaine utilisation du fusil."
+            title:"L'Inquisiteur",
+            text: "Peut utiliser Physique Epique sans limite d'utilisation avec un jet normal pour attaquer."
         }],
-        abilities:[["Druidisme Runique", "Enech - Punition des impies<br><ul><li>Ordre - Loi</li><ul>"],["Physiologie Epique<br><ul><li>Résistance</li><li>Force</li></ul>", "Invocation : Ciel<br><ul><li>Destruction</li><li>Pluie</li></ul>"],[]]
+        abilities:[["Druidisme Runique", "Enech - Punition des impies<br><ul><li>Ordre - Loi</li><ul>"],["Invocation : Ciel<br><ul><li>Destruction</li><li>Pluie</li></ul>"],["Physiologie Epique<br><ul><li>Résistance</li><li>Force</li><li>Vitesse</li></ul>"]]
     },{
         playerID: 5,
         name: "Ljubomir 'Mimir' Uspešno",
@@ -137,6 +137,9 @@ var globalDB = {
         },{
             title:"Volonté du Justicier",
             text: "Si Ljubomir accepte la compulsion sur son Enech, il gagne en plus un bonus de +2 à son prochain jet de Présence."
+        },{
+            title:"Stop, Hammer time ! <sup>(3)</sup>",
+            text: "Pour une Conséquence Légère du Destin, Mimir peut faire en sorte qu'un pouvoir légendaire ait l'effet opposé de celui voulu par son lanceur."
         }],
         abilities:[["Mort - Inévitabilité", "Profondeurs - Richesses", "Lumière - Brillance", "Heku", "Enech - Indépendance humaine<br><ul><li>Taiyi - Flux</li><ul>"],["Physiologie Epique<br><ul><li>Beauté</li><li>Présence</li></ul>"],[]]
     },{
