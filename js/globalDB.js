@@ -239,5 +239,40 @@ var globalDB = {
             text: "+2 Volonté pour créer des Illusions la nuit avec Nuit- Lune"
         }],
         abilities:[["Chwal - Marionnettiste", "Nuit - Lune", "Terre - Vie"],[],[]]
+    },{
+        playerID: 12,
+        name: "John Smith",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/bastet",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/john-smith",
+        aspects: ["Espion pragmatique et patient", "Langue de Plomb", "La foule est mon alliée", "Compartimentalisateur d'information", "La félinitude dans le sang"],
+        skills: [[""], ["Perception", ""],["Tir","Furtivité",""],["Technologie","Athlétisme","Volonté",""]],
+        stunts:[{
+            title:"L'ami des tous petits <sup>(2)</sup>",
+            text: "John peut relancer tous ses jets de Tir mais doit accepter le second résultat et possède l’aspect 'Position Révélée'"
+        },{
+            title:"Vos yeux sont miens",
+            text: "John peut créer l’aspect 'Vos yeux sont miens', lui permettant de voir à travers les yeux de sa cible tant que l’aspect est actif. Doit voir sa cible pour l’activer et elle peut s’en apercevoir avec un jet de volonté ou perception."
+        },{
+            title:"Good Morning Vietnam",
+            text: "+1 Tir en position surélevée"
+        },{
+            title:"Il y a deux sortes de noix",
+            text: "Desert Eagle. Moyenne/Courte portée : +1 Perception pour détecter les faiblesses."
+        },{
+            title:"Patience est vertu",
+            text: "Fusil Sniper. Si utilisé, John peut passer son tour pour créer l’aspect 'Je te vois' avec deux FI à +2 bonus"
+        },{
+            title:"Réflexes Eclairs",
+            text: "+2 Notice pour les jets d’initiative"
+        },{
+            title:"Coordination Exemplaire",
+            text: "Dans une scène, +1 sur toutes les FI d’aspects prévus à l’avance."
+        },{
+            title:"Vision du Vide",
+            text: "Une fois par scène, peut voir à travers les murs à portée de vue mais devient aveugle au tour suivant"
+        }],
+        abilities:[["Heku", "Vitesse Epique", "Ordre - Contrôle de Soi", "Taiyi - Nature"],["Invocation : Nuit<br><ul><li>Voile</li><li>Vide</li></ul>", "Druidisme<br><ul><li>Technodruidisme</li><li>Thériantropie : Aigle</li></ul>"],[]]
     }]
 }
