@@ -459,7 +459,7 @@ var globalDB = {
             title:"Orb of Frost",
             text: "Every week, Severian gain one Orb of Frost (up to 5 in total). Each Orb can be used in combat for a +2 to the dice results of the power (water or air) ustilization."
         }],
-        abilities:[["Dragon"],["Invocation : Air<ul><li>Destruction</li><li>Ciel dégagé</li></ul>"],["Invocation : Eau<ul><li>Glace</li><li>Paix</li>li>Vie</li></ul>]]
+        abilities:[["Dragon"],["Invocation : Air<ul><li>Destruction</li><li>Ciel dégagé</li></ul>"],["Invocation : Eau<ul><li>Glace</li><li>Paix</li>li>Vie</li></ul>"]]
     },{
         playerID: 19,
         name: "Tsukiyotake-san",
