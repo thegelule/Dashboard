@@ -506,7 +506,7 @@ var globalDB = {
             text: "Peut utiliser Will au lieu de Lore pour découvrir des informations hors combat"
         },{
             title:"For the Night is Dark and Full of Terrors",
-            text: "Lors de l'utilisation d'un pouvoir de Night-Fear, la cible gagne l'Aspect "Stuck in Fear", donnant -2 à son prochain jet de défense"
+            text: "Lors de l'utilisation d'un pouvoir de Night-Fear, la cible gagne l'Aspect 'Stuck in Fear', donnant -2 à son prochain jet de défense"
         },{
             title:"The Night Shall Be My Shroud",
             text: "Lors de l'utilisation d'un pouvoir de Night-Veil, le scion choisit entre:<ul><li>Chaque allié (scion exclus) gagne +1 au prochain jet de défense</li><li>Le scion gagne +2 en Stealth pour son prochain jet de furtivité pendant la session (non cumulable)</li></ul>"
