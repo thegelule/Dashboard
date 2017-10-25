@@ -88,6 +88,7 @@ function DisplayNumbersInMenu(){
 	FetchNumberofCharacters("GITS_characters.html");
     FetchNumberofCharacters("WOC_characters.html");
     FetchNumberofCharacters("GCM_characters.html");
+    FetchNumberofCharacters("DOS_characters.html");
 }
 
 function FetchNumberofCharacters(pageName){
