@@ -9,6 +9,30 @@ function LoadingContent(){
     DisplayNumbersInMenu();
 }
 
+function SetActiveMenu(element){
+    var arrowElement = $(element).find("arrow");
+    var selecElement = document.createElement("span");
+    
+    FindActiveAndDisable();
+    
+    $(selectElement).addClass("selected");
+    arrowElement.addClass("open");
+    $(element.parentElement).addClass("open active");
+    element.appendChild(selectElement);
+    
+    
+    
+}
+
+function FindActiveAndDisable(){
+    var activeElement = $("li.active");
+    var selectedArrow = activeElement.find("selected");
+    
+    activeElement.removeClass("active");
+    activeElement[0].removeChild(selectedArrow);
+    
+}
+
 function OpenCampaignCharacters(campString){
     var urlToRequest = "https://thegelule.github.io/Dashboard/pages/" + campString + "_characters.html"
     $.ajax({
@@ -144,6 +168,9 @@ function GM_OpenCharacterDialog(){
 }
 
 function OpenGMaker(){
+    
+    SetActiveMenu(document.getElementById("GMMenuButton"));
+    
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
         type: "GET",

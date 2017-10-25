@@ -75,7 +75,7 @@ License: You must have a valid license purchased only from themeforest(the above
     </head>
     <!-- END HEAD -->
 
-    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white" onload="LoadingContent();">
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-sidebar-fixed" onload="LoadingContent();">
         <div class="page-wrapper">
             <!-- BEGIN HEADER -->
             <div class="page-header navbar navbar-fixed-top">
@@ -133,7 +133,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <h3 class="uppercase">Wyrdwalkers</h3>
                             </li>
                             <li class="nav-item active open start">
-                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <a class="nav-link nav-toggle" onclick="SetActiveMenu(this);">
                                     
                                     <span class="title">Campagnes</span>
                                     <span class="selected"></span>
@@ -279,18 +279,17 @@ License: You must have a valid license purchased only from themeforest(the above
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" id="GMMenubutton">
                                 <a onclick="OpenGMaker();" class="nav-link nav-toggle">
                                     
                                     <span class="title">Godborn Maker</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <a class="nav-link nav-toggle" onclick="SetActiveMenu(this);">
                                     
                                     <span class="title">Templates Sheets</span>
-                                    <span class="selected"></span>
-                                    <span class="arrow close"></span>
+                                    <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
@@ -375,11 +374,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:;" class="nav-link nav-toggle">
+                                <a class="nav-link nav-toggle" onclick="SetActiveMenu(this);">
                                     
                                     <span class="title">Legends Campaigns</span>
-                                    <span class="selected"></span>
-                                    <span class="arrow open"></span>
+                                    <span class="arrow"></span>
                                 </a>
                                 <ul class="sub-menu">
                                     <li class="nav-item">
