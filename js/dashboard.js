@@ -11,7 +11,7 @@ function LoadingContent(){
 
 function SetActiveMenu(element){
     var arrowElement = $(element).find(".arrow");
-    var selecElement = document.createElement("span");
+    var selectElement = document.createElement("span");
     
     FindActiveAndDisable();
     
