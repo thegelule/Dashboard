@@ -10,7 +10,7 @@ function LoadingContent(){
 }
 
 function SetActiveMenu(element){
-    var arrowElement = $(element).find("arrow");
+    var arrowElement = $(element).find(".arrow");
     var selecElement = document.createElement("span");
     
     FindActiveAndDisable();
@@ -26,10 +26,10 @@ function SetActiveMenu(element){
 
 function FindActiveAndDisable(){
     var activeElement = $("li.active");
-    var selectedArrow = $(activeElement[0].children[0]).find("selected");
+    var selectedArrow = $(activeElement[0].children[0]).find(".selected");
     
     activeElement.removeClass("active");
-    activeElement.remove(selectedArrow);
+    selectedArrow.remove();
     
 }
 
