@@ -29,7 +29,7 @@ function FindActiveAndDisable(){
     var selectedArrow = $(activeElement[0].children[0]).find("selected");
     
     activeElement.removeClass("active");
-    activeElement[0].removeChild(selectedArrow[0]);
+    activeElement.remove(selectedArrow);
     
 }
 
