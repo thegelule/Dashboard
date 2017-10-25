@@ -250,7 +250,7 @@ var globalDB = {
         skills: [[""], ["Perception", ""],["Tir","Furtivité",""],["Technologie","Athlétisme","Volonté",""]],
         stunts:[{
             title:"L'ami des tous petits <sup>(2)</sup>",
-            text: "John peut relancer tous ses jets de Tir mais doit accepter le second résultat et possède l’aspect 'Position Révélée'"
+            text: "John peut relancer tous ses jets de Tir mais doit accepter le second résultat et possède l’aspect 'Position Révélée. La cible a -2 en Physique.'"
         },{
             title:"Vos yeux sont miens",
             text: "John peut créer l’aspect 'Vos yeux sont miens', lui permettant de voir à travers les yeux de sa cible tant que l’aspect est actif. Doit voir sa cible pour l’activer et elle peut s’en apercevoir avec un jet de volonté ou perception."
@@ -272,7 +272,109 @@ var globalDB = {
         },{
             title:"Vision du Vide",
             text: "Une fois par scène, peut voir à travers les murs à portée de vue mais devient aveugle au tour suivant"
+        },{
+            title:"A-Team",
+            text: "Les aspects créés avec Ordre - Contrôle de Soi donnent un bonus de +3 au lieu de +2"
         }],
         abilities:[["Heku", "Vitesse Epique", "Ordre - Contrôle de Soi", "Taiyi - Nature"],["Invocation : Nuit<br><ul><li>Voile</li><li>Vide</li></ul>", "Druidisme<br><ul><li>Technodruidisme</li><li>Thériantropie : Aigle</li></ul>"],[]]
+    },{
+        playerID: 13,
+        name: "Nita Nairobi",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/tane-mahuta",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/nita-nairobi",
+        aspects: ["Chamane de l'Ours", "On s'bouge le cul !", "Guider le peuple", "Justicière sociale", "Leader du BEAR"],
+        skills: [["Présence"], ["Volonté", "Physique"],["Empathie","Perception","Anatomie"],["Technologie","Rapport","Savoir","Athlétisme"]],
+        stunts:[{
+            title:"Tatouages Runique : Ours<sup>(3)</sup>",
+            text: "Formes d'ours : <ul><li>Classique</li><li>Esprit (+1 Volonté, -1 Physique)</li><li>Bois (+1 Physique, -1 Athlétisme)</li><li>Brume (+1 Athlétisme, -1 Physique)</li></ul>"
+        },{
+            title:"Bénédiction de l'ours éclair <sup>(3)</sup>",
+            text: "Sous forme d'ours et sous la pluie, les alliés de Nita gagnent une case de stress physique à -2 et une case de stress mental à -1. En cas d'action injuste de la part d'un allié, celui-ci est foudroyé et perd à la place une case de stress physique à -2 et de stress mental à -1 natives"
+        },{
+            title:"Rugissement de Nita <sup>(2)</sup>",
+            text: "Peut créer l'aspect 'BEAR Assemble !' avec 2 IG une fois par scène"
+        },{
+            title:"Fille des pluies",
+            text: "Nita peut faire tomber la pluie après 5 minutes"
+        },{
+            title:"Unskilled & Strong <sup>(2)</sup>",
+            text: "Peut utiliser Physique à la place de Combat"
+        },{
+            title:"Griffes d'éviscération<sup>(3)</sup>",
+            text: "+2 de dégats si l'attaque a réussi"
+        },{
+            title:"Rassembleuse",
+            text: "Nita n'est pas victime des préjugés"
+        }],
+        abilities:[["Enech<ul><li>Druidisme (Ours)</li></ul>", "Taille Epique", "Présence Epique", "Sorcellerie Fey - Pluie"],[],[]]
+    },{
+        playerID: 14,
+        name: "Hamset",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/seth",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/hamset",
+        aspects: ["Tout peut être sacrifié pour mon pouvoir", "Les Dieux ne pourront pas éternellement me surpasser", "Il y a les rivaux et les marionnettes", "Sans Panthéon mais pas sans ambition", "Personne n'échappe à mon contrôle"],
+        skills: [["Volonté"], ["Manipulation", "Savoir"],["Ressources","Athlétisme","Perception"],["Empathie","Présence","Combat","Physique"]],
+        stunts:[{
+            title:"Marque",
+            text: "3 maximum<ul><li>N1: Donne l'aspect 'Hamset seul maitre'</li><li>N2: Le personnage marqué devient un phylactère vivant (Hamset échange une partie de son âme avec celle de la cible)</li><li>N3: Hamset peut utiliser 1 point dans la meilleure stat du personnage contrôlé.</li></ul>"
+        },{
+            title:"Kepesh du Désert",
+            text: "Fait apparaitre une Kepesh"
+        },{
+            title:"Lien avec Tantale",
+            text: "+1 au maximum des jets de dés (compte pour les liens du Destin)"
+        },{
+            title:"Combat télékinésique",
+            text: "Remplace Physique et Combat par Volonté"
+        },{
+            title:"Oeil du Désert",
+            text: "Pas de Lien du Destin à minuit"
+        },{
+            title:"Griffes d'éviscération<sup>(3)</sup>",
+            text: "+2 de dégats si l'attaque a réussi"
+        },{
+            title:"Forme Fantomatique",
+            text: "Une fois par session, peut remplacer un dégât physique par un dégat mental"
+        }],
+        abilities:[["Profondeurs - Abysses", "Ordre - Gravité"],["Hématurgie<ul><li>Itztli</li><li>Sculpteur de chair</li></ul>"],["Magie des âmes<ul><li>Contagion Emotionnelle</li><li>Vampirisme</li><li>Nécromancie</li></ul>"]]
+    },{
+        playerID: 15,
+        name: "Lin Wang",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/hine-nui-te-po",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/lin-wang",
+        aspects: ["La loyauté est une arme", "Le silence est le refuge des sages", "L'empathie est un frein à l'accomplissement", "Fils à maman", "Il n'y a pas de lumière sans ombre"],
+        skills: [["Athlétisme"], ["Volonté", "Combat"],["Discrétion","Connaissance","Perception"],["Anatomie","Présence","Ressources","Physique"]],
+        stunts:[{
+            title:"Le chemin de la Lune",
+            text: "Peut utiliser Athlétisme à la place de Discrétion la nuit"
+        },{
+            title:"Ombre parmi les ombres",
+            text: "Peut relancer ses jets de Discrétion dans l'obscurité et choisir le meilleur résultat"
+        },{
+            title:"Ami de la pègre",
+            text: "+2 Rapport avec les criminels"
+        },{
+            title:"Oeil de Lune",
+            text: "Permet à Lin de voir comme en plein jour et de bénéficier d'une invocation de Lune supplémentaire"
+        },{
+            title:"Euthanasie bienveillante",
+            text: "Sur réussite d'un jet de Perception, si la cible a subi une conséquence grave, Lin lui accorde une mort douce (sauf résistance avec Volonté)"
+        },{
+            title:"La face cachée de la Lune",
+            text: "Une fois par scène, une invocation d'Ombre donne +2 à la prochaine invocation de Lune et inversement"
+        },{
+            title:"Guerrier insaisissable",
+            text: "Lors d'un jet d'Atlétisme en défense, peut relancer le jet mais doit accepter le second résultat"
+        },{
+            title:"Devoir filial",
+            text: "Une compulsion de l'aspect 'Fils à maman' donne un bonus de +4 au lieu de +2"
+        }],
+        abilities:[["Mort - Paix"],["Physiologie Epique<ul><li>Athlétisme</li><li>Vitesse</li></ul>","Invocation : Ciel<ul><li>Vent</li><li>Calme</li></ul>"],["Invocation : Nuit<ul><li>Ombre</li><li>Lune</li><li>Rêve</li></ul>"]]
     }]
 }
