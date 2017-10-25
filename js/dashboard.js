@@ -17,7 +17,7 @@ function SetActiveMenu(element){
     
     $(selectElement).addClass("selected");
     arrowElement.addClass("open");
-    $(element.parentElement).addClass("open active");
+    $(element.parentElement).addClass("active");
     element.appendChild(selectElement);
     
     
