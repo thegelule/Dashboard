@@ -26,10 +26,10 @@ function SetActiveMenu(element){
 
 function FindActiveAndDisable(){
     var activeElement = $("li.active");
-    var selectedArrow = activeElement.find("selected");
+    var selectedArrow = $(activeElement[0].children[0]).find("selected");
     
     activeElement.removeClass("active");
-    activeElement[0].removeChild(selectedArrow);
+    activeElement[0].removeChild(selectedArrow[0]);
     
 }
 
