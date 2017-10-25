@@ -376,5 +376,147 @@ var globalDB = {
             text: "Une compulsion de l'aspect 'Fils à maman' donne un bonus de +4 au lieu de +2"
         }],
         abilities:[["Mort - Paix"],["Physiologie Epique<ul><li>Athlétisme</li><li>Vitesse</li></ul>","Invocation : Ciel<ul><li>Vent</li><li>Calme</li></ul>"],["Invocation : Nuit<ul><li>Ombre</li><li>Lune</li><li>Rêve</li></ul>"]]
+    },{
+        playerID: 16,
+        name: "Farrokh Bulsara",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/fenrir",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/farrokh-bulsara",
+        aspects: ["Architect of Fear", "Creature of the Night", "Legend Greedy", "Your Mind Is Your Prison", "No tears only dream"],
+        skills: [["Manipulation"], ["Présence", "Volonté"],["Furtivité","Savoir","Perception"],["Anatomie","Combat","Technologie","Physique"]],
+        stunts:[{
+            title:"Is This The Real Life ?<sup>(2)</sup>",
+            text: "Peut utiliser Nuit - Peur avec un jet de dé normal pour découvrir des peurs"
+        },{
+            title:"Is This Just Fantasy ?",
+            text: "A chaque invokation Fear sur une cible, création d'un aspect "Marqué par la peur" qui se disperse au bout de 3 tours d’imprégnation."
+        },{
+            title:"No Escape From Reality",
+            text: "Peut utiliser Manipulation au lieu de Savoir pour découvrir des peurs."
+        },{
+            title:"Caught In A Landslide<sup>(2)</sup>",
+            text: "Une fois par session, peut découvrir une peur de l'adversaire automatiquement"
+        }],
+        abilities:[["Magie des âmes - Soulbinding", "Physiologie Epique - Beauté"],["Invacation : Nuit<ul><li>Peur</li><li>Voile</li></ul>"],[]]
+    },{
+        playerID: 17,
+        name: "Harald Halfdanson",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/loki",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/Harald Halfdanson",
+        aspects: ["Godborn corrompu de Loki", "I just couldn't resist...", "Les amis de mes ennemis sont mes amis", "La crème de la crème", "Ai confiance..."],
+        skills: [["Manipulation"], ["Volonté", "Ressources"],["Furtivité","Présence","Perception"],["Anatomie","Technologie","Athlétisme","Savoir"]],
+        stunts:[{
+            title:"Seed of Discord<sup>(2)</sup>",
+            text: "Peut compulser gratuitement les aspects créés avec Présence Epique"
+        },{
+            title:"Improvise. Adapt. Overcome",
+            text: "Lorsqu'il surpasse un aspect existant, Harald peut créer un aspect bénéfique pour le remplacer"
+        },{
+            title:"Don't touch this",
+            text: "Peut utiliser Taiyi - Flot pour se défendre avec un jet normal et sans limite d'utilisation"
+        },{
+            title:"Relations",
+            text: "Peut utilise Manipulation et/ou Ressources pour decouvrir un aspect sur un ennemi avec 1 IG"
+        },{
+            title:"Useful Little Things",
+            text: "Your pockets are full of useful little things. Whenever you need something, you have it, provided it’s not something too unusual or too large to fit in a pocket, belt pouch, or backpack. When you say you have something, the GM should be likely to agree."
+        },{
+            title:"On a des tas de choses à se dire",
+            text: "Manipulation +2 sur une tentative de seduction"
+        },{
+            title:"Takes one to know one",
+            text: "Manipulation au lieu de Perception ou Rapport"
+        }],
+        abilities:[["Physiologie Epique - Présence","Taiyi - Flot"],["Magie des âmes<ul><li>Chwal - Marionnettiste</li><li>Contagion Emotionnelle</li></ul>"],[]]
+    },{
+        playerID: 18,
+        name: "Severiann",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/severiann",
+        aspects: ["Evil Is Deadly Cold", "Titans want me to prove myself", "Mind over Body", "Thinking before acting", "Proud to be a Dragon"],
+        skills: [[""], ["Volonté", ""],["Physique","Perception",""],["Présence","Rapport","Savoir",""]],
+        stunts:[{
+            title:"Ailes",
+            text: "Aspect permanent 'Vol'"
+        },{
+            title:"Icy You",
+            text: "Each and every ennemy hit by any spell and undergoing an aspect creation gets a -1 Physique malus which can add up to -5"
+        },{
+            title:"Human form",
+            text: "Can transform into a human with full access to all invocation, abilities and stats. Cannot fly in human form"
+        },{
+            title:"Freezing blood",
+            text: "Each time an ennemy dies or undergoes a Severe consequence from one of Severiann's invocation ability: The use is free."
+        },{
+            title:"Mind over body",
+            text: "Can use Will instead of Physique agains physical damages"
+        },{
+            title:"Orb of Frost",
+            text: "Every week, Severian gain one Orb of Frost (up to 5 in total). Each Orb can be used in combat for a +2 to the dice results of the power (water or air) ustilization."
+        }],
+        abilities:[["Dragon"],["Invocation : Air<ul><li>Destruction</li><li>Ciel dégagé</li></ul>"],["Invocation : Eau<ul><li>Glace</li><li>Paix</li>li>Vie</li></ul>]]
+    },{
+        playerID: 19,
+        name: "Tsukiyotake-san",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/gaia",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/tsukiyotake-san",
+        aspects: ["Mushroom Monk", "Titanspawn of Gaia", "A stranger is a friend you haven’t met", "Peace of mind is true power", "Acting together is to find happiness"],
+        skills: [[""], ["Rapport", ""],["Combat","Perception",""],["Furtivité","Volonté","Savoir",""]],
+        stunts:[{
+            title:"Harmony Tai Chi",
+            text: "Cannot inflict physical damage or stress to sentient or living beings by any direct action. When rolling rapport or will, can reroll and but must accept the second result"
+        },{
+            title:"Will of the Earth",
+            text: "Compulsion -2 Fatepoint to resist, +3 if accepted"
+        },{
+            title:"Good Cop",
+            text: "+2 to Rapport when creating advantages to assist someone who uses presence to intimidate"
+        },{
+            title:"Oeil de Lune",
+            text: "Permet à Lin de voir comme en plein jour et de bénéficier d'une invocation de Lune supplémentaire"
+        },{
+            title:"Mushroom flesh<sup>(2)</sup>",
+            text: "Once per session can diminish a physical consequence by meditating 3 hours"
+        },{
+            title:"Communion Spore<sup>(2)</sup>",
+            text: "Up to eleven targets can willingly accept a communion spore after an hour long ritual. The target gains one use of Mushroom Flesh and can telepathically link for one week. (Uses one charge of Earth)"
+        }],
+        abilities:[["Augure","Druidisme Runique","Nuit - Rêve", "Illusion", "Magie des âmes - Shamanisme"],["Terre<ul><li>Vie</li><li>Nature</li></ul>"],[]]
+    },{
+        playerID: 20,
+        name: "Li Romanov",
+        level: 4,
+        earnedXP: 45,
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/yanluo",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/li-romanov",
+        aspects: ["La loyauté est une arme", "Ambitious Fanatic", "Your Minds Are Mine To Mold", "Nothing To Witness If Nobody Left To Witness", "Everything Is For Sale"],
+        skills: [[""], ["Volonté", ""],["Savoir","Furtivité",""],["Manipulation","Présence","Perception","Combat"]],
+        stunts:[{
+            title:"Doomsday<sup>(2)</sup>",
+            text: "Peut utiliser Nuit-Néant avec un jet de dé normal pour attaquer (et seulement attaquer)"
+        },{
+            title:"Currency Exchange",
+            text: "Peut utiliser Will au lieu de Lore pour découvrir des informations hors combat"
+        },{
+            title:"For the Night is Dark and Full of Terrors",
+            text: "Lors de l'utilisation d'un pouvoir de Night-Fear, la cible gagne l'Aspect "Stuck in Fear", donnant -2 à son prochain jet de défense"
+        },{
+            title:"The Night Shall Be My Shroud",
+            text: "Lors de l'utilisation d'un pouvoir de Night-Veil, le scion choisit entre:<ul><li>Chaque allié (scion exclus) gagne +1 au prochain jet de défense</li><li>Le scion gagne +2 en Stealth pour son prochain jet de furtivité pendant la session (non cumulable)</li></ul>"
+        },{
+            title:"Scythe 2.0",
+            text: "A chaque utilisation de sa dague pour tuer ou sacrifier une cible, Li créé l'aspect 'Field of Death' autour de lui, lui donnant +2 à sa prochaine invocation d'Inéluctabilité."
+        },{
+            title:"Now You See Me",
+            text: "Donne à Li +2 Fight lorsqu'il essaie de poignarder quelqu'un dans le dos"
+        }],
+        abilities:[["Mort - Inéluctabilité", "Taiyi - Nature","Magie des âmes - Soulbinding"],["Hématurgie<ul><li>Yahuar</li><li>Itztli</li></ul>"],["Invocation : Nuit<ul><li>Voile</li><li>Peur</li><li>Néant</li></ul>"]]
     }]
 }
