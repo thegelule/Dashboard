@@ -334,8 +334,8 @@ var globalDB = {
             title:"Oeil du Désert",
             text: "Pas de Lien du Destin à minuit"
         },{
-            title:"Griffes d'éviscération<sup>(3)</sup>",
-            text: "+2 de dégats si l'attaque a réussi"
+            title:"Dying is your job",
+            text: "L'utilisation combinée d'Itztli et Nécromancie ne génère pas de liens du Destin sur Nécromancie"
         },{
             title:"Forme Fantomatique",
             text: "Une fois par session, peut remplacer un dégât physique par un dégat mental"
