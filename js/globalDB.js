@@ -390,7 +390,7 @@ var globalDB = {
             text: "Peut utiliser Nuit - Peur avec un jet de dé normal pour découvrir des peurs"
         },{
             title:"Is This Just Fantasy ?",
-            text: "A chaque invokation Fear sur une cible, création d'un aspect "Marqué par la peur" qui se disperse au bout de 3 tours d’imprégnation."
+            text: "A chaque invokation Fear sur une cible, création d'un aspect 'Marqué par la peur' qui se disperse au bout de 3 tours d’imprégnation."
         },{
             title:"No Escape From Reality",
             text: "Peut utiliser Manipulation au lieu de Savoir pour découvrir des peurs."
