@@ -9,28 +9,57 @@ function LoadingContent(){
     DisplayNumbersInMenu();
 }
 
-function SetActiveMenu(element){
-    var arrowElement = $(element).find(".arrow");
-    var selectElement = document.createElement("span");
-    
-    FindActiveAndDisable();
-    
-    $(selectElement).addClass("selected");
-    arrowElement.addClass("open");
-    $(element.parentElement).addClass("active");
-    element.appendChild(selectElement);
-    
-    
-    
+function SetActiveMenu(AElement){
+	var activeElement = $(".WR_Button_Class.active");
+	var parentMenu = $(AElement).closest(".WR_Button_Class.nav-item");
+	var listBelow = $(AElement).find("ul");
+	var openedList = [];
+	var lists = $("ul.sub-menu.WR_SousMenu_Group_Container_Class");
+	
+	for(var i = 0; i < lists.length; i++){
+		if(lists[i].style.display == "block")
+			openedList.push(lists[i]);
+	}
+	
+	if(openedList.length != 0 && openedList[0].style.display == "block"){
+		$(openedList[0]).slideUp();
+	}
+	
+	if(!$(parentMenu).hasClass("active")){
+		parentMenu.addClass("open active");
+		ToggleSelected($(AElement));
+		activeElement.removeClass("active");
+	}
 }
 
-function FindActiveAndDisable(){
-    var activeElement = $("li.active");
-    var selectedArrow = $(activeElement[0].children[0]).find(".selected");
-    
-    activeElement.removeClass("active");
-    selectedArrow.remove();
-    
+function SetActiveSubMenu(AElement) {
+	var parentMenu = $(AElement).closest(".WR_Button_Class.nav-item");
+	var activeElement = $(".WR_Button_Class.active");
+	
+	
+	if(!parentMenu.hasClass("active")){
+		parentMenu.addClass("open active");
+		ToggleSelected(parentMenu);
+		activeElement.removeClass("active");
+	}
+}
+
+function ToggleSelected(element){
+	var selectedElements = $(".WR_Selected_Indicator.selected");
+	var menuLink = null;
+	var selectorElement = document.createElement("span");
+	
+	if($(element).hasClass("WR_Button_Class_Link")){
+		menuLink = element;
+	}
+	else{
+		menuLink = $(element).find(".WR_Button_Class_Link.nav-link.nav-toggle");
+	}
+	
+	selectedElements.remove();
+	
+	$(selectorElement).addClass("WR_Selected_Indicator selected");
+	menuLink[0].appendChild(selectorElement);
 }
 
 function OpenCampaignCharacters(campString){
