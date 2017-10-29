@@ -96,6 +96,16 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <!-- END RESPONSIVE MENU TOGGLER -->
                     <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="top-menu">
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown dropdown-quick-sidebar-toggler">
+                                <a href="javascript:;" class="dropdown-toggle">
+                                    <i class="fa fa-chevron-left" id="LibraryOpener"></i>
+                                </a>
+                            </li>
+                            <!-- END QUICK SIDEBAR TOGGLER -->
+                        </ul>
+                    </div>
                     <!-- END TOP NAVIGATION MENU -->
                 </div>
                 <!-- END HEADER INNER -->
@@ -599,7 +609,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </a>
                                         <ul class="sub-menu">
                                             <li class="nav-item">
-                                                <a href="javascript:;" class="nav-link ">                                                
+                                                <a onclick="OpenCampaignStory('BSTTS');" class="nav-link ">                                                
                                                     <span class="title">Tale</span>
 
                                                 </a>
@@ -623,6 +633,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN CONTENT -->
                 <div class="page-content-wrapper">
                     <!-- BEGIN CONTENT BODY -->
+                    
                     <div class="page-content">
                         <div id="ContentDisplayContainer" class="AsyncContentContainer">
                             <!-- Step 1: Create the containing elements. -->
@@ -696,13 +707,58 @@ License: You must have a valid license purchased only from themeforest(the above
                     </div>
                     <!-- END CONTENT BODY -->
                 </div>
+                <a href="javascript:;" class="page-quick-sidebar-toggler">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+                <div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
+                    <div class="page-quick-sidebar">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> 
+                                    Characters                                    
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-target="#quick_sidebar_tab_2" data-toggle="tab"> 
+                                    Basic NPCs                                    
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-target="#quick_sidebar_tab_3"> 
+                                    Campaigns                               
+                                </a>
+                                
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
+                                <div class="CharacterLibraryContainer">
+                                                                        
+                                </div>                                
+                            </div>
+                            <div class="tab-pane page-quick-sidebar-alerts" id="quick_sidebar_tab_2">
+                                <div class="NPCLibraryContainer">
+                                    <div class="note note-info">
+                                        <p>Coming Soon</p>
+                                    </div>            
+                                </div>                                
+                            </div>
+                            <div class="tab-pane page-quick-sidebar-settings" id="quick_sidebar_tab_3">
+                                <div class="CampaignLibraryContainer">
+                                    <div class="note note-info">
+                                        <p>Coming Soon</p>
+                                    </div>             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- END CONTENT -->
             </div>
             <!-- END CONTAINER -->
             <!-- BEGIN FOOTER -->
             <div class="page-footer">
-                <div class="page-footer-inner"> 2017 &copy; <a href="http://www.wyrdwalkers.wikidot.com">Wyrdwalkers</a> powered by 
-                    <a target="_blank" href="http://keenthemes.com">Metronic Theme By Keenthemes</a>
+                <div class="page-footer-inner"> 2017 &copy; <a href="http://www.wyrdwalkers.wikidot.com">Wyrdwalkers</a>
                 </div>
                 <div class="scroll-to-top">
                     <i class="icon-arrow-up"></i>
@@ -737,6 +793,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="js/app.min.js" type="text/javascript"></script>
         <!-- END THEME GLOBAL SCRIPTS -->
         <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="js/form-repeater.min.js" type="text/javascript"></script>
         <script src="js/dashboard.min.js" type="text/javascript"></script>
         <!-- END PAGE LEVEL SCRIPTS -->
         <!-- BEGIN THEME LAYOUT SCRIPTS -->
