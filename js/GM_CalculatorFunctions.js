@@ -1,5 +1,5 @@
 var GodParams = null;
-
+var libraryDB = null;
 
 var LegendaryAbility = function(name,description,legendaries) {
   this.name = name;
@@ -557,13 +557,13 @@ function FilterApproaches(array){
                 resultArray.push(arrayObject);
             }
         }
+    }
         
-        if(resultArray.length == 0){
-            return array;
-        }
-        else{
-            return resultArray;
-        }
+    if(resultArray.length == 0){
+        return array;
+    }
+    else{
+        return resultArray;
     }
 }
 
