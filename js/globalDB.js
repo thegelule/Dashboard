@@ -553,7 +553,7 @@ var globalDB = {
             text: "Si un allié a subi une conséquence, Carl a +2 à son jet d'Athlétisme pour tenter de le protéger"
         },{
             title:"Bracelet de bâtisseur",
-            text: "Peut stocker une utilisation gratuite de <i>Terre-Roche</i>. Doit être mentionné avant utilisation"
+            text: "Peut stocker une utilisation gratuite de <i>Terre-Roche</i> qui ne génère pas de liens du Destin. Doit être mentionné avant utilisation"
         }],
         abilities:[["Mort - Voyage", "Druidisme Runique"],["Invocation : Ordre<ul><li>Gravité</li><li>Architecture</li></ul>","Invocation : Terre<ul><li>Roche</li><li>Vie</li></ul>"],["Physiologie Epique<ul><li>Force</li><li>Résistance</li><li>Toucher</li></ul>"]]
     },{
