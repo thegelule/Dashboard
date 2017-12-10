@@ -312,7 +312,7 @@ var globalDB = {
             text: "Les ennemis ont -2 à leurs jets d'initiative"
         },{
             title:"Cité Ourse",
-            text: "Nita grandit jusqu'à atteindre la taille d'une maison (max 4 tours - 2 s'il pleut). Elle gagne une 4 IG de l'aspect 'Ourse Géante' et gagne une case de stress physique à -5. Consomme une utilisation de <i>Taille Epique</i>"
+            text: "Nita grandit jusqu'à atteindre la taille d'une maison (max 4 tours - 2 s'il pleut). Elle gagne 4 IG de l'aspect 'Ourse Géante' et gagne une case de stress physique à -5. Consomme une utilisation de <i>Taille Epique</i>"
         }],
         abilities:[["Enech<ul><li>Druidisme (Ours)</li></ul>", "Taille Epique", "Présence Epique", "Sorcellerie Fey - Pluie"],[],[]]
     },{
