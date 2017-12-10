@@ -284,14 +284,14 @@ var globalDB = {
         earnedXP: 45,
         divineParent: "http://wyrdwalkers-fr.wikidot.com/tane-mahuta",
         charWikiLink: "http://wyrdwalkers-fr.wikidot.com/nita-nairobi",
-        aspects: ["Chamane de l'Ours", "On s'bouge le cul !", "Guider le peuple", "Justicière sociale", "Leader du BEAR"],
+        aspects: ["Ourse du Bois Noir", "On s'bouge le cul !", "Guider le peuple", "Justicière sociale", "Leader du BEAR"],
         skills: [["Présence"], ["Volonté", "Physique"],["Empathie","Perception","Anatomie"],["Technologie","Rapport","Savoir","Athlétisme"]],
         stunts:[{
-            title:"Tatouages Runique : Ours<sup>(3)</sup>",
-            text: "Formes d'ours : <ul><li>Classique</li><li>Esprit (+1 Volonté, -1 Physique)</li><li>Bois (+1 Physique, -1 Athlétisme)</li><li>Brume (+1 Athlétisme, -1 Physique)</li></ul>"
+            title:"Ourse du Bois Noir<sup>(3)</sup>",
+            text: "+2 Physique, -2 en Discrétion et Manipulation. Case de stress physique -4."
         },{
             title:"Bénédiction de l'ours éclair <sup>(3)</sup>",
-            text: "Sous forme d'ours et sous la pluie, les alliés de Nita gagnent une case de stress physique à -2 et une case de stress mental à -1. En cas d'action injuste de la part d'un allié, celui-ci est foudroyé et perd à la place une case de stress physique à -2 et de stress mental à -1 natives"
+            text: "Sous forme d'ours et sous la pluie, les alliés de Nita gagnent une case de stress physique à -2 et une case de stress mental à -2. En cas d'action injuste de la part d'un allié, celui-ci est foudroyé et perd à la place une case de stress physique à -2 et de stress mental à -1 natives"
         },{
             title:"Rugissement de Nita <sup>(2)</sup>",
             text: "Peut créer l'aspect 'BEAR Assemble !' avec 2 IG une fois par scène"
@@ -307,6 +307,12 @@ var globalDB = {
         },{
             title:"Rassembleuse",
             text: "Nita n'est pas victime des préjugés"
+        },{
+            title:"Présence Inquiétante",
+            text: "Les ennemis ont -2 à leurs jets d'initiative"
+        },{
+            title:"Cité Ourse",
+            text: "Nita grandit jusqu'à atteindre la taille d'une maison (max 4 tours - 2 s'il pleut). Elle gagne une IG de l'aspect 'Ourse Géante' et gagne une case de stress physique à -5. Consomme une utilisation de <i>Taille Epique</i>"
         }],
         abilities:[["Enech<ul><li>Druidisme (Ours)</li></ul>", "Taille Epique", "Présence Epique", "Sorcellerie Fey - Pluie"],[],[]]
     },{
@@ -518,5 +524,60 @@ var globalDB = {
             text: "Donne à Li +2 Fight lorsqu'il essaie de poignarder quelqu'un dans le dos"
         }],
         abilities:[["Mort - Inéluctabilité", "Taiyi - Nature","Magie des âmes - Soulbinding"],["Hématurgie<ul><li>Yahuar</li><li>Itztli</li></ul>"],["Invocation : Nuit<ul><li>Voile</li><li>Peur</li><li>Néant</li></ul>"]]
+    },{
+        playerID: 21,
+        name: "Carl Johnson",
+        level: 4,
+        earnedXP: "N/A",
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/geb",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/carl-johnson",
+        aspects: ["Je vous conseille de ne pas me mettre en colère", "C'est dans l'unité que se trouve la force", "J'ai perdu quelqu'un...plus jamais", "Les pyramides ne se sont pas faites en un jour", "La cime dépasse les nuages"],
+        skills: [["Physique"], ["Volonté", "Athlétisme"],["Perception","Combat","Présence"],["Rapport","Savoir","Soins","Technologie"]],
+        stunts:[{
+            title:"Peau de pierre",
+            text: "Carl passe un tour pour gagner l'aspect 'Peau de pierre' avec 3 IG"
+        },{
+            title:"Bouclier humain",
+            text: "Si Carl est proche d'un allié, un jet d'Athlétisme réussi lui permet de faire le jet de défense à la place de l'allié"
+        },{
+            title:"Résilience de la Terre",
+            text: "2 fois par scène. Peut passer un tour pour faire perdre toutes ses cases de stress à lui-même ou un allié"
+        },{
+            title:"Le Pilier",
+            text: "Une fois par scène. Quand un allié utilise un aspect créé par Carl, il donne un bonus de +3 au lieu de +2"
+        },{
+            title:"Avalanche",
+            text: "Les aspect 'Charge' (sur jet de Physique) donnent un bonus de +3"
+        },{
+            title:"Soutenir les faibles",
+            text: "Si un allié a subi une conséquence, Carl a +2 à son jet d'Athlétisme pour tenter de le protéger"
+        },{
+            title:"Bracelet de bâtisseur",
+            text: "Peut stocker une utilisation gratuite de <i>Terre-Roche</i>. Doit être mentionné avant utilisation"
+        }],
+        abilities:[["Mort - Voyage", "Druidisme Runique"],["Invocation : Ordre<ul><li>Gravité</li><li>Architecture</li></ul>","Invocation : Terre<ul><li>Roche</li><li>Vie</li></ul>"],["Physiologie Epique<ul><li>Force</li><li>Résistance</li><li>Toucher</li></ul>"]]
+    },{
+        playerID: 22,
+        name: "William Lawrence",
+        level: 4,
+        earnedXP: "N/A",
+        divineParent: "http://wyrdwalkers-fr.wikidot.com/shiva",
+        charWikiLink: "http://wyrdwalkers-fr.wikidot.com/william-lawrence",
+        aspects: ["Eminence grise", "It is not me who's wrong, it is the world", "Détruire pour rebâtir", "Tout sacrifier pour arriver à ses fins", "Pas de compromis, pas de pardon"],
+        skills: [["Présence"], ["Savoir", "Manipulation"],["Rapport","Athlétisme","Volonté"],["Ressources","Technologie","Anatomie","Furtivité"]],
+        stunts:[{
+            title:"Rebelious Mind",
+            text: "Lorsqu'il s'agit de détruire une structure sociale (groupe, communauté,...), William a +1 Manipulation"
+        },{
+            title:"Know Your Enemy",
+            text: "Lors de l'utilisation de <i>Prophétie</i>, William peut choisir entre :<ul><li>Le prochain aspect créé avec <i>Lumière-Brillance</i> donne un bonus de +3 mais -1 Manipulation pour la scène</li><li>William gagne +1 Savoir et -1 Présence pour le reste de la scène</li></ul>"
+        },{
+            title:"I, William Lawrence, Command You",
+            text: "William peut utiliser <i>Présence Epique</i> sans limite d'utilisation dans les situations sociales mondaines uniquement"
+        },{
+            title:"The Power of the King",
+            text: "Pour un point de Destin et une fois par session, William peut combiner <i>Ordre-Contrôle</i> et <i>Mort-Inéluctabilité</i> pour forcer quelqu'un à se suicider (one-shot). Doit avoir un contact visuel avec la cible.<br>Cibles de niveau inférieur : réussite automatique.<br>Cible de niveau égal : fait un jet de volonté pour résister mais ne peut pas utiliser son stress.<br>Cible de niveau supérieur : jet de volonté classique pour résister.<br>Si la ou les cibles sont atteintes, les liens du Destin éventuellement générés sont doublés"
+        }],
+        abilities:[["Lumière - Brillance", "Ordre - Contrôle","Vision du Wyrd - Prophétie","Chwal - Marionnettiste"],["Invocation : Mort<ul><li>Inéluctabilité</li><li>Voyage</li></ul>","Physiologie Epique<ul><li>Vitesse</li><li>Présence</li></ul>"],[""]]
     }]
 }
