@@ -82,7 +82,7 @@ li.aspect{
 }
 
 .FakeSkills{
-    border: none;
+    border: none !important;
 }
 
 .row{
