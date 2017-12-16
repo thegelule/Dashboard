@@ -322,7 +322,7 @@ function GM_FillForms(e){
     FillName(e.find(".name")[0],$("#inputFileNameToSaveAs").val());
     GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL").val());
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
-    GM_FillSkills(e.find(".SkillsContainer")[0],$(".SkillInput"));
+    GM_FillSkills(e.find(".SkillsContainer")[0],$(".skills"));
     GM_FillStunts(e.find(".StuntsContainer")[0],$("#StuntFormContainer"));
     GM_FillAbilities(e.find(".AbilitiesContainer")[0],$(".CustomAbility"));
 }
@@ -398,13 +398,19 @@ function GM_FillSkills(e,skills){
     
     //On recrée le tableau de la DB
     for(var i = 4; i > 0; i--){
+        var tab = [];
+
         for(var j = 1; j < 5; j++){
             if((i+j) <= 5){
-                var tab = [];
+                
                 var fetchID = "Skill_" + i + "_" + j;
                 tab.push(document.getElementById(fetchID).value);
-                skillLevelTab.push(tab);
-                CharacterObject.Skills.push(tab);
+                var obj = {
+                    level: i,
+                    names: tab
+                };
+                skillLevelTab.push(document.getElementById(fetchID).value);
+                CharacterObject.Skills.push(obj);
             }
             
         }
@@ -412,20 +418,16 @@ function GM_FillSkills(e,skills){
     
     //On reboucle ensuite sur ce qui a été fait pour les fiches de persos
     for(var i = 0; i < skills.length; i++){
-        var skillLevelTab = skills[i];
+        var skill = skills[i];
+       /* var skillInputGrandParent = skill.parentElement.parentElement;
+        var inputLevel = parseInt(skillInputGrandParent.classList[1].replace("level",""));
         var increment = 5 - (i+1);
         var level = ".level" + increment;
         var levelContainerElement = $(e).find(level);
-        var skillsElements = $(levelContainerElement[0]).find(".skills");
+        var skillsElements = $(levelContainerElement[0]).find(".skills");*/
         
-       for(var j = 0; j < skillLevelTab.length; j++){
-           var skill = skillLevelTab[j];
-           var skillElement = skillsElements[j];
-           
-           if(skill != undefined){
-               skillElement.innerText = skill;
-           }
-       } 
+        //On suppose que les skills sont récupérés dans le bon ordre par jQuery. A changer si ça merde
+       skill.innerText = skillLevelTab[i]; 
     }
 }
 
