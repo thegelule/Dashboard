@@ -41,6 +41,7 @@
 <div class="row FloatingButton">
     <button type="button" onclick="GM_OpenCharacterDialog();" class="btn white SaveButtons">Spawn Character Sheet</button>	
     <button type="button" onclick="GM_SaveCharacterInLibrary();" class="btn white SaveButtons">Save Character in Library</button>	
+    <button type="button" onclick="ResetCharacterForm();" class="btn white SaveButtons">New Character</button>
 </div>
 <div class="row">
     <h4 class="col-md-12">
@@ -432,27 +433,19 @@
                                 <a class="one" href="http://evilhat.wikidot.com/fate-core-stunts" target="_blank">Ideas for Normal Stunts</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div data-repeater-list="group-a">
-                                    <div data-repeater-item="" class="mt-repeater-item">
+                                <div data-repeater-list="stunt-group" id="StuntFormContainer">
+                                    <div data-repeater-item="1" class="mt-repeater-item">
                                         <div class='form-group'>
                                             <div class="mt-repeater-input">
-                                                <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
+                                                <input type="text" class="CustomStuntTitle" placeholder="Stunt Title" data-stunt="1">
                                             </div>
                                             <div class="mt-repeater-input mt-repeater-textarea">
-                                                <textarea id="stunt1" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
+                                                <textarea rows="4" cols="50" placeholder="Stunt Content" class="form-control CustomStunt" data-stunt="1"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class='form-group'>
-                                        <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
-                                    <textarea id="stunt2" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
-                                </div>
-                                <div class='form-group'>
-                                        <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
-                                    <textarea id="stunt3" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
-                                </div>
-                                <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+                                <a href="javascript:;" data-repeater-create="" class="btn btn-success" onclick="DuplicateStuntForm();">
                                     <i class="fa fa-plus"></i> New Stunt
                                 </a>
                             </div>

@@ -1,3 +1,5 @@
+var CharacterObject = {};
+
 function LoadingContent(){
     if(window.location.href.indexOf("#Godborn-Maker") > -1) {
        OpenGMaker();
@@ -585,4 +587,58 @@ function RequestInfoFromWiki(wikiPage){
             
         }
     });*/
+}
+
+/*<div data-repeater-item="1" class="mt-repeater-item">
+    <div class='form-group'>
+        <div class="mt-repeater-input">
+            <input type="text" class="CustomStuntTitle" placeholder="Stunt Title" data-stunt="1">
+        </div>
+        <div class="mt-repeater-input mt-repeater-textarea">
+            <textarea id="stuntContent1" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt" data-stunt="1"></textarea>
+        </div>
+    </div>
+</div>*/
+
+function ResetCharacterForm(){
+    window.location.href = "https://thegelule.github.io/Dashboard/#Godborn-Maker";
+    CharacterObject = {};
+}
+
+function DuplicateStuntForm(){
+    var StuntFormContainerElement = $("#StuntFormContainer");
+    var nbStunts = $(".mt-repeater-item").length;
+    var newStuntContainer = document.createElement("div");
+    var newStuntFormGroup = document.createElement("div");
+    var newStuntTitleContainer = document.createElement("div");
+    var newStuntTitleElement = document.createElement("input");
+    var newStuntContentContainer = document.createElement("div");
+    var newStuntContentElement = document.createElement("textarea");
+
+    $(newStuntContainer).addClass("mt-repeater-item StuntContainer");
+    newStuntContainer.setAttribute("data-repeater-item",nbStunts + 1);
+    StuntFormContainerElement.appendChild(newStuntContainer);
+
+    $(newStuntFormGroup).addClass("form-group");
+    newStuntContainer.appendChild(newStuntFormGroup);
+
+    $(newStuntTitleContainer).addClass("mt-repeater-input");
+    newStuntFormGroup.appendChild(newStuntTitleContainer);
+
+    $(newStuntTitleElement).addClass("CustomStuntTitle");
+    newStuntTitleElement.type = "text";
+    newStuntTitleElement.placeholder = "Stunt Title";
+    newStuntTitleElement.setAttribute("data-stunt", nbStunts + 1);
+    newStuntTitleContainer.appendChild(newStuntTitleElement);
+
+    $(newStuntContentContainer).addClass("mt-repeater-input mt-repeater-textarea");
+    newStuntFormGroup.appendChild(newStuntContentContainer);
+
+    $(newStuntContentElement).addClass("form-control CustomStunt");
+    newStuntContentElement.rows = 4;
+    newStuntContentElement.cols = 50;
+    newStuntContentElement.placeholder = "Stunt Content";
+    newStuntContentElement.setAttribute("data-stunt", nbStunts + 1);
+
+
 }

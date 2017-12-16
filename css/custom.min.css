@@ -156,6 +156,15 @@ a.btn.btn-circle.btn-default {
 
 .SaveButtons{
     display: block;
+    width: 190px;
+    margin-bottom: 5px;
+}
+
+.CustomStuntTitle {
+    width: 50%;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /*#LegendaryAbilitiesContainer {
