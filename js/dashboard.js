@@ -625,7 +625,7 @@ function DuplicateStuntForm(){
     $(newStuntTitleContainer).addClass("mt-repeater-input");
     newStuntFormGroup.appendChild(newStuntTitleContainer);
 
-    $(newStuntTitleElement).addClass("CustomStuntTitle");
+    $(newStuntTitleElement).addClass("CustomStuntTitle form-control");
     newStuntTitleElement.type = "text";
     newStuntTitleElement.placeholder = "Stunt Title";
     newStuntTitleElement.setAttribute("data-stunt", nbStunts + 1);
