@@ -475,7 +475,7 @@ function GM_FillAbilities(e,abilitiesContainer){
         
         //Si une spec est composée de plusieurs mots
         for(var j = 0; j < specName.length; j++){
-            if(specName[j].indexOf(" ") == specName.length-1){
+            if(specName[j].indexOf(" ") == specName[j].length-1){
                 specName[j] += specName[j+1];
                 specName.splice(j+1,1);
             }
