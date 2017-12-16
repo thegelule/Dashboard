@@ -465,7 +465,7 @@ function GM_FillStunts(e,stuntsContainer){
 function GM_FillAbilities(e,abilitiesContainer){
     var formAbilities = $(e).find(".form")[0];
     var abilitiesElements = $(abilitiesContainer).children(".AbilityContainer");
-    CharacterObject.Aspects = [];
+    CharacterObject.Abilities = [];
 
     for(var i = 0; i < abilitiesElements.length; i++){
         var ability = abilitiesElements[i]
