@@ -472,7 +472,7 @@ function GM_FillAbilities(e,abilitiesContainer){
         var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
         var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
         
-        if(specName != undefined){
+        if(specName != ""){
             specName = specName.split(/(?=[A-Z])/);
             
             //Si une spec est composée de plusieurs mots
@@ -507,7 +507,7 @@ function GM_NewAbilityElement(e,powerName,specName){
         if(specName[0] != ""){
             powerNameElement.innerText += " - " + specName[0];
         }
-        
+
         destinationBox[0].appendChild(powerNameElement);
     }
     else{
