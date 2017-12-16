@@ -322,7 +322,7 @@ function GM_FillForms(e){
     FillName(e.find(".name")[0],$("#inputFileNameToSaveAs").val());
     GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL").val());
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
-    GM_FillSkills(e.find(".SkillsContainer")[0],$(".skills"));
+    GM_FillSkills(e.find(".skills"),$(".SkillInput"));
     GM_FillStunts(e.find(".StuntsContainer")[0],$("#StuntFormContainer"));
     GM_FillAbilities(e.find(".AbilitiesContainer")[0],$(".CustomAbility"));
 }
@@ -398,17 +398,16 @@ function GM_FillSkills(e,skills){
     
     //On recrée le tableau de la DB
     for(var i = 4; i > 0; i--){
-        var tab = [];
+        var obj = {
+            level: i,
+            names: []
+        };
 
         for(var j = 1; j < 5; j++){
-            if((i+j) <= 5){
-                
+            if((i+j) <= 5){ 
                 var fetchID = "Skill_" + i + "_" + j;
-                tab.push(document.getElementById(fetchID).value);
-                var obj = {
-                    level: i,
-                    names: tab
-                };
+
+                obj.names.push(document.getElementById(fetchID).value);
                 skillLevelTab.push(document.getElementById(fetchID).value);
                 CharacterObject.Skills.push(obj);
             }
@@ -417,8 +416,8 @@ function GM_FillSkills(e,skills){
     }
     
     //On reboucle ensuite sur ce qui a été fait pour les fiches de persos
-    for(var i = 0; i < skills.length; i++){
-        var skill = skills[i];
+    for(var i = 0; i < e.length; i++){
+        var skill = e[i];
        /* var skillInputGrandParent = skill.parentElement.parentElement;
         var inputLevel = parseInt(skillInputGrandParent.classList[1].replace("level",""));
         var increment = 5 - (i+1);
