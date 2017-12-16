@@ -465,6 +465,7 @@ function GM_FillStunts(e,stuntsContainer){
 function GM_FillAbilities(e,abilitiesContainer){
     var formAbilities = $(e).find(".form")[0];
     var abilitiesElements = $(abilitiesContainer).children(".AbilityContainer");
+    CharacterObject.Aspects = [];
 
     for(var i = 0; i < abilitiesElements.length; i++){
         var ability = abilitiesElements[i]
@@ -491,6 +492,11 @@ function GM_NewAbilityElement(e,powerName,specName){
     var destinationBox = $(e).find(".AbilityL" + powerLevel + " > ul");
 
     powerNameElement.innerText = powerName;
+    CharacterObject.Abilities.push({
+        level: powerLevel,
+        power: powerName,
+        specs: specName
+    });
 
     if(powerLevel == 1){
         powerNameElement.innerText += " - " + specName[0];

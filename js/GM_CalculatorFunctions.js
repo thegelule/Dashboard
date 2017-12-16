@@ -1122,20 +1122,22 @@ value+=1
 
 function characterSheetSpawn() {
     var TextToDL = "";
-    var aspects = $(".CustomAspect");
-    var stunts = $(".StuntContainer");
-    var abilities = $(".CustomAbility");
+    var aspects = CharacterObject.Aspects;
+    var stunts = CharacterObject.Stunts;
+    var abilities = CharacterObject.Abilities;
     var pic = $("#CharacterImageURL").val();
     var name = $("#inputFileNameToSaveAs").val();
     
     TextToDL += "Name: " + name + "\r\n";
+    TextToDL += "\r\n";
     TextToDL += "Picture: " + pic + "\r\n";
-    
+    TextToDL += "\r\n";
     TextToDL += "Aspects:\r\n";
         
     for(var i = 0; i < aspects.length;i++){
         var aspect = aspects[i].value;
-        TextToDL += aspect + "\n";
+        TextToDL += "- ";
+        TextToDL += aspect + "\r\n";
     }
     
     TextToDL += "\r\n";
@@ -1160,8 +1162,12 @@ function characterSheetSpawn() {
     TextToDL += "Stunts:\r\n";
         
     for(var i = 0; i < stunts.length;i++){
-        var stunt = stunts[i].innerText;
-        TextToDL += stunt + "\n";
+        var title = stunts[i].title;
+        var content = stunts[i].content;
+        TextToDL += title + ":\r\n";
+        TextToDL += content + "\r\n";
+        TextToDL += "\r\n";
+        TextToDL += "\r\n";
     }
     
     TextToDL += "\r\n";
@@ -1170,8 +1176,18 @@ function characterSheetSpawn() {
     TextToDL += "Abilities:\r\n";
         
     for(var i = 0; i < abilities.length;i++){
-        var ability = abilities[i].innerText;
-        TextToDL += ability + "\r\n";
+        var powerName = abilities[i].power;
+        var specs = abilities[i].spec;
+        TextToDL += powerName + "\r\n";
+        
+        for(var j =0; j < specs.length; j++){
+            TextToDL += "\t";
+            TextToDL += specs[j]
+
+            if(j != specs.length-1){
+                TextToDL += " - ";
+            }
+        }
     }
     
     return TextToDL;
