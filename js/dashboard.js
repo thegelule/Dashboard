@@ -607,7 +607,7 @@ function ResetCharacterForm(){
 
 function DuplicateStuntForm(){
     var StuntFormContainerElement = $("#StuntFormContainer");
-    var nbStunts = $(".mt-repeater-item").length;
+    var nbStunts = $(".StuntContainer").length;
     var newStuntContainer = document.createElement("div");
     var newStuntFormGroup = document.createElement("div");
     var newStuntTitleContainer = document.createElement("div");
@@ -617,7 +617,7 @@ function DuplicateStuntForm(){
 
     $(newStuntContainer).addClass("mt-repeater-item StuntContainer");
     newStuntContainer.setAttribute("data-repeater-item",nbStunts + 1);
-    StuntFormContainerElement.appendChild(newStuntContainer);
+    StuntFormContainerElement[0].appendChild(newStuntContainer);
 
     $(newStuntFormGroup).addClass("form-group");
     newStuntContainer.appendChild(newStuntFormGroup);
