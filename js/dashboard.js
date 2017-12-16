@@ -624,7 +624,7 @@ function RequestInfoFromWiki(wikiPage){
 </div>*/
 
 function ResetCharacterForm(){
-    OpenGM();
+    OpenGMaker();
     CharacterObject = {};
 }
 
