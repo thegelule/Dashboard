@@ -182,3 +182,10 @@ a.btn.btn-circle.btn-default {
 .SkillInput {
     width: 100% !important;
 }
+
+.SkillLevelIndicator{
+    margin-right:5px;
+    font-weight:bold;
+    float:left;
+    padding-top: 5px;
+}
