@@ -741,3 +741,19 @@ function SetPreviousValue(element){
     var selectedValue = elementValue;
     element.setAttribute("data-previous",selectedValue);
 }
+
+function RemoveAbility(element){
+
+}
+
+function DuplicateAbilityForm(){
+    var URL = "https://thegelule.github.io/Dashboard/pages/GM_AbilitiesOptionsDuplicate.html";
+    $.ajax({
+        url : URL,
+        type: "GET",
+        success : function(result){
+            var AbilitiesContainerElement = document.getElementById("AbilityFormContainer");
+            AbilitiesContainerElement.innerHTML += result;
+        }
+    });
+}

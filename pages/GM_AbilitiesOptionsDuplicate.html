@@ -1,0 +1,52 @@
+<div data-repeater-item="1" class="mt-repeater-item AbilityContainer">
+    <div class='form-group'>
+        <div class="mt-repeater-input">
+            <select class="selectpicker CustomAbilityTitle">
+                <optgroup label="Pure Disciplines">
+                    <option value="Druidism">Druidism</option>
+                    <option value="Hematurgy">Hematurgy</option>
+                    <option value="Spiritwalking">Spiritwalking</option>
+                    <option value="Wyrdseeing">Wyrdseeing</option>
+                    <option value="Epic Physiology">Epic Physiology</option>
+                    <option value="Invokation: Fire">Invokation: Fire</option>
+                    <option value="Invokation: Water">Invokation: Water</option>
+                    <option value="Invokation: Light">Invokation: Light</option>
+                    <option value="Invokation: Night">Invokation: Night</option>
+                    <option value="Invokation: World">Invokation: World</option>
+                    <option value="Invokation: Depths">Invokation: Depths</option>
+                    <option value="Invokation: Sky">Invokation: Sky</option>
+                    <option value="Invokation: Death">Invokation: Death</option>
+                    <option value="Invokation: Order">Invokation: Order</option>
+                </optgroup>
+                <optgroup label="Complex Disciplines">
+                    <option value="Taiyi">Taiyi</option>
+                    <option value="Haruspicy">Haruspicy</option>
+                    <option value="Enech" data-content="Enech <span class='label label-sm label-warning'>GM aprobation</span>">Enech</option>
+                    <option value="Augury">Augury</option>
+                    <option value="Heku">Heku</option>
+                </optgroup>
+                <optgroup label="Specific Disciplines - Ask your GM">
+                        <option value="Spiritual Communion">Spiritual Communion</option>
+                        <option value="Runic Tatoos">Runic Tatoos</option>
+                        <option value="Astral Travel">Astral Travel</option>
+                </optgroup>
+                <optgroup label="Enlightened Disciplines - Forbidden to divine lineage">
+                        <option value="The Middle Way">The Middle Way</option>
+                        <option value="Nihilism">Nihilism</option>
+                        <option value="Isfet">Isfet</option>
+                        <option value="Kannagara no Michi">Kannagara no Michi</option>
+                </optgroup>
+                
+            </select>
+            <a href="javascript:;" class="btn red-soft DeleteStuntButton" onclick="RemoveAbility(this);">
+                <i class="fa fa-times"></i>&nbsp;Delete
+            </a>
+        </div>
+        <div class="mt-repeater-input mt-repeater-textarea">
+            <select class="selectpicker CustomAbilitySpec" multiple>
+                
+            </select>
+            <textarea rows="4" cols="50" type="text" class="form-control SpecFreeText" style="display: none;"></textarea>
+        </div>
+    </div>
+</div>

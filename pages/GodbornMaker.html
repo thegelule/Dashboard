@@ -622,30 +622,64 @@
                         <div class="slimScrollDiv">
                             <h5 class="two col-md-12">Legendary Abilities</h5>
                             <div class="col-lg-4 col-md-4 col-sm-4">
-                                <a href="http://wyrdwalkers.wikidot.com/legendary-disciplines" target="_blank">Explanations of the Legendary Skills and Stunts</a> <br>
                                 <a href="http://wyrdwalkers.wikidot.com/legendary-abilities" target="_blank">List of Legendary Abilities, with Examples for Legendary Skills and Stunts.</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div data-repeater-list="group-b">
-                                    <div data-repeater-item="" class="mt-repeater-item">
+                                <div data-repeater-list="ability-group" id="AbilityFormContainer">
+                                    <div data-repeater-item="1" class="mt-repeater-item AbilityContainer">
                                         <div class='form-group'>
                                             <div class="mt-repeater-input">
-                                                <input type="text" class="LegendaryAbility" placeholder="Enter a discipline">
+                                                <select class="selectpicker CustomAbilityTitle" data-ability="1">
+                                                    <optgroup label="Pure Disciplines">
+                                                        <option value="Druidism">Druidism</option>
+                                                        <option value="Hematurgy">Hematurgy</option>
+                                                        <option value="Spiritwalking">Spiritwalking</option>
+                                                        <option value="Wyrdseeing">Wyrdseeing</option>
+                                                        <option value="Epic Physiology">Epic Physiology</option>
+                                                        <option value="Invokation: Fire">Invokation: Fire</option>
+                                                        <option value="Invokation: Water">Invokation: Water</option>
+                                                        <option value="Invokation: Light">Invokation: Light</option>
+                                                        <option value="Invokation: Night">Invokation: Night</option>
+                                                        <option value="Invokation: World">Invokation: World</option>
+                                                        <option value="Invokation: Depths">Invokation: Depths</option>
+                                                        <option value="Invokation: Sky">Invokation: Sky</option>
+                                                        <option value="Invokation: Death">Invokation: Death</option>
+                                                        <option value="Invokation: Order">Invokation: Order</option>
+                                                    </optgroup>
+                                                    <optgroup label="Complex Disciplines">
+                                                        <option value="Taiyi">Taiyi</option>
+                                                        <option value="Haruspicy">Haruspicy</option>
+                                                        <option value="Enech" data-content="Enech <span class='label label-sm label-warning'>GM aprobation</span>">Enech</option>
+                                                        <option value="Augury">Augury</option>
+                                                        <option value="Heku">Heku</option>
+                                                    </optgroup>
+                                                    <optgroup label="Specific Disciplines - Ask your GM">
+                                                            <option value="Spiritual Communion">Spiritual Communion</option>
+                                                            <option value="Runic Tatoos">Runic Tatoos</option>
+                                                            <option value="Astral Travel">Astral Travel</option>
+                                                    </optgroup>
+                                                    <optgroup label="Enlightened Disciplines - Forbidden to divine lineage">
+                                                            <option value="The Middle Way">The Middle Way</option>
+                                                            <option value="Nihilism">Nihilism</option>
+                                                            <option value="Isfet">Isfet</option>
+                                                            <option value="Kannagara no Michi">Kannagara no Michi</option>
+                                                    </optgroup>
+                                                    
+                                                </select>
+                                                <a href="javascript:;" class="btn red-soft DeleteStuntButton" onclick="RemoveAbility(this);">
+                                                    <i class="fa fa-times"></i>&nbsp;Delete
+                                                </a>
                                             </div>
                                             <div class="mt-repeater-input mt-repeater-textarea">
-                                                <div data-repeater-list="group-c">
-                                                    <div data-repeater-item="" class="mt-repeater-item">
-                                                        <input type="text" placeholder="Enter a concept"><button type="button" class="btn btn-circle btn-outline blue-madison ConceptInfoButton" onclick="DisplayInfo('Concept');"><i class="fa fa-info"></i></button>
-                                                    </div>
-                                                </div>
-                                                <a href="javascript:;" data-repeater-create="" class="btn btn-outline purple mt-repeater-add">
-                                                    <i class="fa fa-plus"></i> New Concept
-                                                </a>
+                                                <select class="selectpicker CustomAbilitySpec" data-ability-spec="1" multiple>
+                                                    
+                                                </select>
+                                                <textarea rows="4" cols="50" type="text" class="form-control SpecFreeText" style="display: none;"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="javascript:;" data-repeater-create="" class="btn btn-outline green-sharp mt-repeater-add">
+                                <a href="javascript:;" class="btn btn-success" onclick="DuplicateAbilityForm();">
                                     <i class="fa fa-plus"></i> New Ability
                                 </a>
                             </div>
