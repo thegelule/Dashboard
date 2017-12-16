@@ -154,6 +154,10 @@ a.btn.btn-circle.btn-default {
     max-height: 250px !important;
 }
 
+.SaveButtons{
+    display: block;
+}
+
 /*#LegendaryAbilitiesContainer {
     max-height: 250px;
     overflow: auto;
