@@ -426,7 +426,8 @@ function GM_FillSkills(e,skills){
         var skillsElements = $(levelContainerElement[0]).find(".skills");*/
         
         //On suppose que les skills sont récupérés dans le bon ordre par jQuery. A changer si ça merde
-       skill.innerText = skillLevelTab[i]; 
+        if(skillLevelTab[i] != "Empty")
+            skill.innerText = skillLevelTab[i]; 
     }
 }
 
