@@ -693,6 +693,9 @@ function UpdateSkillsLeft(element){
     var selects = $("select.SkillInput");
     var selectedValue = element.value;
     var previousValue = element.getAttribute("data-previous");
+    var body = $("body")[0];
+
+    body.style.cursor = "wait";
 
     for(var i = 0; i < selects.length; i++){
         var select = selects[i];
@@ -704,6 +707,8 @@ function UpdateSkillsLeft(element){
             }
         }
     }
+
+    body.style.cursor = "default";
 }
 
 function GenerateSelectSkillsList(selectID,skillString){
@@ -717,7 +722,8 @@ function GenerateSelectSkillsList(selectID,skillString){
         for(var i = 0; i < skillsLabels.length; i++){
             var option = document.createElement("option");
             option.value = skillsLabels[i];
-            option.innerHTML = skillsLabels[i];
+            if(skillsLabels[i] != "Empty")
+                option.innerHTML = skillsLabels[i];
             selectElement.appendChild(option);
         }
     }
