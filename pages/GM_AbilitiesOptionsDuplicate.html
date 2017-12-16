@@ -1,7 +1,7 @@
 <div data-repeater-item="1" class="mt-repeater-item AbilityContainer">
     <div class='form-group'>
         <div class="mt-repeater-input">
-            <select class="selectpicker CustomAbilityTitle Fresh">
+            <select class="selectpicker CustomAbilityTitle Fresh" onchange="UpdateSpecSelect(this);">
                 <optgroup label="Pure Disciplines">
                     <option value="Empty"></option>
                     <option value="Druidism">Druidism</option>
@@ -9,15 +9,15 @@
                     <option value="Spiritwalking">Spiritwalking</option>
                     <option value="Wyrdseeing">Wyrdseeing</option>
                     <option value="Epic Physiology">Epic Physiology</option>
-                    <option value="Invokation: Fire">Invokation: Fire</option>
-                    <option value="Invokation: Water">Invokation: Water</option>
-                    <option value="Invokation: Light">Invokation: Light</option>
-                    <option value="Invokation: Night">Invokation: Night</option>
-                    <option value="Invokation: World">Invokation: World</option>
-                    <option value="Invokation: Depths">Invokation: Depths</option>
-                    <option value="Invokation: Sky">Invokation: Sky</option>
-                    <option value="Invokation: Death">Invokation: Death</option>
-                    <option value="Invokation: Order">Invokation: Order</option>
+                    <option value="Fire">Invokation: Fire</option>
+                    <option value="Water">Invokation: Water</option>
+                    <option value="Light">Invokation: Light</option>
+                    <option value="Night">Invokation: Night</option>
+                    <option value="World">Invokation: World</option>
+                    <option value="Depths">Invokation: Depths</option>
+                    <option value="Sky">Invokation: Sky</option>
+                    <option value="Death">Invokation: Death</option>
+                    <option value="Order">Invokation: Order</option>
                 </optgroup>
                 <optgroup label="Complex Disciplines">
                     <option value="Taiyi">Taiyi</option>
@@ -39,7 +39,7 @@
                 </optgroup>
                 
             </select>
-            <a href="javascript:;" class="btn red-soft DeleteStuntButton" onclick="RemoveAbility(this);">
+            <a href="javascript:;" class="btn red-soft DeleteAbilityButton" onclick="RemoveAbility(this);">
                 <i class="fa fa-times"></i>&nbsp;Delete
             </a>
         </div>

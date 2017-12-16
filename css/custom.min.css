@@ -168,19 +168,19 @@ a.btn.btn-circle.btn-default {
     display: inline-block;
 }
 
-.DeleteStuntButton {
+.DeleteStuntButton, .DeleteAbilityButton {
     margin-bottom: 2px;
     vertical-align: top;
     position: absolute;
     right: 30px;
 }
 
-.DeleteAbilityButton{
+/*.DeleteAbilityButton{
     margin-bottom: 2px;
     vertical-align: top;
     position: absolute;
     left: 260px;
-}
+}*/
 
 .StuntTitleText{
     font-weight: bold;
