@@ -736,7 +736,9 @@ function SetPreviousValue(element){
 }
 
 function RemoveAbility(element){
-
+    var AbilityContainerElement = element.parentElement.parentElement.parentElement;
+    
+    AbilityContainerElement.style.display = "none";
 }
 
 function DuplicateAbilityForm(){
