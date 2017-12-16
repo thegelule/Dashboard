@@ -601,7 +601,7 @@ function RequestInfoFromWiki(wikiPage){
 </div>*/
 
 function ResetCharacterForm(){
-    window.location.href = "https://thegelule.github.io/Dashboard/#Godborn-Maker";
+    location.reload();
     CharacterObject = {};
 }
 
