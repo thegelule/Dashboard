@@ -110,7 +110,7 @@ label.stuntTitle {
     padding-left: 15px;
 }
 
-.StuntContainer {
+.StuntContainer, .AbilityContainer {
     border: 1px solid #ccc;
     padding: 15px;
     margin-bottom: 10px;
