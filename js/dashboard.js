@@ -700,7 +700,7 @@ function UpdateSkillsLeft(element){
         if(select.id != currentID){
             for(var j = 0; j < select.length; j++){
                 var option = select.options[j];
-                GenerateSelectSkillsList(currentID,selectedValue);
+                GenerateSelectSkillsList(select.id,selectedValue);
             }
         }
     }
@@ -710,6 +710,8 @@ function GenerateSelectSkillsList(selectID,skillString){
     var optionsTab = [];
     var skillsLabels = ["Athletics","Fight","Marksmanphip","Stealth","Will","Physique", "Technology", "Notice","First Aid","Lore","Manipulation","Presence","Rapport","Resources"];
     var selectElement = document.getElementById(selectID);
+
+    $(selectElement).empty();
 
     if(skillString == "Empty"){
         for(var i = 0; i < skillsLabels.length; i++){
