@@ -468,8 +468,8 @@ function GM_FillAbilities(e,abilitiesContainer){
 
     for(var i = 0; i < abilitiesElements.length; i++){
         var ability = abilitiesElements[i]
-        var powerName = $(ability).find(".CustomAbilityTitle")[0].value;
-        var specName = $(ability).find(".CustomAbilitySpec")[0].value;
+        var powerName = $(ability).find("div.CustomAbilityTitle").val();
+        var specName = $(ability).find("div.CustomAbilitySpec").val();
 
         GM_NewAbilityElement(powerName,specName);
     }
