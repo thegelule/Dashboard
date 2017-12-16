@@ -1135,7 +1135,7 @@ function characterSheetSpawn() {
     TextToDL += "Aspects:\r\n";
         
     for(var i = 0; i < aspects.length;i++){
-        var aspect = aspects[i].value;
+        var aspect = aspects[i];
         TextToDL += "- ";
         TextToDL += aspect + "\r\n";
     }

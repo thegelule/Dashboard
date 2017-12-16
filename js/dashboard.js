@@ -362,7 +362,7 @@ function GM_FillAspects(e,aspects){
         
         listItemElement.classList.add("aspect");
         itemTextContainer.innerText = aspectText;
-
+        
         CharacterObject.Aspects.push(aspectText);
         itemContainer.appendChild(itemTextContainer);
         listItemElement.appendChild(itemContainer);
@@ -407,7 +407,7 @@ function GM_FillSkills(e,skills){
             if((i+j) <= 5){ 
                 var fetchID = "Skill_" + i + "_" + j;
 
-                obj.names.push(document.getElementById(fetchID).value);
+                obj.names.push($(fetchID).text());
                 skillLevelTab.push(document.getElementById(fetchID).value);
             }
         }
