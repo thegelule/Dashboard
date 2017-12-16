@@ -1123,7 +1123,7 @@ value+=1
 function characterSheetSpawn() {
     var TextToDL = "";
     var aspects = $(".CustomAspect");
-    var stunts = $(".CustomStunt");
+    var stunts = $(".StuntContainer");
     var abilities = $(".CustomAbility");
     var pic = $("#CharacterImageURL").val();
     var name = $("#inputFileNameToSaveAs").val();

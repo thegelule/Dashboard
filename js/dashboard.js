@@ -297,6 +297,7 @@ function GM_OpenCharacterDialog(){
 function OpenGMaker(){
     
     SetActiveMenu(document.getElementById("GMMenuButton"));
+    //$(".page-quick-sidebar-toggler")[0].style.display = "block";
     
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
@@ -328,6 +329,7 @@ function GM_FillForms(e){
 
 function GM_FillPicture(e,url){
     e.src = url;
+    CharacterObject.Picture = url;
 }
 
 function FillAspects(e,aspects){
@@ -350,6 +352,7 @@ function FillAspects(e,aspects){
 
 function GM_FillAspects(e,aspects){
     var ulElement = $(e).find(".dropdown-menu-list")[0];
+    CharacterObject.Aspects = [];
     
     for(var i = 0; i < aspects.length; i++){
         var listItemElement = document.createElement("li");
@@ -358,8 +361,9 @@ function GM_FillAspects(e,aspects){
         var aspectText = aspects[i].value;
         
         listItemElement.classList.add("aspect");
-        itemTextContainer.innerText = aspectText; 
-        
+        itemTextContainer.innerText = aspectText;
+
+        CharacterObject.Aspects.push(aspectText);
         itemContainer.appendChild(itemTextContainer);
         listItemElement.appendChild(itemContainer);
         ulElement.appendChild(listItemElement);
@@ -390,6 +394,7 @@ function FillSkills(e,skills){
 function GM_FillSkills(e,skills){ 
     
     var skillLevelTab = [];
+    CharacterObject.Skills = []
     
     //On recrée le tableau de la DB
     for(var i = 4; i > 0; i--){
@@ -399,6 +404,7 @@ function GM_FillSkills(e,skills){
                 var fetchID = "Skill_" + i + "_" + j;
                 tab.push(document.getElementById(fetchID).value);
                 skillLevelTab.push(tab);
+                CharacterObject.Skills.push(tab);
             }
             
         }
@@ -435,12 +441,17 @@ function FillStunts(e,stunts){
 
 function GM_FillStunts(e,stuntsContainer){
     var formStunts = $(e).find(".form")[0];
-    var stunts = stuntsContainer.getElementsByClassName("StuntContainer");
+    var stunts = stuntsContainer[0].getElementsByClassName("StuntContainer");
+    CharacterObject.Stunts = [];
     
     for(var i = 0; i < stunts.length; i++){
         var stuntElement = stunts[i];
         var stuntTitle = stuntElement.getElementsByClassName("CustomStuntTitle")[0].value;
-        var stuntContent = stuntElement.getElementsByClassName("CustomStunt")[0].innerText;
+        var stuntContent = stuntElement.getElementsByClassName("CustomStunt")[0].value;
+        CharacterObject.Stunts.push({
+            title: stuntTitle,
+            content: stuntContent
+        });
         var stuntElementCS = GM_NewStuntOrAbilityElement(stuntTitle,stuntContent);
         formStunts.appendChild(stuntElementCS);
     }
@@ -448,7 +459,8 @@ function GM_FillStunts(e,stuntsContainer){
 
 function GM_FillAbilities(e,abilities){
     var formAbilities = $(e).find(".form")[0];
-    
+    //TODO: Sauvegarder les Abilities dans le CharacterObject
+
     for(var i = 0; i < abilities.length; i++){
         var ability = abilities[i].innerText;
         var abilityElement = GM_NewStuntOrAbilityElement(ability.innerText);
@@ -473,6 +485,7 @@ function FillAbilities(e,abilities){
 
 function FillName(e,name){
     e.innerText = name;
+    CharacterObject.Name = name;
 }
 
 function RetrieveCharacterFromID(ID){
