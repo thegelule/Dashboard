@@ -471,7 +471,16 @@ function GM_FillAbilities(e,abilitiesContainer){
         var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
         var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
 		
-		specName = specName.split(/(?=[A-Z])/);
+        specName = specName.split(/(?=[A-Z])/);
+        
+        //Si une spec est composée de plusieurs mots
+        for(var j = 0; j < specName.length; j++){
+            if(specName[j].indexOf(" ") == specName.length-1){
+                specName[j] += specName[j+1];
+                specName.splice(j+1,1);
+            }
+        }
+
         GM_NewAbilityElement(e,powerName,specName);
     }
 }
