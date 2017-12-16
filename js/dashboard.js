@@ -633,6 +633,7 @@ function DuplicateStuntForm(){
     newStuntTitleContainer.appendChild(newStuntTitleElement);
 
     $(deleteStuntButtonElement).addClass("btn red-soft DeleteStuntButton");
+    deleteStuntButtonElement.innerHTML = "<i class='fa fa-times'></i>&nbsp;Delete";
     $(deleteStuntButtonElement).on("click",function(){
         RemoveStunt(this);
     });

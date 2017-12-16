@@ -165,7 +165,16 @@ a.btn.btn-circle.btn-default {
     margin-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
+    display: inline-block;
 }
+
+.DeleteStuntButton {
+    margin-bottom: 2px;
+    vertical-align: top;
+    position: absolute;
+    right: 30px;
+}
+
 
 /*#LegendaryAbilitiesContainer {
     max-height: 250px;
