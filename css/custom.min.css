@@ -175,6 +175,10 @@ a.btn.btn-circle.btn-default {
     right: 30px;
 }
 
+.StuntTitleText{
+    font-weight: bold;
+}
+
 
 /*#LegendaryAbilitiesContainer {
     max-height: 250px;

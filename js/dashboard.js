@@ -322,7 +322,7 @@ function GM_FillForms(e){
     GM_FillPicture(e.find(".picture")[0],$("#CharacterImageURL").val());
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
     GM_FillSkills(e.find(".SkillsContainer")[0],$(".SkillInput"));
-    GM_FillStunts(e.find(".StuntsContainer")[0],$(".CustomStunt"));
+    GM_FillStunts(e.find(".StuntsContainer")[0],$("#StuntFormContainer"));
     GM_FillAbilities(e.find(".AbilitiesContainer")[0],$(".CustomAbility"));
 }
 
@@ -433,13 +433,16 @@ function FillStunts(e,stunts){
     }
 }
 
-function GM_FillStunts(e,stunts){
+function GM_FillStunts(e,stuntsContainer){
     var formStunts = $(e).find(".form")[0];
+    var stunts = stuntsContainer.getElementsByClassName("StuntContainer");
     
     for(var i = 0; i < stunts.length; i++){
-        var stunt = stunts[i].innerText;
-        var stuntElement = GM_NewStuntOrAbilityElement(stunt.innerText);
-        formStunts.appendChild(stuntElement);
+        var stuntElement = stunts[i];
+        var stuntTitle = stuntElement.getElementsByClassName("CustomStuntTitle")[0].value;
+        var stuntContent = stuntElement.getElementsByClassName("CustomStunt")[0].innerText;
+        var stuntElementCS = GM_NewStuntOrAbilityElement(stuntTitle,stuntContent);
+        formStunts.appendChild(stuntElementCS);
     }
 }
 
@@ -511,20 +514,26 @@ function NewStuntElement(stunt){
     return formGroup;
 }
 
-function GM_NewStuntOrAbilityElement(text){
+function GM_NewStuntOrAbilityElement(title,content){
     var formGroup = document.createElement("div");
     var textContainerParent = document.createElement("div");
+    var titleContainer = document.createElement("div");
+    var stuntTitleSpan = document.createElement("span");
     var textContainer = document.createElement("div");
-    var textBreak = document.createElement("br");
     
     formGroup.classList.add("form-group");
     textContainerParent.classList.add("col-md-12");
     textContainerParent.classList.add("StuntContainer");
+    $(titleContainer).addClass("StuntTitleContainer")
+    titleContainer.style.marginBottom = "5px";
+    $(stuntTitleSpan).addClass("StuntTitleText");
+    stuntTitleSpan.innerHTML = title;
     textContainer.classList.add("form-control-static");
     textContainer.classList.add("stuntText");
-    textContainer.innerHTML = text;
+    textContainer.innerHTML = content;
     
-    textContainerParent.appendChild(textBreak);
+    titleContainer.appendChild(stuntTitleSpan);
+    textContainerParent.appendChild(titleContainer);
     textContainerParent.appendChild(textContainer);
     formGroup.appendChild(textContainerParent);
     
