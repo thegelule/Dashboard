@@ -639,6 +639,7 @@ function DuplicateStuntForm(){
     newStuntContentElement.cols = 50;
     newStuntContentElement.placeholder = "Stunt Content";
     newStuntContentElement.setAttribute("data-stunt", nbStunts + 1);
+    newStuntContentContainer.appendChild(newStuntContentElement);
 
 
 }
