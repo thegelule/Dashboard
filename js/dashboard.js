@@ -897,5 +897,5 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
         }
     }
 
-    $(".CustomAbilitySpec").selectpicker('refresh');
+    $(".Added").selectpicker('refresh');
 }
