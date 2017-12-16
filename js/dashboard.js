@@ -781,7 +781,7 @@ function UpdateSpecSelect(element){
     var selected = $(':selected', element);
     var groupLabel = selected.closest('optgroup').attr('label');
     var specSelect = $(element).closest(".AbilityContainer").find("select.CustomAbilitySpec");
-    var specFreeText = $(element).closest(".AbilityContainer").find("textarea.SpecFreeText");
+    var specFreeText = $(element).closest(".AbilityContainer").find("textarea.SpecFreeText")[0];
 
     if(groupLabel.indexOf("Enlightened") < 0){
         switch(element.value){
@@ -893,7 +893,7 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
 
             option.value = spec;
             option.innerHTML = spec;
-            selectElement.appendChild(option);
+            selectElement[0].appendChild(option);
         }
     }
 
