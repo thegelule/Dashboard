@@ -750,6 +750,8 @@ function DuplicateAbilityForm(){
             $(".Fresh").selectpicker();
             $(".Fresh").addClass("Added");
             $(".Fresh").removeClass("Fresh");
+            $(".Added").addClass("PreviousStep");
+            $(".PreviousStep").removeClass("Added")
         }
     });
 }
