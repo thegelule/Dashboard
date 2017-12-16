@@ -883,12 +883,13 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
     $(selectElement).empty();
 
     for(var i = 0; i < tabOptions.length; i++){
+        var spec = tabOptions[i];
+        
         if(spec[0] == "I"){
             continue;
         }
         else{
             var option = document.createElement("option");
-            var spec = tabOptions[i];
 
             option.value = spec;
             option.innerHTML = spec;
