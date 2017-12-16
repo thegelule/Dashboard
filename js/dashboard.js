@@ -409,10 +409,10 @@ function GM_FillSkills(e,skills){
 
                 obj.names.push(document.getElementById(fetchID).value);
                 skillLevelTab.push(document.getElementById(fetchID).value);
-                CharacterObject.Skills.push(obj);
             }
-            
         }
+
+        CharacterObject.Skills.push(obj);
     }
     
     //On reboucle ensuite sur ce qui a été fait pour les fiches de persos

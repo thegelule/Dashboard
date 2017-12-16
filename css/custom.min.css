@@ -189,3 +189,16 @@ a.btn.btn-circle.btn-default {
     float:left;
     padding-top: 5px;
 }
+
+.CustomAspect {
+    width: 100%;
+}
+
+.two {
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.fa-chevron-left:before {
+    content: "\f053" !important;
+}
