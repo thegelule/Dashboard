@@ -748,8 +748,8 @@ function DuplicateAbilityForm(){
             var AbilitiesContainerElement = document.getElementById("AbilityFormContainer");
             AbilitiesContainerElement.innerHTML += result;
             $(".Fresh").selectpicker();
-            $(".Fresh").removeClass("Fresh");
             $(".Fresh").addClass("Added");
+            $(".Fresh").removeClass("Fresh");
         }
     });
 }
