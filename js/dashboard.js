@@ -624,7 +624,7 @@ function RequestInfoFromWiki(wikiPage){
 </div>*/
 
 function ResetCharacterForm(){
-    location.reload();
+    OpenGM();
     CharacterObject = {};
 }
 
@@ -679,4 +679,61 @@ function RemoveStunt(element){
     var StuntContainerElement = element.parentElement.parentElement.parentElement;
 
     StuntContainerElement.style.display = "none";
+}
+
+function ChangeLanguage(langString){
+    if(langString== "FR")
+        bootbox.alert("Bientôt disponible");
+    else if(langString == "ENG")
+        bootbox.alert("Coming Soon");
+}
+
+function UpdateSkillsLeft(element){
+    var currentID = element.id;
+    var selects = $("select.SkillInput");
+    var selectedValue = element.value;
+    var previousValue = element.getAttribute("data-previous");
+
+    for(var i = 0; i < selects.length; i++){
+        var select = selects[i];
+        
+        if(select.id != currentID){
+            for(var j = 0; j < select.length; j++){
+                var option = select.options[j];
+                GenerateSelectSkillsList(currentID,selectedValue);
+            }
+        }
+    }
+}
+
+function GenerateSelectSkillsList(selectID,skillString){
+    var optionsTab = [];
+    var skillsLabels = ["Athletics","Fight","Marksmanphip","Stealth","Will","Physique", "Technology", "Notice","First Aid","Lore","Manipulation","Presence","Rapport","Resources"];
+    var selectElement = document.getElementById(selectID);
+
+    if(skillString == "Empty"){
+        for(var i = 0; i < skillsLabels.length; i++){
+            var option = document.createElement("option");
+            option.value = skillsLabels[i];
+            option.innerHTML = skillsLabels[i];
+            selectElement.appendChild(option);
+        }
+    }
+    else{
+        for(var i = 0; i < skillsLabels.length; i++){
+            if(skillsLabels[i] != skillString){
+                var option = document.createElement("option");
+                option.value = skillsLabels[i];
+                option.innerHTML = skillsLabels[i];
+                selectElement.appendChild(option);
+            }
+        }
+    }
+
+    $(".selectpicker").selectpicker('refresh');
+}
+
+function SetPreviousValue(element){
+    var selectedValue = elementValue;
+    element.setAttribute("data-previous",selectedValue);
 }
