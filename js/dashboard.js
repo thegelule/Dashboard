@@ -612,6 +612,7 @@ function DuplicateStuntForm(){
     var newStuntFormGroup = document.createElement("div");
     var newStuntTitleContainer = document.createElement("div");
     var newStuntTitleElement = document.createElement("input");
+    var deleteStuntButtonElement = document.createElement("a");
     var newStuntContentContainer = document.createElement("div");
     var newStuntContentElement = document.createElement("textarea");
 
@@ -631,6 +632,12 @@ function DuplicateStuntForm(){
     newStuntTitleElement.setAttribute("data-stunt", nbStunts + 1);
     newStuntTitleContainer.appendChild(newStuntTitleElement);
 
+    $(deleteStuntButtonElement).addClass("btn red-soft DeleteStuntButton");
+    $(deleteStuntButtonElement).on("click",function(){
+        RemoveStunt(this);
+    });
+    newStuntTitleContainer.appendChild(deleteStuntButtonElement);
+
     $(newStuntContentContainer).addClass("mt-repeater-input mt-repeater-textarea");
     newStuntFormGroup.appendChild(newStuntContentContainer);
 
@@ -642,4 +649,10 @@ function DuplicateStuntForm(){
     newStuntContentContainer.appendChild(newStuntContentElement);
 
 
+}
+
+function RemoveStunt(element){
+    var StuntContainerElement = element.parentElement.parentElement.parentElement;
+
+    StuntContainerElement.style.display = "none";
 }

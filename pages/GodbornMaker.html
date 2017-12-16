@@ -438,6 +438,9 @@
                                         <div class='form-group'>
                                             <div class="mt-repeater-input">
                                                 <input type="text" class="CustomStuntTitle form-control" placeholder="Stunt Title" data-stunt="1">
+                                                <a href="javascript:;" class="btn red-soft DeleteStuntButton" onclick="RemoveStunt(this);">
+                                                    <i class="fa fa-times"></i>&nbsp;Delete
+                                                </a>
                                             </div>
                                             <div class="mt-repeater-input mt-repeater-textarea">
                                                 <textarea rows="4" cols="50" placeholder="Stunt Content" class="form-control CustomStunt" data-stunt="1"></textarea>
@@ -445,7 +448,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="javascript:;" data-repeater-create="" class="btn btn-success" onclick="DuplicateStuntForm();">
+                                <a href="javascript:;" class="btn btn-success" onclick="DuplicateStuntForm();">
                                     <i class="fa fa-plus"></i> New Stunt
                                 </a>
                             </div>
