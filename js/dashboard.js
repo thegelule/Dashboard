@@ -449,12 +449,15 @@ function GM_FillStunts(e,stuntsContainer){
         var stuntElement = stunts[i];
         var stuntTitle = stuntElement.getElementsByClassName("CustomStuntTitle")[0].value;
         var stuntContent = stuntElement.getElementsByClassName("CustomStunt")[0].value;
-        CharacterObject.Stunts.push({
-            title: stuntTitle,
-            content: stuntContent
-        });
-        var stuntElementCS = GM_NewStuntOrAbilityElement(stuntTitle,stuntContent);
-        formStunts.appendChild(stuntElementCS);
+
+        if(stuntElement.style.display != "none"){
+            CharacterObject.Stunts.push({
+                title: stuntTitle,
+                content: stuntContent
+            });
+            var stuntElementCS = GM_NewStuntOrAbilityElement(stuntTitle,stuntContent);
+            formStunts.appendChild(stuntElementCS);
+        }
     }
 }
 
@@ -611,17 +614,6 @@ function RequestInfoFromWiki(wikiPage){
         }
     });*/
 }
-
-/*<div data-repeater-item="1" class="mt-repeater-item">
-    <div class='form-group'>
-        <div class="mt-repeater-input">
-            <input type="text" class="CustomStuntTitle" placeholder="Stunt Title" data-stunt="1">
-        </div>
-        <div class="mt-repeater-input mt-repeater-textarea">
-            <textarea id="stuntContent1" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt" data-stunt="1"></textarea>
-        </div>
-    </div>
-</div>*/
 
 function ResetCharacterForm(){
     OpenGMaker();
