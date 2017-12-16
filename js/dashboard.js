@@ -754,6 +754,7 @@ function DuplicateAbilityForm(){
         success : function(result){
             var AbilitiesContainerElement = document.getElementById("AbilityFormContainer");
             AbilitiesContainerElement.innerHTML += result;
+            $(".selectpicker").selectpicker();
         }
     });
 }
