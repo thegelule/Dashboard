@@ -135,7 +135,24 @@ function FetchNumberofCharacters(pageName){
 	});
 }
 
+function LoadLibraryDB(){
+    var emptyLibraryDB = {
+        characters:[],
+        npcs:[],
+        campaigns:[]
+    }
+
+    if(localStorage.library != undefined){
+        libraryDB = JSON.parse(localStorage.library);
+    }
+    else{
+        libraryDB = emptyLibraryDB;
+        localStorage.library = JSON.stringify(libraryDB);
+    }
+}
+
 function LoadHomePage(){
+    LoadLibraryDB();
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/IntroPage.html",
         type: "GET",
@@ -163,6 +180,84 @@ function OpenCharacterDialog(element){
         }
     });
     
+}
+
+function GM_SaveCharacterInLibrary(){
+    GM_CreateCharacterContainer();
+    GM_FetchCharacterInfo();
+    GM_CharacterSavedNotif();
+    GM_OpenLibraryPanel();
+}
+
+function GM_FetchCharacterInfo(){
+
+}
+
+function GM_CreateCharacterContainer(){
+    var libraryContainer = $(".CharacterLibraryContainer")[0];
+    var characterTag = document.createElement("div");
+    var dropButton = document.createElement("a");
+    var characterName = document.createElement("span");
+    var characArrowDown = document.createElement("i");
+    var actionslist = document.createElement("ul");
+    var viewCharacterSummary = document.createElement("li");
+    var applyHTMLTemplate = document.createElement("li");
+    var deleteCharacter = document.createElement("li");
+    var viewCharacterSummaryAction = document.createElement("a");
+    var applyHTMLTemplateAction = document.createElement("a");
+    var deleteCharacterAction = document.createElement("a");
+    var viewCharacIcon = document.createElement("i");
+    var viewCharacLabel = document.createElement("span");
+    var applyTempIcon = document.createElement("i");
+    var applyTempLabel = document.createElement("span");
+    var deleteCharIcon = document.createElement("i");
+    var deleteCharLabel = document.createElement("span");
+
+    viewCharacLabel.innerHTML = "View Summary";
+    $(viewCharacIcon).addClass("fa fa-eye");
+    applyTempLabel.innerHTML = "Spawn a Sheet";
+    $(applyTempIcon).addClass("fa fa-html5");
+    $(characArrowDown).addClass("fa fa-angle-down");
+    characterName = $("#inputFileNameToSaveAs").val();
+    $(characterName).addClass("LibraryCharacterName");
+    $(characterTag).addClass("btn grey-salsa");
+    deleteCharLabel = "Delete Character";
+    $(deleteCharIcon).addClass("fa fa-times");
+
+    viewCharacterSummaryAction.appendChild(viewCharacIcon);
+    viewCharacterSummaryAction.appendChild(viewCharacLabel);
+    applyHTMLTemplateAction.appendChild(applyTempIcon);
+    applyHTMLTemplateAction.appendChild(applyTempLabel);
+    deleteCharacterAction.appendChild(deleteCharIcon);
+    deleteCharacterAction.appendChild(deleteCharLabel);
+    viewCharacterSummary.appendChild(viewCharacterSummaryAction);
+    applyHTMLTemplate.appendChild(applyHTMLTemplateAction);
+    deleteCharacter.appendChild(deleteCharacterAction);
+    actionslist.appendChild(viewCharacterSummary);
+    actionslist.appendChild(applyHTMLTemplate);
+    actionslist.appendChild(deleteCharacter);
+    dropButton.appendChild(characterName);
+    dropButton.appendChild(characArrowDown);
+    characterTag.appendChild(dropButton);
+
+    viewCharacterSummaryAction.addEventListener("click",function(){
+        
+    });
+    
+    applyHTMLTemplateAction.addEventListener("click",function(){
+        
+    });
+
+    deleteCharacterAction.addEventListener("click",function(){
+        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+
+        DeleteCharacterFromLibrary(characterName);
+    });
+    
+}
+
+function GM_OpenLibraryPanel(){
+    $("#LibraryOpener").click();
 }
 
 function GM_OpenCharacterDialog(){    

@@ -32,9 +32,15 @@
         <span>Powered by <a href="www.github.com/Ellil1" target="_blank">Ellil1</a> on Github</span>
     </div>	
 </div>
+<div class="row">
+    <div class="note note-danger">
+        <span>WORK IN PROGRESS</span>
+    </div>	
+</div>
 <hr>
 <div class="row FloatingButton">
-    <button type="button" onclick="GM_OpenCharacterDialog();" class="btn btn-default">Spawn Character Sheet</button>	
+    <button type="button" onclick="GM_OpenCharacterDialog();" class="btn btn-outline grey-salsa">Spawn Character Sheet</button>	
+    <button type="button" onclick="GM_SaveCharacterInLibrary();" class="btn btn-outline grey-salsa">Save Character in Library</button>	
 </div>
 <div class="row">
     <h4 class="col-md-12">
@@ -303,46 +309,46 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_4_1" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_4_1" placeholder="+4 Skill" class="form-control SkillInput">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_3_1" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_3_1" placeholder="+3 Skill" class="form-control SkillInput">
                                         </div>
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_3_2" placeholder="Skill" class="form-control SkillInput">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_2_1" placeholder="Skill" class="form-control SkillInput">
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_2_2" placeholder="Skill" class="form-control SkillInput">
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_2_3" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_3_2" placeholder="+3 Skill" class="form-control SkillInput">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group">
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_1_1" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_2_1" placeholder="+2 Skill" class="form-control SkillInput">
                                         </div>
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_1_2" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_2_2" placeholder="+2 Skill" class="form-control SkillInput">
                                         </div>
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_1_3" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_2_3" placeholder="+2 Skill" class="form-control SkillInput">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-3 col-sm-3 col lg-3">
+                                            <input type="text" id="Skill_1_1" placeholder="+1 Skill" class="form-control SkillInput">
                                         </div>
                                         <div class="col-md-3 col-sm-3 col lg-3">
-                                            <input type="text" id="Skill_1_4" placeholder="Skill" class="form-control SkillInput">
+                                            <input type="text" id="Skill_1_2" placeholder="+1 Skill" class="form-control SkillInput">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col lg-3">
+                                            <input type="text" id="Skill_1_3" placeholder="+1 Skill" class="form-control SkillInput">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col lg-3">
+                                            <input type="text" id="Skill_1_4" placeholder="+1 Skill" class="form-control SkillInput">
                                         </div>
                                     </div> 
                                 </div>
@@ -426,15 +432,29 @@
                                 <a class="one" href="http://evilhat.wikidot.com/fate-core-stunts" target="_blank">Ideas for Normal Stunts</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class='form-group'>
-                                    <textarea id="stunt1" rows="4" cols="30" placeholder="Stunt" class="form-control" class="CustomStunt"></textarea>
+                                <div data-repeater-list="group-a">
+                                    <div data-repeater-item="" class="mt-repeater-item">
+                                        <div class='form-group'>
+                                            <div class="mt-repeater-input">
+                                                <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
+                                            </div>
+                                            <div class="mt-repeater-input mt-repeater-textarea">
+                                                <textarea id="stunt1" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class='form-group'>
-                                    <textarea id="stunt2" rows="4" cols="30" placeholder="Stunt" class="form-control" class="CustomStunt"></textarea>
+                                        <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
+                                    <textarea id="stunt2" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
                                 </div>
                                 <div class='form-group'>
-                                    <textarea id="stunt3" rows="4" cols="30" placeholder="Stunt" class="form-control" class="CustomStunt"></textarea>
+                                        <input type="text" class="CustomStuntTitle" placeholder="Stunt Title">
+                                    <textarea id="stunt3" rows="4" cols="30" placeholder="Free Normal Stunt" class="form-control" class="CustomStunt"></textarea>
                                 </div>
+                                <a href="javascript:;" data-repeater-create="" class="btn btn-success mt-repeater-add">
+                                    <i class="fa fa-plus"></i> New Stunt
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -446,15 +466,28 @@
                                 <a href="http://wyrdwalkers.wikidot.com/legendary-abilities" target="_blank">List of Legendary Abilities, with Examples for Legendary Skills and Stunts.</a>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class='form-group'>
-                                    <textarea id="legend1" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control" class="CustomAbility"></textarea>
+                                <div data-repeater-list="group-b">
+                                    <div data-repeater-item="" class="mt-repeater-item">
+                                        <div class='form-group'>
+                                            <div class="mt-repeater-input">
+                                                <input type="text" class="LegendaryAbility" placeholder="Enter a discipline">
+                                            </div>
+                                            <div class="mt-repeater-input mt-repeater-textarea">
+                                                <div data-repeater-list="group-c">
+                                                    <div data-repeater-item="" class="mt-repeater-item">
+                                                        <input type="text" placeholder="Enter a concept"><button type="button" class="btn btn-circle btn-outline blue-madison ConceptInfoButton" onclick="DisplayInfo('Concept');"><i class="fa fa-info"></i></button>
+                                                    </div>
+                                                </div>
+                                                <a href="javascript:;" data-repeater-create="" class="btn btn-outline purple mt-repeater-add">
+                                                    <i class="fa fa-plus"></i> New Concept
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class='form-group'>
-                                    <textarea id="legend2" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control" class="CustomAbility"></textarea>
-                                </div>
-                                <div class='form-group'>
-                                    <textarea id="legend3" rows="4" cols="30" placeholder="Legendary Skill or Stunt" class="form-control" class="CustomAbility"></textarea>
-                                </div>
+                                <a href="javascript:;" data-repeater-create="" class="btn btn-outline green-sharp mt-repeater-add">
+                                    <i class="fa fa-plus"></i> New Ability
+                                </a>
                             </div>
                         </div>
                     </div>
