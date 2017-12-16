@@ -878,7 +878,7 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
     for(var i = 0; i < tabOptions.length; i++){
         var spec = tabOptions[i];
 
-        if(spec[0] == "I"){
+        if(spec == "I"){
             continue;
         }
         else{
