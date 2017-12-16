@@ -1187,6 +1187,8 @@ function characterSheetSpawn() {
                 TextToDL += " - ";
             }
         }
+
+        TextToDL += "\r\n";
     }
     
     return TextToDL;
