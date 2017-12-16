@@ -471,15 +471,20 @@ function GM_FillAbilities(e,abilitiesContainer){
         var ability = abilitiesElements[i]
         var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
         var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
-		
-        specName = specName.split(/(?=[A-Z])/);
         
-        //Si une spec est composée de plusieurs mots
-        for(var j = 0; j < specName.length; j++){
-            if(specName[j].indexOf(" ") == specName[j].length-1){
-                specName[j] += specName[j+1];
-                specName.splice(j+1,1);
+        if(specName != undefined){
+            specName = specName.split(/(?=[A-Z])/);
+            
+            //Si une spec est composée de plusieurs mots
+            for(var j = 0; j < specName.length; j++){
+                if(specName[j].indexOf(" ") == specName[j].length-1){
+                    specName[j] += specName[j+1];
+                    specName.splice(j+1,1);
+                }
             }
+        }
+        else{
+            specName = [""];
         }
 
         GM_NewAbilityElement(e,powerName,specName);
@@ -499,7 +504,10 @@ function GM_NewAbilityElement(e,powerName,specName){
     });
 
     if(powerLevel == 1){
-        powerNameElement.innerText += " - " + specName[0];
+        if(specName[0] != ""){
+            powerNameElement.innerText += " - " + specName[0];
+        }
+        
         destinationBox[0].appendChild(powerNameElement);
     }
     else{
