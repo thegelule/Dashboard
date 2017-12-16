@@ -74,11 +74,15 @@ li.aspect{
     cursor: default;
 }
 
-.skills{
+.skills, .FakeSkills{
     border: 1px solid #dddddd!important;
     height: 34px;
     text-align: center;
     padding: 5px;
+}
+
+.FakeSkills{
+    border: none;
 }
 
 .row{
@@ -147,7 +151,7 @@ a.btn.btn-circle.btn-default {
 }
 
 .picture{
-    max-width: 100px;
+    max-width: 100%;
 }
 
 .bootstrap-select.btn-group .dropdown-menu.inner {
