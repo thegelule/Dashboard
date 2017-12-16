@@ -1177,11 +1177,10 @@ function characterSheetSpawn() {
         
     for(var i = 0; i < abilities.length;i++){
         var powerName = abilities[i].power;
-        var specs = abilities[i].spec;
+        var specs = abilities[i].specs;
         TextToDL += powerName + "\r\n";
         
         for(var j =0; j < specs.length; j++){
-            TextToDL += "\t";
             TextToDL += specs[j]
 
             if(j != specs.length-1){
