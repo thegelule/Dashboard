@@ -324,7 +324,7 @@ function GM_FillForms(e){
     GM_FillAspects(e.find(".AspectsContainer")[0],$(".CustomAspect"));
     GM_FillSkills(e.find(".skills"),$(".SkillInput"));
     GM_FillStunts(e.find(".StuntsContainer")[0],$("#StuntFormContainer"));
-    GM_FillAbilities(e.find(".AbilitiesContainer")[0],$(".CustomAbility"));
+    GM_FillAbilities(e.find(".AbilitiesContainer")[0],$("#AbilityFormContainer"));
 }
 
 function GM_FillPicture(e,url){
@@ -456,20 +456,51 @@ function GM_FillStunts(e,stuntsContainer){
                 title: stuntTitle,
                 content: stuntContent
             });
-            var stuntElementCS = GM_NewStuntOrAbilityElement(stuntTitle,stuntContent);
+            var stuntElementCS = GM_NewStuntElement(stuntTitle,stuntContent);
             formStunts.appendChild(stuntElementCS);
         }
     }
 }
 
-function GM_FillAbilities(e,abilities){
+function GM_FillAbilities(e,abilitiesContainer){
     var formAbilities = $(e).find(".form")[0];
-    //TODO: Sauvegarder les Abilities dans le CharacterObject
+    var abilitiesElements = $(abilitiesContainer).children(".AbilityContainer");
 
-    for(var i = 0; i < abilities.length; i++){
-        var ability = abilities[i].innerText;
-        var abilityElement = GM_NewStuntOrAbilityElement(ability.innerText);
-        formAbilities.appendChild(abilityElement);
+    for(var i = 0; i < abilitiesElements.length; i++){
+        var ability = abilitiesElements[i]
+        var powerName = $(ability).find(".CustomAbilityTitle")[0].value;
+        var specName = $(ability).find(".CustomAbilitySpec")[0].value;
+
+        GM_NewAbilityElement(powerName,specName);
+    }
+}
+
+function GM_NewAbilityElement(powerName,specName){
+    var powerLevel = specName.length;
+    var powerNameElement = document.createElement("li");
+    var destinationBox = $(".AbilityL" + powerLevel + " > ul");
+
+    powerNameElement.innerText = powerName;
+
+    if(powerLevel == 1){
+        powerNameElement.innerText += " - " + specName[0];
+        destinationBox[0].appendChild(powerNameElement);
+    }
+    else{
+        var sublistElement = document.createElement("ul");
+        
+
+        for(var i = 0; i < specName.length; i++){
+            var powerSpecElement = document.createElement("li");
+            var spec = specName[i];
+
+            powerSpecElement.innerText = spec;
+
+            sublistElement.appendChild(powerSpecElement);
+        }
+
+        destinationBox[0].appendChild(powerNameElement);
+        destinationBox[0].appendChild(sublistElement);
     }
 }
 
@@ -532,7 +563,7 @@ function NewStuntElement(stunt){
     return formGroup;
 }
 
-function GM_NewStuntOrAbilityElement(title,content){
+function GM_NewStuntElement(title,content){
     var formGroup = document.createElement("div");
     var textContainerParent = document.createElement("div");
     var titleContainer = document.createElement("div");
