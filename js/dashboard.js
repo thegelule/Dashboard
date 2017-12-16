@@ -734,7 +734,7 @@ function GenerateSelectSkillsList(selectID,skillString){
         }
     }
 
-    $(".selectpicker").selectpicker('refresh');
+    $(".SkillInput").selectpicker('refresh');
 }
 
 function SetPreviousValue(element){
@@ -759,4 +759,142 @@ function DuplicateAbilityForm(){
             $(".Fresh").addClass("Added");
         }
     });
+}
+
+function UpdateSpecSelect(element){
+    var DruidTab = ["Green Druid", "Runic Druid", "Theriantropy", "Technodruid", "Fey Sorcerer", "Mythcalling"];
+    var HemaTab = ["Itztli", "Yahuar","Flesh-Shaping"];
+    var SpiritTab = ["Necromancy","Soulbinding","Shamanism","Chwal: Rider","Chwal: Pupetteer"];
+    var WyrdTab = ["Mystery","Prophecy"];
+    var PhyTab = ["Strength","Resistance","Speed","Senses","Presence","Appearance"];
+    var FireTab = ["I","Destruction","Strife","Life","Invention","Drought","Magma"];
+    var WaterTab = ["I","Raging Sea", "Drowning", "Provider","Life"];
+    var LightTab = ["I","Sun","Brightness","Illumination"];
+    var NightTab = ["I","Veil","Moon","Terror","Nightmare","Sleep","Darkness","Stars","Void"];
+    var WorldTab = ["I","Life","Nature","Mountains","Expanse"];
+    var DepthTab = ["I","Shadows","Caverns","Abundance","Decay","Abyss"];
+    var SkyTab = ["I","Tempest","Cataclysm","Calm","Rain"];
+    var DeathTab = ["I","Inevitability","Horror","Extinction","Peace","Journey"];
+    var OrderTab = ["I","Knowledge","Law","Gravity","Control"];
+    var TaiyiTab = ["Nature Manipulation","Flow Manipulation"];
+    var NoSpecTab = [""];
+    var selected = $(':selected', element);
+    var groupLabel = selected.closest('optgroup').attr('label');
+    var specSelect = $(element).closest(".AbilityContainer").find(".CustomAbilitySpec");
+    var specFreeText = $(element).closest(".AbilityContainer").find(".SpecFreeText");
+
+    if(groupLabel.indexOf("Enlightened") < 0){
+        switch(element.value){
+            case "Druidism":
+            GenerateSelectSpecsList(DruidTab,specSelect);
+            specFreeText.style.display = "none";
+            break;
+
+            case "Hematurgy":
+            GenerateSelectSpecsList(HemaTab,specSelect);   
+            specFreeText.style.display = "none";
+            break;
+
+            case "Spiritwalking":
+            GenerateSelectSpecsList(SpiritTab,specSelect);  
+            specFreeText.style.display = "none"; 
+            break;
+
+            case "Wyrdseeing":
+            GenerateSelectSpecsList(WyrdTab,specSelect); 
+            specFreeText.style.display = "none";  
+            break;
+
+            case "Epic Physiology":
+            GenerateSelectSpecsList(PhyTab,specSelect); 
+            specFreeText.style.display = "none";  
+            break;
+
+            case "I:Fire":
+            GenerateSelectSpecsList(FireTab,specSelect);   
+            specFreeText.style.display = "none";
+            break;
+
+            case "I:Water":
+            GenerateSelectSpecsList(WaterTab,specSelect); 
+            specFreeText.style.display = "none";  
+            break;
+
+            case "I:Light":
+            GenerateSelectSpecsList(LightTab,specSelect);  
+            specFreeText.style.display = "none"; 
+            break;
+
+            case "I:Night":
+            GenerateSelectSpecsList(NightTab,specSelect);   
+            specFreeText.style.display = "none";
+            break;
+
+            case "I:World":
+            GenerateSelectSpecsList(WorldTab,specSelect);   
+            specFreeText.style.display = "none";
+            break;
+
+            case "I:Depths":
+            GenerateSelectSpecsList(DepthTab,specSelect);  
+            specFreeText.style.display = "none"; 
+            break;
+
+            case "I:Sky":
+            GenerateSelectSpecsList(SkyTab,specSelect);  
+            specFreeText.style.display = "none";
+            break;
+
+            case "I:Death":
+            GenerateSelectSpecsList(DeathTab,specSelect);  
+            specFreeText.style.display = "none"; 
+            break;
+
+            case "I:Order":
+            GenerateSelectSpecsList(OrderTab,specSelect); 
+            specFreeText.style.display = "none";  
+            break;
+
+            case "Taiyi":
+            GenerateSelectSpecsList(TaiyiTab,specSelect);   
+            specFreeText.style.display = "none";
+            break;
+
+            case "Enech":
+            GenerateSelectSpecsList(NoSpecTab,specSelect); 
+            specFreeText.style.display = "block";
+            break;
+
+            case "Runic Tattoos":
+            GenerateSelectSpecsList(NoSpecTab,specSelect); 
+            specFreeText.style.display = "block";
+            break;
+
+            default:
+            GenerateSelectSpecsList(NoSpecTab,specSelect); 
+            specFreeText.style.display = "none";
+            break;
+        }
+    }
+}
+
+function GenerateSelectSpecsList(tabOptions,selectElement){
+
+    $(selectElement).empty();
+
+    for(var i = 0; i < tabOptions.length; i++){
+        if(spec[0] == "I"){
+            continue;
+        }
+        else{
+            var option = document.createElement("option");
+            var spec = tabOptions[i];
+
+            option.value = spec;
+            option.innerHTML = spec;
+            selectElement.appendChild(option);
+        }
+    }
+
+    $(".CustomAbilitySpec").selectpicker('refresh');
 }

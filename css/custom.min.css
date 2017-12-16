@@ -209,3 +209,7 @@ a.btn.btn-circle.btn-default {
 .fa-chevron-left:before {
     content: "\f053" !important;
 }
+
+.CustomAbilityTitle, .CustomAbilitySpec{
+    width: 33% !important;
+}
