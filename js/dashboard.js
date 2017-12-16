@@ -468,17 +468,18 @@ function GM_FillAbilities(e,abilitiesContainer){
 
     for(var i = 0; i < abilitiesElements.length; i++){
         var ability = abilitiesElements[i]
-        var powerName = $(ability).find("div.CustomAbilityTitle").val();
-        var specName = $(ability).find("div.CustomAbilitySpec").val();
-
-        GM_NewAbilityElement(powerName,specName);
+        var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
+        var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
+		
+		specName = specName.split(/(?=[A-Z])/);
+        GM_NewAbilityElement(e,powerName,specName);
     }
 }
 
-function GM_NewAbilityElement(powerName,specName){
+function GM_NewAbilityElement(e,powerName,specName){
     var powerLevel = specName.length;
     var powerNameElement = document.createElement("li");
-    var destinationBox = $(".AbilityL" + powerLevel + " > ul");
+    var destinationBox = $(e).find(".AbilityL" + powerLevel + " > ul");
 
     powerNameElement.innerText = powerName;
 
