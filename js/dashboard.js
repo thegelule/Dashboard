@@ -708,7 +708,7 @@ function UpdateSkillsLeft(element){
 
 function GenerateSelectSkillsList(selectID,skillString){
     var optionsTab = [];
-    var skillsLabels = ["Athletics","Fight","Marksmanphip","Stealth","Will","Physique", "Technology", "Notice","First Aid","Lore","Manipulation","Presence","Rapport","Resources"];
+    var skillsLabels = ["Empty","Athletics","Fight","Marksmanphip","Stealth","Will","Physique", "Technology", "Notice","First Aid","Lore","Manipulation","Presence","Rapport","Resources"];
     var selectElement = document.getElementById(selectID);
 
     $(selectElement).empty();
