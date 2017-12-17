@@ -268,9 +268,17 @@ function GM_CreateCharacterContainer(){
     $(characArrowDown).addClass("fa fa-angle-down");
     characterName.innerHTML = $("#inputFileNameToSaveAs").val();
     $(characterName).addClass("LibraryCharacterName");
-    $(characterTag).addClass("btn grey-salsa");
+    $(characterTag).addClass("btn btn-default");
     deleteCharLabel.innerHTML = "Delete Character";
     $(deleteCharIcon).addClass("fa fa-times");
+    $(dropButton).addClass("dropdown-toggle");
+    dropButton.setAttribute("data-toggle","dropdown");
+    dropButton.setAttribute("data-hover","dropdown");
+    dropButton.setAttribute("data-close-others","true");
+    dropButton.setAttribute("aria-expanded","false");
+    dropButton.href = "javascript:;";
+    $(actionslist).addClass("dropdown-menu");
+
 
     viewCharacterSummaryAction.appendChild(viewCharacIcon);
     viewCharacterSummaryAction.appendChild(viewCharacLabel);
