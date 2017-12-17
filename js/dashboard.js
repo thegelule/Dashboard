@@ -1213,7 +1213,7 @@ function EmbedPDF(PDFurl){
     var ContentContainer = $("#ContentDisplayContainer");
     var PDFContainer = document.createElement("div");
     var options = {
-        height: $(".page-content-wrapper > .page-content")[0].style.minHeight
+        height: parseInt($(".page-content-wrapper > .page-content")[0].style.minHeight) - parseInt($(".page-footer").css("height")) - 5 + "px"
     }
 
     ContentContainer.empty();
