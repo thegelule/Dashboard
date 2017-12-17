@@ -236,7 +236,7 @@ function GM_CreateCharacterContainerOnLoad(character){
     $(characArrowDown).addClass("fa fa-angle-down");
     characterName.innerHTML = character.Name;
     $(characterName).addClass("LibraryCharacterName");
-    $(characterTag).addClass("btn btn-default");
+    $(characterTag).addClass("btn btn-default dropdown");
     deleteCharLabel.innerHTML = "Delete Character";
     $(deleteCharIcon).addClass("fa fa-times");
     $(dropButton).addClass("dropdown-toggle");
