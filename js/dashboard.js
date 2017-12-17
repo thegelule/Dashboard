@@ -271,8 +271,8 @@ function GM_CreateCharacterContainerOnLoad(character){
 
     deleteCharacterAction.addEventListener("click",function(){
         var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
-
-        DeleteCharacterFromLibrary(characterName,this);
+        var characterElement = $(this).closest(".dropdown");
+        DeleteCharacterFromLibrary(characterName,characterElement);
     });
 }
 
