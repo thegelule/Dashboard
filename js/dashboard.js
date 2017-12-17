@@ -185,11 +185,43 @@ function OpenCharacterDialog(element){
     
 }
 
+function isCharacSaved(){
+    var result = false;
+
+    for(var i =0; i < CharacterLibrary.length; i++){
+        var character = CharacterLibrary[i];
+        
+        if(CharacterObject.Name = character.Name && CharacterObject.Picture == character.Picture
+            && CharacterObject.Aspects == chracter.Aspects && CharacterObject.Skills == character.Skills
+            && CharacterObject.Stunts == character.Stunts && CharacterObject.Abilities == character.Abilities){
+                result = true;
+            }
+    }
+
+    return result;
+}
+
 function GM_SaveCharacterInLibrary(){
-    GM_CreateCharacterContainer();
-    GM_FetchCharacterInfo();
-    GM_CharacterSavedNotif();
-    GM_OpenLibraryPanel();
+    var characterExistsInLib = isCharacSaved();
+
+    if(!characterExistsInLib){
+        GM_CreateCharacterContainer();
+        GM_FetchCharacterInfo();
+        GM_CharacterSavedNotif();
+        GM_OpenLibraryPanel();
+    }
+    else{
+        $.bootstrapGrowl("This character already exists !",{
+            ele: 'body', // which element to append to
+            type: 'danger', // (null, 'info', 'danger', 'success')
+            offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+            align: 'right', // ('left', 'right', or 'center')
+            width: 250, // (integer, or 'auto')
+            delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+            allow_dismiss: true, // If true then will display a cross to close the popup.
+            stackup_spacing: 10 // spacing between consecutively stacked growls.
+          });
+    }
 }
 
 function GM_CharacterSavedNotif(){
@@ -234,10 +266,10 @@ function GM_CreateCharacterContainer(){
     applyTempLabel.innerHTML = "Spawn a Sheet";
     $(applyTempIcon).addClass("fa fa-html5");
     $(characArrowDown).addClass("fa fa-angle-down");
-    characterName = $("#inputFileNameToSaveAs").val();
+    characterName.innerHTML = $("#inputFileNameToSaveAs").val();
     $(characterName).addClass("LibraryCharacterName");
     $(characterTag).addClass("btn grey-salsa");
-    deleteCharLabel = "Delete Character";
+    deleteCharLabel.innerHTML = "Delete Character";
     $(deleteCharIcon).addClass("fa fa-times");
 
     viewCharacterSummaryAction.appendChild(viewCharacIcon);
@@ -252,6 +284,7 @@ function GM_CreateCharacterContainer(){
     dropButton.appendChild(characterName);
     dropButton.appendChild(characArrowDown);
     characterTag.appendChild(dropButton);
+    libraryContainer.appendChild(characterTag);
 
     viewCharacterSummaryAction.addEventListener("click",function(){
         GM_OpenCharacterDialog_Lib();
@@ -305,7 +338,7 @@ function GM_OpenCharacterDialog(){
                         label: "Save in Library",
                         className: 'btn-info',
                         callback: function(){
-                            GM_SaveCharacterInLibrary();
+                            GM_SaveCharacterInLibrary(CharacterObject);
                         }
                     },
                     cancel: {
