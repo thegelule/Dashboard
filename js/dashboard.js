@@ -201,6 +201,82 @@ function isCharacSaved(){
     return result;
 }
 
+function LoadCharactersFromStorage(){
+    CharacterLibrary = JSON.parse(localStorage.getItem("Characters"));
+
+    for(var i = 0; i < CharacterLibrary.length; i++){
+        var character = CharacterLibrary[i];
+        GM_CreateCharacterContainerOnLoad(character);
+    }
+    
+}
+
+function GM_CreateCharacterContainerOnLoad(character){
+    var libraryContainer = $(".CharacterLibraryContainer")[0];
+    var characterTag = document.createElement("div");
+    var dropButton = document.createElement("a");
+    var characterName = document.createElement("span");
+    var characArrowDown = document.createElement("i");
+    var actionslist = document.createElement("ul");
+    var viewCharacterSummary = document.createElement("li");
+    var applyHTMLTemplate = document.createElement("li");
+    var deleteCharacter = document.createElement("li");
+    var viewCharacterSummaryAction = document.createElement("a");
+    var deleteCharacterAction = document.createElement("a");
+    var viewCharacIcon = document.createElement("i");
+    var viewCharacLabel = document.createElement("span");
+    var applyTempIcon = document.createElement("i");
+    var applyTempLabel = document.createElement("span");
+    var deleteCharIcon = document.createElement("i");
+    var deleteCharLabel = document.createElement("span");
+
+    viewCharacLabel.innerHTML = "View Summary";
+    $(viewCharacIcon).addClass("fa fa-eye");
+    applyTempLabel.innerHTML = "Spawn a Sheet";
+    $(applyTempIcon).addClass("fa fa-html5");
+    $(characArrowDown).addClass("fa fa-angle-down");
+    characterName.innerHTML = character.Name;
+    $(characterName).addClass("LibraryCharacterName");
+    $(characterTag).addClass("btn btn-default");
+    deleteCharLabel.innerHTML = "Delete Character";
+    $(deleteCharIcon).addClass("fa fa-times");
+    $(dropButton).addClass("dropdown-toggle");
+    dropButton.setAttribute("data-toggle","dropdown");
+    dropButton.setAttribute("data-hover","dropdown");
+    dropButton.setAttribute("data-close-others","true");
+    dropButton.setAttribute("aria-expanded","false");
+    dropButton.href = "javascript:;";
+    $(actionslist).addClass("dropdown-menu");
+
+
+    viewCharacterSummaryAction.appendChild(viewCharacIcon);
+    viewCharacterSummaryAction.appendChild(viewCharacLabel);
+    deleteCharacterAction.appendChild(deleteCharIcon);
+    deleteCharacterAction.appendChild(deleteCharLabel);
+    viewCharacterSummary.appendChild(viewCharacterSummaryAction);
+    deleteCharacter.appendChild(deleteCharacterAction);
+    actionslist.appendChild(viewCharacterSummary);
+    actionslist.appendChild(applyHTMLTemplate);
+    actionslist.appendChild(deleteCharacter);
+    dropButton.appendChild(characterName);
+    dropButton.appendChild(characArrowDown);
+    characterTag.appendChild(dropButton);
+    characterTag.appendChild(actionslist);
+    libraryContainer.appendChild(characterTag);
+
+    viewCharacterSummaryAction.addEventListener("click",function(){
+        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var character = FetchCharacterFromStorage(characterName);
+        GM_OpenCharacterDialog_Lib(character);
+    });
+
+    deleteCharacterAction.addEventListener("click",function(){
+        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+
+        DeleteCharacterFromLibrary(characterName,this);
+    });
+}
+
 function GM_SaveCharacterInLibrary(){
     var characterExistsInLib = isCharacSaved();
 
@@ -292,10 +368,13 @@ function GM_CreateCharacterContainer(){
     dropButton.appendChild(characterName);
     dropButton.appendChild(characArrowDown);
     characterTag.appendChild(dropButton);
+    characterTag.appendChild(actionslist);
     libraryContainer.appendChild(characterTag);
 
     viewCharacterSummaryAction.addEventListener("click",function(){
-        GM_OpenCharacterDialog_Lib();
+        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var character = FetchCharacterFromStorage(characterName);
+        GM_OpenCharacterDialog_Lib(character);
     });
 
     deleteCharacterAction.addEventListener("click",function(){
