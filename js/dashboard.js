@@ -488,10 +488,21 @@ function GM_OpenCharacterDialog_Lib(characterName){
 }
 
 function OpenGMaker(){
-    
+    var localLib = localStorage.getItem("Characters");
     SetActiveMenu(document.getElementById("GMMenuButton"));
     //$(".page-quick-sidebar-toggler")[0].style.display = "block";
-    localStorage.Characters = [];
+
+    if(localLib != null){
+        CharacterLibrary = JSON.parse(localLib);
+    }
+    else{
+        localStorage.setItem("Characters",JSON.stringify("[]"));
+    }
+    
+    for(var i = 0;i < CharacterLibrary.length; i++){
+        var character = CharacterLibrary[i];
+        GM_CreateCharacterContainerOnLoad(character);
+    }
     
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
