@@ -495,7 +495,7 @@ function OpenGMaker(){
         CharacterLibrary = JSON.parse(localLib);
     }
     else{
-        localStorage.setItem("Characters",JSON.stringify("[]"));
+        localStorage.setItem("Characters",JSON.stringify([]));
     }
     
     for(var i = 0;i < CharacterLibrary.length; i++){
