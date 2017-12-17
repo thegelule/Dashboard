@@ -553,11 +553,22 @@ function GM_FillAspectsFromObject(e,aspects){
 }
 
 function GM_FillSkillsFromObject(e,skills){
-        
+    //On commence par concaténer tous les skills dans un tableau unique  
+    var skillsList = [];  
+    for(var j = 0; j < skills.length;j++){
+        var skillTab = skills[j];
+        for(var k = 0; k < skillTab.length;k++){
+            var skill = skillTab[k];
+
+            skillsList.push(skill);
+        }
+    }
+
+    //Puis on les assigne dans les div correspondants
     for(var i = 0; i < e.length; i++){
         var skillBox = e[i];
         
-        skillBox.innerText = skills[i];
+        skillBox.innerText = skillsList[i];
     }
 }
 
