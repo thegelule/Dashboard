@@ -246,3 +246,13 @@ a.dropdown-toggle {
 .CharacterLibraryContainer .fa-angle-down {
     float: right;
 }
+
+.CharacterLibraryContainer .btn.btn-default.dropdown {
+    padding: 0;
+}
+
+.CharacterLibraryContainer a.dropdown-toggle {
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}

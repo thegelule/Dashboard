@@ -289,7 +289,7 @@ function GM_SaveCharacterInLibrary(){
         $.bootstrapGrowl("This character already exists !",{
             ele: 'body', // which element to append to
             type: 'danger', // (null, 'info', 'danger', 'success')
-            offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+            offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
             align: 'right', // ('left', 'right', or 'center')
             width: 250, // (integer, or 'auto')
             delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
@@ -303,7 +303,7 @@ function GM_CharacterSavedNotif(){
     $.bootstrapGrowl("Character successfully saved !",{
         ele: 'body', // which element to append to
         type: 'success', // (null, 'info', 'danger', 'success')
-        offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+        offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
         align: 'right', // ('left', 'right', or 'center')
         width: 250, // (integer, or 'auto')
         delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
@@ -415,10 +415,10 @@ function GM_OpenCharacterDialog(){
                 message: bufferElement.innerHTML,
                 buttons: {
                     ok: {
-                        label: "Download",
+                        label: "Download Sheet",
                         className: 'btn-info',
                         callback: function(){
-                            SaveCharacterAsText();
+                            OpenDownloadUI();
                         }
                     },
                     noclose: {
@@ -456,6 +456,54 @@ function FetchCharacterFromStorage(characterName){
 }
 
 
+function OpenDownloadUI(){
+    bootbox.prompt({
+        title: "Which format do you prefer ?",
+        size: "large",
+        inputType: 'select',
+        inputOptions: [
+            {
+                text: 'Choose one...',
+                value: '',
+            },
+            {
+                text: 'Text file',
+                value: '1',
+            },
+            {
+                text: 'PDF Sheet',
+                value: '2',
+            }
+        ],
+        callback: function (result) {
+            if(result != ''){
+                if(result == '1'){
+                    SaveCharacterAsText();
+                }
+                else if(result == '2'){
+                    DisplayTemplateChoiceUI();
+                }
+                else{
+                    $.bootstrapGrowl("Your choice was not understood. Please try again.",{
+                        ele: 'body', // which element to append to
+                        type: 'danger', // (null, 'info', 'danger', 'success')
+                        offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+                        align: 'right', // ('left', 'right', or 'center')
+                        width: 250, // (integer, or 'auto')
+                        delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+                        allow_dismiss: true, // If true then will display a cross to close the popup.
+                        stackup_spacing: 10 // spacing between consecutively stacked growls.
+                    });
+                }
+            }
+        }
+    });
+}
+
+function DisplayTemplateChoiceUI(){
+
+}
+
 //Function appelée uniquement lors de la visualisation d'un character sauvegardé dans la library
 function GM_OpenCharacterDialog_Lib(character){    
     $.ajax({
@@ -466,19 +514,36 @@ function GM_OpenCharacterDialog_Lib(character){
             bufferElement.innerHTML = result; 
             if(character != null){
                 GM_FillFormsFromObject($(bufferElement),character); 
-                bootbox.alert(bufferElement.innerHTML);
+                bootbox.confirm({
+                    messsage: bufferElement.innerHTML,
+                    buttons: {
+                        confirm: {
+                            label: 'Download Sheet',
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: 'Close',
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if(result){
+                            OpenDownloadUI();
+                        }
+                    }
+                });
             }
             else{
                 $.bootstrapGrowl("This character doesn't exist...",{
                     ele: 'body', // which element to append to
                     type: 'danger', // (null, 'info', 'danger', 'success')
-                    offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+                    offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
                     align: 'right', // ('left', 'right', or 'center')
                     width: 250, // (integer, or 'auto')
                     delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
                     allow_dismiss: true, // If true then will display a cross to close the popup.
                     stackup_spacing: 10 // spacing between consecutively stacked growls.
-                  });
+                });
             }
             
         }
@@ -1140,4 +1205,19 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
     }
 
     $(".Added").selectpicker('refresh');
+}
+
+/*********** PDF Embed ************************/
+
+function EmbedPDF(PDFurl){
+    var ContentContainer = $("#ContentDisplayContainer");
+    var PDFContainer = document.createElement("div");
+
+    ContentContainer.empty();
+    PDFContainer.id = "PDFContainer";
+    ContentContainer.appendChild(PDFContainer);
+
+    PDFurl = "docs/" + PDFurl;
+
+    PDFObject.embed(PDFurl, "#PDFContainer");
 }
