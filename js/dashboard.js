@@ -1212,12 +1212,15 @@ function GenerateSelectSpecsList(tabOptions,selectElement){
 function EmbedPDF(PDFurl){
     var ContentContainer = $("#ContentDisplayContainer");
     var PDFContainer = document.createElement("div");
+    var options = {
+        height: $(".page-content-wrapper > .page-content")[0].style.minHeight
+    }
 
     ContentContainer.empty();
     PDFContainer.id = "PDFContainer";
-    ContentContainer.appendChild(PDFContainer);
+    ContentContainer[0].appendChild(PDFContainer);
 
     PDFurl = "docs/" + PDFurl;
 
-    PDFObject.embed(PDFurl, "#PDFContainer");
+    PDFObject.embed(PDFurl, "#PDFContainer", options);
 }
