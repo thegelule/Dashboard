@@ -214,6 +214,16 @@ a.btn.btn-circle.btn-default {
     content: "\f053" !important;
 }
 
+.fa-chevron-right:before {
+    content: "\f054" !important;
+}
+
 .CustomAbilityTitle, .CustomAbilitySpec{
     width: 33% !important;
+}
+
+.page-quick-sidebar-wrapper {
+    width: 25%;
+    right: -25%;
+    max-width: 500px;
 }

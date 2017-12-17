@@ -1,4 +1,5 @@
 var CharacterObject = {};
+var CharacterLibrary = [];
 
 function LoadingContent(){
     if(window.location.href.indexOf("#Godborn-Maker") > -1) {
@@ -191,8 +192,22 @@ function GM_SaveCharacterInLibrary(){
     GM_OpenLibraryPanel();
 }
 
-function GM_FetchCharacterInfo(){
+function GM_CharacterSavedNotif(){
+    $.bootstrapGrowl("Character successfully saved !",{
+        ele: 'body', // which element to append to
+        type: 'success', // (null, 'info', 'danger', 'success')
+        offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+        align: 'right', // ('left', 'right', or 'center')
+        width: 250, // (integer, or 'auto')
+        delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+        allow_dismiss: true, // If true then will display a cross to close the popup.
+        stackup_spacing: 10 // spacing between consecutively stacked growls.
+      });
+}
 
+function GM_FetchCharacterInfo(){
+    CharacterLibrary.push(CharacterObject);
+    localStorage.setItem("Characters",JSON.stringify(CharacterLibrary));
 }
 
 function GM_CreateCharacterContainer(){
@@ -206,7 +221,6 @@ function GM_CreateCharacterContainer(){
     var applyHTMLTemplate = document.createElement("li");
     var deleteCharacter = document.createElement("li");
     var viewCharacterSummaryAction = document.createElement("a");
-    var applyHTMLTemplateAction = document.createElement("a");
     var deleteCharacterAction = document.createElement("a");
     var viewCharacIcon = document.createElement("i");
     var viewCharacLabel = document.createElement("span");
@@ -228,12 +242,9 @@ function GM_CreateCharacterContainer(){
 
     viewCharacterSummaryAction.appendChild(viewCharacIcon);
     viewCharacterSummaryAction.appendChild(viewCharacLabel);
-    applyHTMLTemplateAction.appendChild(applyTempIcon);
-    applyHTMLTemplateAction.appendChild(applyTempLabel);
     deleteCharacterAction.appendChild(deleteCharIcon);
     deleteCharacterAction.appendChild(deleteCharLabel);
     viewCharacterSummary.appendChild(viewCharacterSummaryAction);
-    applyHTMLTemplate.appendChild(applyHTMLTemplateAction);
     deleteCharacter.appendChild(deleteCharacterAction);
     actionslist.appendChild(viewCharacterSummary);
     actionslist.appendChild(applyHTMLTemplate);
@@ -243,19 +254,29 @@ function GM_CreateCharacterContainer(){
     characterTag.appendChild(dropButton);
 
     viewCharacterSummaryAction.addEventListener("click",function(){
-        
-    });
-    
-    applyHTMLTemplateAction.addEventListener("click",function(){
-        
+        GM_OpenCharacterDialog_Lib();
     });
 
     deleteCharacterAction.addEventListener("click",function(){
         var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
 
-        DeleteCharacterFromLibrary(characterName);
+        DeleteCharacterFromLibrary(characterName,this);
     });
     
+}
+
+function DeleteCharacterFromLibrary(characterName,characterElement){
+    for(var i = 0; i < CharacterLibrary.length; i++){
+        var character = CharacterLibrary[i];
+
+        //On supprime le premier qu'on trouve et on sauvegarde le nouvel array dans le localStorage
+        if(character.Name == characterName){
+            CharacterLibrary.splice(i,1);
+            characterElement.style.display = "none";
+            localStorage.setItem("Characters",JSON.stringify(CharacterLibrary));
+            break;
+        }
+    }
 }
 
 function GM_OpenLibraryPanel(){
@@ -270,24 +291,76 @@ function GM_OpenCharacterDialog(){
             bufferElement = document.createElement("div");
             bufferElement.innerHTML = result; 
             GM_FillForms($(bufferElement)); 
-            bootbox.confirm({
+            bootbox.dialog({
                 message: bufferElement.innerHTML,
                 buttons: {
-                    confirm: {
-                        label: 'Download',
-                        className: 'btn-info'
+                    ok: {
+                        label: "Download",
+                        className: 'btn-info',
+                        callback: function(){
+                            SaveCharacterAsText();
+                        }
+                    },
+                    noclose: {
+                        label: "Save in Library",
+                        className: 'btn-info',
+                        callback: function(){
+                            GM_SaveCharacterInLibrary();
+                        }
                     },
                     cancel: {
-                        label: 'Cancel',
+                        label: "Close",
                         className: 'btn-default'
-                    }
-                },
-                callback: function (result) {
-                    if(result){
-                        SaveCharacterAsText();
                     }
                 }
             });
+            
+        }
+    });
+    
+}
+
+function FetchCharacterFromStorage(characterName){
+    var result = null;
+
+    for(var i = 0; i < CharacterLibrary.length; i++){
+        var character = CharacterLibrary[i];
+
+        if(character.Name = characterName){
+            result = character;
+            break;
+        }
+    }
+
+    return result;
+}
+
+
+//Function appelée uniquement lors de la visualisation d'un character sauvegardé dans la library
+function GM_OpenCharacterDialog_Lib(characterName){    
+    $.ajax({
+       url: "https://thegelule.github.io/Dashboard/pages/GM_CharacterSheet.html",
+        type: "GET",
+        success : function(result){
+            bufferElement = document.createElement("div");
+            bufferElement.innerHTML = result; 
+            var Character = FetchCharacterFromStorage(characterName);
+            if(Character != null){
+                GM_FillFormsFromObject($(bufferElement),Character); 
+                bootbox.alert(bufferElement.innerHTML);
+            }
+            else{
+                $.bootstrapGrowl("This character doesn't exist...",{
+                    ele: 'body', // which element to append to
+                    type: 'danger', // (null, 'info', 'danger', 'success')
+                    offset: {from: 'bottom', amount: 20}, // 'top', or 'bottom'
+                    align: 'right', // ('left', 'right', or 'center')
+                    width: 250, // (integer, or 'auto')
+                    delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+                    allow_dismiss: true, // If true then will display a cross to close the popup.
+                    stackup_spacing: 10 // spacing between consecutively stacked growls.
+                  });
+            }
             
         }
     });
@@ -298,6 +371,7 @@ function OpenGMaker(){
     
     SetActiveMenu(document.getElementById("GMMenuButton"));
     //$(".page-quick-sidebar-toggler")[0].style.display = "block";
+    localStorage.Characters = [];
     
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GodbornMaker.html",
@@ -310,13 +384,6 @@ function OpenGMaker(){
     });
 }
 
-function FillForms(e,ch){
-    FillName(e.find(".name")[0],ch.name);
-    FillAspects(e.find(".AspectsContainer")[0],ch.aspects);
-    FillSkills(e.find(".SkillsContainer")[0],ch.skills);
-    FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
-    FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
-}
 
 function GM_FillForms(e){
     FillName(e.find(".name")[0],$("#inputFileNameToSaveAs").val());
@@ -327,13 +394,18 @@ function GM_FillForms(e){
     GM_FillAbilities(e.find(".AbilitiesContainer")[0],$("#AbilityFormContainer"));
 }
 
-function GM_FillPicture(e,url){
-    e.src = url;
-    CharacterObject.Picture = url;
+function GM_FillFormsFromObject(e,character){
+    FillName(e.find(".name")[0],character.Name);
+    GM_FillPicture(e.find(".picture")[0],character.Picture);
+    GM_FillAspectsFromObject(e.find(".AspectsContainer")[0],character.Aspects);
+    GM_FillSkillsFromObject(e.find(".skills"),character.Skills);
+    GM_FillStuntsFromObject(e.find(".StuntsContainer")[0],character.Stunts);
+    GM_FillAbilitiesFromObject(e.find(".AbilitiesContainer")[0],character.Abilities);
 }
 
-function FillAspects(e,aspects){
+function GM_FillAspectsFromObject(e,aspects){
     var ulElement = $(e).find(".dropdown-menu-list")[0];
+   
     
     for(var i = 0; i < aspects.length; i++){
         var listItemElement = document.createElement("li");
@@ -342,12 +414,51 @@ function FillAspects(e,aspects){
         var aspectText = aspects[i];
         
         listItemElement.classList.add("aspect");
-        itemTextContainer.innerText = aspectText; 
+        itemTextContainer.innerText = aspectText;
         
         itemContainer.appendChild(itemTextContainer);
         listItemElement.appendChild(itemContainer);
         ulElement.appendChild(listItemElement);
     }
+}
+
+function GM_FillSkillsFromObject(e,skills){
+        
+    for(var i = 0; i < e.length; i++){
+        var skillBox = e[i];
+        
+        skillBox.innerText = skills[i];
+    }
+}
+
+function GM_FillStuntsFromObject(e, stunts){
+    var formStunts = $(e).find(".form")[0];
+    
+    for(var i = 0; i < stunts.length; i++){
+        var currentStunt = stunts[i];
+        var stuntTitle = currentStunt.title;
+        var stuntContent = currentStunt.content;
+
+        var stuntElementCS = GM_NewStuntElement(stuntTitle,stuntContent);
+        formStunts.appendChild(stuntElementCS);
+    }
+}
+
+function GM_FillAbilitiesFromObject(e,abilities){
+    var formAbilities = $(e).find(".form")[0];
+
+    for(var i = 0; i < abilities.length; i++){
+        var ability = abilities[i];
+        var powerName = ability.power;
+        var specName = ability.specs;
+        
+        GM_NewAbilityElement(e,powerName,specName,true);
+    }
+}
+
+function GM_FillPicture(e,url){
+    e.src = url;
+    CharacterObject.Picture = url;
 }
 
 function GM_FillAspects(e,aspects){
@@ -371,26 +482,6 @@ function GM_FillAspects(e,aspects){
 }
 
 
-
-function FillSkills(e,skills){    
-    for(var i = 0; i < skills.length; i++){
-        var skillLevelTab = skills[i];
-        var increment = 5 - (i+1);
-        var level = ".level" + increment;
-        var levelContainerElement = $(e).find(level);
-        var skillsElements = $(levelContainerElement[0]).find(".skills");
-        
-       for(var j = 0; j < skillLevelTab.length; j++){
-           var skill = skillLevelTab[j];
-           var skillElement = skillsElements[j];
-           
-           if(skill != undefined){
-               skillElement.innerText = skill;
-           }
-       } 
-    }
-}
-
 function GM_FillSkills(e,skills){ 
     
     var skillLevelTab = [];
@@ -407,7 +498,7 @@ function GM_FillSkills(e,skills){
             if((i+j) <= 5){ 
                 var fetchID = "Skill_" + i + "_" + j;
 
-                obj.names.push($(fetchID).text());
+                obj.names.push($("#" + fetchID + " option:selected").text());
                 skillLevelTab.push(document.getElementById(fetchID).value);
             }
         }
@@ -431,15 +522,6 @@ function GM_FillSkills(e,skills){
     }
 }
 
-function FillStunts(e,stunts){
-    var formStunts = $(e).find(".form")[0];
-    
-    for(var i = 0; i < stunts.length; i++){
-        var stunt = stunts[i];
-        var stuntElement = NewStuntElement(stunt);
-        formStunts.appendChild(stuntElement);
-    }
-}
 
 function GM_FillStunts(e,stuntsContainer){
     var formStunts = $(e).find(".form")[0];
@@ -490,22 +572,25 @@ function GM_FillAbilities(e,abilitiesContainer){
                 specName = [""];
             }
 
-            GM_NewAbilityElement(e,powerName,specName);
+            GM_NewAbilityElement(e,powerName,specName,false);
         }
     }
 }
 
-function GM_NewAbilityElement(e,powerName,specName){
+function GM_NewAbilityElement(e,powerName,specName,fromSaveInLib){
     var powerLevel = specName.length;
     var powerNameElement = document.createElement("li");
     var destinationBox = $(e).find(".AbilityL" + powerLevel + " > ul");
 
     powerNameElement.innerText = powerName;
-    CharacterObject.Abilities.push({
-        level: powerLevel,
-        power: powerName,
-        specs: specName
-    });
+
+    if(!fromSaveInLib)
+        CharacterObject.Abilities.push({
+            level: powerLevel,
+            power: powerName,
+            specs: specName
+        });
+    }
 
     if(powerLevel == 1){
         if(specName[0] != ""){
@@ -532,20 +617,6 @@ function GM_NewAbilityElement(e,powerName,specName){
     }
 }
 
-function FillAbilities(e,abilities){
-    for(var i = 0; i < abilities.length; i++){
-        var levelTab = abilities[i];
-        var classParameter = ".AbilityLevel" + (i+1);
-        var levelElement = $(e).find(classParameter)[0];
-        var abilitiesContainer = $(levelElement).find(".form")[0];
-        
-        for(var j = 0; j < levelTab.length; j++){
-            var ability = levelTab[j];
-            var abilityElement = NewAbilityElement(ability);
-            abilitiesContainer.appendChild(abilityElement);
-        }
-    }
-}
 
 function FillName(e,name){
     e.innerText = name;
@@ -642,37 +713,6 @@ function InitSelects(){
 function RequestInfoFromWiki(wikiPage){
     var requestURL = "http://www.wyrdwalkers.wikidot.com/" + wikiPage;
     window.open(requestURL, "_blank");
-    
-    /*var invocation = new XMLHttpRequest();
-   
-    if(invocation) {    
-        invocation.open('GET', requestURL, true);
-        invocation.onreadystatechange = function (result){
-            var bufferElement = document.createElement("div");
-            bufferElement.innerHTML = result; 
-            //FillForms($(bufferElement), character); 
-            bootbox.alert({
-                message: bufferElement.innerHTML,
-                size: "large"
-            });
-        };
-        invocation.send(); 
-      }*/
-
-    /*$.ajax({
-       url: requestURL,
-        type: "GET",
-        success : function(result){
-            bufferElement = document.createElement("div");
-            bufferElement.innerHTML = result; 
-            //FillForms($(bufferElement), character); 
-            bootbox.alert({
-                message: bufferElement.innerHTML,
-                size: "large"
-            });
-            
-        }
-    });*/
 }
 
 function ResetCharacterForm(){
