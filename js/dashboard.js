@@ -456,16 +456,15 @@ function FetchCharacterFromStorage(characterName){
 
 
 //Function appelée uniquement lors de la visualisation d'un character sauvegardé dans la library
-function GM_OpenCharacterDialog_Lib(characterName){    
+function GM_OpenCharacterDialog_Lib(character){    
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GM_CharacterSheet.html",
         type: "GET",
         success : function(result){
             bufferElement = document.createElement("div");
             bufferElement.innerHTML = result; 
-            var Character = FetchCharacterFromStorage(characterName);
-            if(Character != null){
-                GM_FillFormsFromObject($(bufferElement),Character); 
+            if(character != null){
+                GM_FillFormsFromObject($(bufferElement),character); 
                 bootbox.alert(bufferElement.innerHTML);
             }
             else{
@@ -761,6 +760,11 @@ function GM_NewAbilityElement(e,powerName,specName,fromSaveInLib){
 
 function FillName(e,name){
     e.innerText = name;
+
+    if(CharacterObject.Name == undefined){
+        CharacterObject.Name = "";
+    }
+
     CharacterObject.Name = name;
 }
 

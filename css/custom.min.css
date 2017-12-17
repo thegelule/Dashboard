@@ -227,3 +227,22 @@ a.btn.btn-circle.btn-default {
     right: -25%;
     max-width: 500px;
 }
+
+a.dropdown-toggle {
+    text-decoration: none;
+}
+
+.CharacterLibraryContainer .dropdown {
+    width: 100%;
+    text-align: left;
+}
+
+.CharacterLibraryContainer {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.CharacterLibraryContainer .fa-angle-down {
+    float: right;
+}
