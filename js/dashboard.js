@@ -555,7 +555,7 @@ function GM_FillSkillsFromObject(e,skills){
     //On commence par concaténer tous les skills dans un tableau unique  
     var skillsList = [];  
     for(var j = 0; j < skills.length;j++){
-        var skillTab = skills[j];
+        var skillTab = skills[j].names;
         for(var k = 0; k < skillTab.length;k++){
             var skill = skillTab[k];
 
