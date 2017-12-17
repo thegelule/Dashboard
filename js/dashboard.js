@@ -378,8 +378,9 @@ function GM_CreateCharacterContainer(){
 
     deleteCharacterAction.addEventListener("click",function(){
         var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
+        var characterElement = $(this).closest(".dropdown");
 
-        DeleteCharacterFromLibrary(characterName,this);
+        DeleteCharacterFromLibrary(characterName,characterElement);
     });
     
 }
@@ -391,7 +392,7 @@ function DeleteCharacterFromLibrary(characterName,characterElement){
         //On supprime le premier qu'on trouve et on sauvegarde le nouvel array dans le localStorage
         if(character.Name == characterName){
             CharacterLibrary.splice(i,1);
-            characterElement.style.display = "none";
+            characterElement[0].style.display = "none";
             localStorage.setItem("Characters",JSON.stringify(CharacterLibrary));
             break;
         }
