@@ -584,7 +584,7 @@ function GM_NewAbilityElement(e,powerName,specName,fromSaveInLib){
 
     powerNameElement.innerText = powerName;
 
-    if(!fromSaveInLib)
+    if(!fromSaveInLib){
         CharacterObject.Abilities.push({
             level: powerLevel,
             power: powerName,
