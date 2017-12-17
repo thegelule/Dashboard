@@ -264,13 +264,13 @@ function GM_CreateCharacterContainerOnLoad(character){
     libraryContainer.appendChild(characterTag);
 
     viewCharacterSummaryAction.addEventListener("click",function(){
-        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
         var character = FetchCharacterFromStorage(characterName);
         GM_OpenCharacterDialog_Lib(character);
     });
 
     deleteCharacterAction.addEventListener("click",function(){
-        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
 
         DeleteCharacterFromLibrary(characterName,this);
     });
@@ -343,7 +343,7 @@ function GM_CreateCharacterContainer(){
     $(characArrowDown).addClass("fa fa-angle-down");
     characterName.innerHTML = $("#inputFileNameToSaveAs").val();
     $(characterName).addClass("LibraryCharacterName");
-    $(characterTag).addClass("btn btn-default");
+    $(characterTag).addClass("btn btn-default dropdown");
     deleteCharLabel.innerHTML = "Delete Character";
     $(deleteCharIcon).addClass("fa fa-times");
     $(dropButton).addClass("dropdown-toggle");
@@ -371,13 +371,13 @@ function GM_CreateCharacterContainer(){
     libraryContainer.appendChild(characterTag);
 
     viewCharacterSummaryAction.addEventListener("click",function(){
-        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
         var character = FetchCharacterFromStorage(characterName);
         GM_OpenCharacterDialog_Lib(character);
     });
 
     deleteCharacterAction.addEventListener("click",function(){
-        var characterName = $(this).closest(".LibraryCharacterName")[0].innerText;
+        var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
 
         DeleteCharacterFromLibrary(characterName,this);
     });
