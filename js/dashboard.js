@@ -469,25 +469,29 @@ function GM_FillAbilities(e,abilitiesContainer){
 
     for(var i = 0; i < abilitiesElements.length; i++){
         var ability = abilitiesElements[i]
-        var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
-        var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
-        
-        if(specName != ""){
-            specName = specName.split(/(?=[A-Z])/);
+
+        if(ability.style.display != "none"){
+
+            var powerName = $(ability).find("div.CustomAbilityTitle .selected .text").text();
+            var specName = $(ability).find("div.CustomAbilitySpec .selected .text").text();
             
-            //Si une spec est composée de plusieurs mots
-            for(var j = 0; j < specName.length; j++){
-                if(specName[j].indexOf(" ") == specName[j].length-1){
-                    specName[j] += specName[j+1];
-                    specName.splice(j+1,1);
+            if(specName != ""){
+                specName = specName.split(/(?=[A-Z])/);
+                
+                //Si une spec est composée de plusieurs mots
+                for(var j = 0; j < specName.length; j++){
+                    if(specName[j].indexOf(" ") == specName[j].length-1){
+                        specName[j] += specName[j+1];
+                        specName.splice(j+1,1);
+                    }
                 }
             }
-        }
-        else{
-            specName = [""];
-        }
+            else{
+                specName = [""];
+            }
 
-        GM_NewAbilityElement(e,powerName,specName);
+            GM_NewAbilityElement(e,powerName,specName);
+        }
     }
 }
 
