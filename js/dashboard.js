@@ -202,7 +202,6 @@ function isCharacSaved(){
 }
 
 function LoadCharactersFromStorage(){
-    CharacterLibrary = JSON.parse(localStorage.getItem("Characters"));
 
     for(var i = 0; i < CharacterLibrary.length; i++){
         var character = CharacterLibrary[i];
