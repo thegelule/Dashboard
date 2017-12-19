@@ -1,0 +1,138 @@
+@page{
+    size: 7in 9.25in;
+    margin: 27mm 16mm 27mm 16mm;
+}
+
+.TemplateSheetBody{
+    padding: 20px;
+}
+.FrameContainer img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.CharacterPicture, .Frame{
+    width: 140px;
+    height: 177px;
+    position: absolute;
+    top: 0;
+    row: calc(50% - 70px);
+}
+
+.Frame{
+    z-index: 2;
+}
+
+.CharacterPicture{
+    z-index: 1;
+}
+
+.FrameContainer{
+    height: 177px;
+    position: relative;
+    
+}
+
+body {
+    font-size: 18px;
+ }
+
+ .AspectsTitleContainer {
+    text-align: center;
+}
+
+span.AspectsTitle {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.rowPart {
+    padding: 10px;
+    margin-right: 10px;
+    vertical-align: top;
+    width: calc(48% - 20px);
+}
+
+.RightPart {
+    padding: 10px;
+    margin-row: 10px;
+    width: calc(48% - 20px);
+}
+
+.AspectsContainer, .ConsequencesContainer, .InformationContainer {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.InformationContainer{
+    padding: 5px;
+}
+
+.ConsequencesTitleContainer, .FateTitleContainer {
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+span.ConsequencesTitle, span.FateTitle {
+    font-weight: bold;
+}
+
+.StressContainer {
+    border-top: 1px solid black;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+
+.PhysicalStressTitle, .MentalStressTitle, .ConseqContentTitle {
+    text-decoration: underline;
+    min-width: 115px;
+}
+
+.SquareBox {
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-row: 5px;
+}
+
+.ConsequencesLabelsContainer, .FatebindingsTitleContainer, .FatebindingsConsequencesContainer {
+    padding: 5px;
+}
+
+.PhysicalConsequencesContainer {
+    border-bottom: 1px black dashed;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.PhysicalConsequencesTitleContainer, .MentalConsequencesTitleContainer {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.Consequence {
+    width: 80px;
+    margin-bottom: 5px;
+}
+
+.CharacterName{
+    font-weight: bold;
+}
+
+.FateContainer{
+    border: 1px solid black;
+}
+
+.FatebindingsContainer{
+    border-top: 1px solid black;
+}
+
+.FatebindingsTitleContainer{
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.FatebindingsConseqTitleContainer {
+    margin-bottom: 5px;
+}
