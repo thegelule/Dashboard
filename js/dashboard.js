@@ -526,6 +526,7 @@ function DisplayTemplateChoiceUI(character){
                          GM_FillPDFTemplate($(bufferElement),character); 
                          bootbox.confirm({
                              message: bufferElement.innerHTML,
+                             size: "large",
                              buttons: {
                                  confirm: {
                                      label: 'Download Sheet',
