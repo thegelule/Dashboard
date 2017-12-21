@@ -249,10 +249,12 @@ a.dropdown-toggle {
 
 .CharacterLibraryContainer .btn.btn-default.dropdown {
     padding: 0;
+    margin-bottom: 10px;
 }
 
 .CharacterLibraryContainer a.dropdown-toggle {
     text-decoration: none;
     display: block;
     padding: 5px 10px;
+    color: #333;
 }
