@@ -403,6 +403,7 @@ function GM_OpenLibraryPanel(){
     $("#LibraryOpener").click();
 }
 
+//Appelée par le bouton "Save Character"
 function GM_OpenCharacterDialog(){    
     $.ajax({
        url: "https://thegelule.github.io/Dashboard/pages/GM_CharacterSheet.html",
@@ -418,7 +419,7 @@ function GM_OpenCharacterDialog(){
                         label: "Download Sheet",
                         className: 'btn-info',
                         callback: function(){
-                            OpenDownloadUI();
+                            OpenDownloadUI(CharacterObject);
                         }
                     },
                     noclose: {
@@ -456,10 +457,9 @@ function FetchCharacterFromStorage(characterName){
 }
 
 
-function OpenDownloadUI(){
+function OpenDownloadUI(character){
     bootbox.prompt({
         title: "Which format do you prefer ?",
-        size: "large",
         inputType: 'select',
         inputOptions: [
             {
@@ -478,10 +478,10 @@ function OpenDownloadUI(){
         callback: function (result) {
             if(result != ''){
                 if(result == '1'){
-                    SaveCharacterAsText();
+                    SaveCharacterAsText(character);
                 }
                 else if(result == '2'){
-                    DisplayTemplateChoiceUI();
+                    DisplayTemplateChoiceUI(character);
                 }
                 else{
                     $.bootstrapGrowl("Your choice was not understood. Please try again.",{
@@ -500,8 +500,150 @@ function OpenDownloadUI(){
     });
 }
 
-function DisplayTemplateChoiceUI(){
+function DisplayTemplateChoiceUI(character){
 
+    bootbox.prompt({
+        title: "Select your sheet template",
+        inputType: 'select',
+        inputOptions: [
+            {
+                text: 'Choose one...',
+                value: '',
+            },
+            {
+                text: 'Aesir - Norse Gods',
+                value: 'Aesir',
+            }
+        ],
+        callback: function (result) {
+            $.ajax({
+                url: "https://thegelule.github.io/Dashboard/Templates/" + result + "/" + result + "Fiche.html";
+                 type: "GET",
+                 success : function(result){
+                     bufferElement = document.createElement("div");
+                     bufferElement.innerHTML = result; 
+                     if(character != null){
+                         GM_FillPDFTemplate($(bufferElement),character); 
+                         bootbox.confirm({
+                             message: bufferElement.innerHTML,
+                             buttons: {
+                                 confirm: {
+                                     label: 'Download Sheet',
+                                     className: 'btn-outline blue-steel'
+                                 },
+                                 cancel: {
+                                     label: 'Back',
+                                     className: 'btn-outline purple-soft'
+                                 }
+                             },
+                             callback: function (result) {
+                                 if(result){
+                                     OpenDownloadUI(character);
+                                 }
+                             }
+                         });
+                     }
+                     else{
+                         $.bootstrapGrowl("This character doesn't exist...",{
+                             ele: 'body', // which element to append to
+                             type: 'danger', // (null, 'info', 'danger', 'success')
+                             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+                             align: 'right', // ('left', 'right', or 'center')
+                             width: 250, // (integer, or 'auto')
+                             delay: 2000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+                             allow_dismiss: true, // If true then will display a cross to close the popup.
+                             stackup_spacing: 10 // spacing between consecutively stacked growls.
+                         });
+                     }
+                     
+                 }
+             });
+        }
+    });
+}
+
+function GM_FillPDFTemplate(page,character){
+    var aspectsElements = $(page).find(".Aspect");
+    var aspects = character.Aspects;
+    var CharacterNameElement = $(page).find("#CharacterName");
+    var CharacterName = character.Name;
+    var SkillsElements = $(page).find(".Skill");
+    var Skills = character.Skills; //array of object : levels go 4, 3 2 and 1
+    var SkillsTab = [];
+    var Abilities = character.Abilities; //array of object : level,power, specs (array)
+    var StuntContainer = $(page).find(".StuntsContentContainer");
+    var Stunts = character.Stunts; //array of object : title, content
+
+    //Getting lazy. All filling functions are being concatenated here
+    //Filling Aspects
+    for(var i = 0; i < aspects.length;i++){
+        var aspect = aspects[i];
+        var element = aspectsElements[i];
+
+        element.innerHTML = aspect;
+    }
+
+    //Filling Skills.
+    for(var i = 0; i < Skills.length;i++){
+        var SkillsByLevel = Skills[i];
+        
+        for(var j = 0; j < SkillsByLevel.names.length;j++){
+            var name = SkillsByLevel.names[j];
+            SkillsTab.push(name)
+        }
+    }
+
+    for(var i = 0; i < SkillsElements.length; i++){
+        var Skill = SkillsElements[i];
+
+        if(SkillsTab[i] != undefined){
+            Skill.innerHTML += SkillsTab[i];
+        }
+        else{
+            bootbox.alert("An unknown error occured while filling the skills. Please try again or contact the admin;")
+        }
+    }
+    
+    //Filling Name
+    CharacterNameElement.innerHTML += CharacterName;
+
+    //Filling Abililites
+    for(var i = 0; i < Abilities.length;i++){
+        var ability = Abilities[i];
+        var level = ability.level;
+        var power = ability.power;
+        var specs = ability.specs;
+        var ConcernedPortlet = $(page).find(".Level" + level);
+        var listContainer = document.createElement("ul");
+        var listItem = document.createElement("li");
+
+        listContainer.appendChild(listItem);
+        ConcernedPortlet[0].appendChild(listContainer);
+
+        if(level == 1){
+            listItem.innerHTML = power + " - " + specs;
+        }
+        else{
+            var subListContainer = document.createElement("ul");
+
+            for(var j = 0; j < specs.length; j++){
+                var subListItem = document.createElement("li");
+                subListItem.innerHTML = specs[j];
+                subListContainer.appendChild(subListItem);
+            }
+
+            listItem.appendChild(subListContainer);
+        }
+    }
+
+    //Filling Stunts. More subtle as it need to fit within the allocated height of the template
+    /*for(var i = 0; i < aspects.length;i++){
+        var aspect = aspects[i];
+        var element = aspectsElements[i];
+
+        element.innerHTML = aspect;
+    }*/
+    
 }
 
 //Function appelée uniquement lors de la visualisation d'un character sauvegardé dans la library
@@ -528,7 +670,7 @@ function GM_OpenCharacterDialog_Lib(character){
                     },
                     callback: function (result) {
                         if(result){
-                            OpenDownloadUI();
+                            OpenDownloadUI(character);
                         }
                     }
                 });
