@@ -541,6 +541,9 @@ function DisplayTemplateChoiceUI(character){
                                  if(result){
                                      createPDF(bufferElement);
                                  }
+                                 else{
+                                    DisplayTemplateChoiceUI(character);
+                                 }
                              }
                          });
                      }
