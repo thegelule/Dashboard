@@ -539,7 +539,7 @@ function DisplayTemplateChoiceUI(character){
                              },
                              callback: function (result) {
                                  if(result){
-                                     OpenDownloadUI(character);
+                                     createPDF(bufferElement);
                                  }
                              }
                          });
