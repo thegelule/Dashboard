@@ -517,7 +517,7 @@ function DisplayTemplateChoiceUI(character){
         ],
         callback: function (result) {
             $.ajax({
-                url: "https://thegelule.github.io/Dashboard/Templates/" + result + "/" + result + "Fiche.html";
+                url: "https://thegelule.github.io/Dashboard/Templates/" + result + "/" + result + "Fiche.html",
                  type: "GET",
                  success : function(result){
                      bufferElement = document.createElement("div");
