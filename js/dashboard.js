@@ -515,15 +515,15 @@ function GM_OpenCharacterDialog_Lib(character){
             if(character != null){
                 GM_FillFormsFromObject($(bufferElement),character); 
                 bootbox.confirm({
-                    messsage: bufferElement.innerHTML,
+                    message: bufferElement.innerHTML,
                     buttons: {
                         confirm: {
                             label: 'Download Sheet',
-                            className: 'btn-success'
+                            className: 'blue-steel'
                         },
                         cancel: {
                             label: 'Close',
-                            className: 'btn-danger'
+                            className: 'red-soft'
                         }
                     },
                     callback: function (result) {
@@ -1257,3 +1257,4 @@ function getCanvas() {
     removeContainer: true
     });
 }
+
