@@ -523,7 +523,8 @@ function DisplayTemplateChoiceUI(character){
                      bufferElement = document.createElement("div");
                      bufferElement.innerHTML = result; 
                      if(character != null){
-                         GM_FillPDFTemplate($(bufferElement),character); 
+                         var chName = GM_FillPDFTemplate($(bufferElement),character); 
+                         
                          bootbox.confirm({
                              message: bufferElement.innerHTML,
                              size: "large",
@@ -539,7 +540,7 @@ function DisplayTemplateChoiceUI(character){
                              },
                              callback: function (result) {
                                  if(result){
-                                     createPDF(bufferElement);
+                                    ConvertToPDF(chName);
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
@@ -647,6 +648,8 @@ function GM_FillPDFTemplate(page,character){
 
         element.innerHTML = aspect;
     }*/
+
+    return CharacterName;
     
 }
 
@@ -1373,16 +1376,16 @@ function EmbedPDF(PDFurl){
 
 /*********** PDF Sheet Generator *****************/
 
-var form = $('.form');
+var form = $('.bootbox-body .form');
 var cache_width = form.width();
 var a4 = [595.28, 841.89]; // for a4 size paper width and height
 
-function ConvertToPDF(element){
-    $('body').scrollTop(0);
-    createPDF();
+function ConvertToPDF(docName){
+    $('.bootbox-body').scrollTop(0);
+    createPDF(docName);
 }
 
-function createPDF(){
+function createPDF(docName){
     getCanvas().then(function(canvas) {
         var
             img = canvas.toDataURL("image/png"),
@@ -1391,7 +1394,7 @@ function createPDF(){
             format: 'a4'
             });
         doc.addImage(img, 'JPEG', 20, 20);
-        doc.save('Aesir.pdf');
+        doc.save(docName + '.pdf');
         form.width(cache_width);
     });
 }
@@ -1399,8 +1402,8 @@ function createPDF(){
 function getCanvas() {
     form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
     return html2canvas(form[0], {
-    imageTimeout: 2000,
-    removeContainer: true
+        imageTimeout: 2000,
+        removeContainer: true
     });
 }
 
