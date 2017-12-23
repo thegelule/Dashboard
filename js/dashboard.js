@@ -1382,51 +1382,49 @@ function ConvertToPDF(docName){
 }
 
 function createPDF(docName){
-    var canvas = getCanvas(docName);
-    var imgP1 = canvas.p1.toDataURL("image/png");
-    var imgP2 = canvas.p2.toDataURL("image/png");
-    var doc = new jsPDF({
+	var doc = new jsPDF({
         unit: 'px',
         format: 'a4'
     });
-    var form = $(".Template");
-    var cache_width = form.width();
+
     var name = (docName != "") ? docName : "Sheet";
 
-    doc.addImage(imgP1, 'PNG', 20, 20);
-    doc.addPage();
-    doc.addImage(imgP2, 'PNG', 20, 20);
-    doc.save(name + '.pdf');
+    getCanvas(".Page1").then(function(canvas){
+		var form = $(".Template");
+		var cache_width = form.width();
+		var img = canvas.toDataURL("image/png");
+		var doc2 = doc;
 
-    form.width(cache_width);
+		doc.addImage(img, 'PNG', 20, 20);
+		doc.addPage();
+
+		getCanvas(".Page2").then(function(canvas){
+			var form = $(".Template");
+			var cache_width = form.width();
+			var img = canvas.toDataURL("image/png");
+
+			doc2.addImage(img, 'PNG', 20, 20);
+			doc2.save(name + '.pdf');
+			form.width(cache_width);
+		});
+	});
+    
+    
+    
+
+    
 }
 
-function getCanvas(docName) {
-    var wrapper = {
-        p1: null,
-        p2: null,
-        name: docName
-    }
-    var page1 = $('.Page1');
-    var page2 = $('.Page2');
+function getCanvas(pageSelector) {
+    var page = $(pageSelector);
     var a4 = [595.28, 841.89]; // for a4 size paper width and height
 
-    page1.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
-    page1.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+    page.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
 
-    var canvaP1 = html2canvas(page1[0], {
+    return html2canvas(page[0], {
         imageTimeout: 2000,
         removeContainer: false
     });
-
-    var canvaP2 = html2canvas(page2[0], {
-        imageTimeout: 3000,
-        removeContainer: false
-    });
-
-    wrapper.p1 = canvaP1;
-    wrapper.p2 = canvaP2;
-
-    return wrapper;
 }
+
 
