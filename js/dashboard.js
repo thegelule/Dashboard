@@ -1381,6 +1381,7 @@ function ConvertToPDF(docName){
     createPDF(docName);
 }
 
+
 function createPDF(docName){
 	var doc = new jsPDF({
         unit: 'px',
@@ -1388,6 +1389,7 @@ function createPDF(docName){
     });
 
     var name = (docName != "") ? docName : "Sheet";
+    var page2Promise = getCanvas(".Page2");
 
     getCanvas(".Page1").then(function(canvas){
 		var form = $(".Template");
@@ -1398,7 +1400,7 @@ function createPDF(docName){
 		doc.addImage(img, 'PNG', 20, 20);
 		doc.addPage();
 
-		getCanvas(".Page2").then(function(canvas){
+		page2Promise.then(function(canvas){
 			var form = $(".Template");
 			var cache_width = form.width();
 			var img = canvas.toDataURL("image/png");
@@ -1407,12 +1409,7 @@ function createPDF(docName){
 			doc2.save(name + '.pdf');
 			form.width(cache_width);
 		});
-	});
-    
-    
-    
-
-    
+	});   
 }
 
 function getCanvas(pageSelector) {

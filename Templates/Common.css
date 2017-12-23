@@ -106,7 +106,7 @@ span.ConsequencesTitle, span.FateTitle {
 }
 
 .PhysicalConsequencesContainer {
-    border-bottom: 1px black dashed;
+    border-bottom: 1px black solid;
     margin-bottom: 5px;
     padding-bottom: 5px;
 }
