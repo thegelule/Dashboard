@@ -90,7 +90,7 @@ span.ConsequencesTitle, span.FateTitle {
 }
 
 .PhysicalStressTitle, .MentalStressTitle, .ConseqContentTitle {
-    text-decoration: underline;
+    text-decoration: none;
     min-width: 115px;
 }
 
@@ -98,7 +98,7 @@ span.ConsequencesTitle, span.FateTitle {
     width: 10px;
     height: 10px;
     border: 1px solid rgba(0,0,0,0.3);
-    margin-row: 5px;
+    margin-bottom: 5px;
 }
 
 .ConsequencesLabelsContainer, .FatebindingsTitleContainer, .FatebindingsConsequencesContainer {
