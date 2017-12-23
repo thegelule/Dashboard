@@ -64,7 +64,7 @@ span.AspectsTitle {
     width: calc(50% - 20px);
 }
 
-.AspectsContainer, .ConsequencesContainer, .InformationContainer {
+.Template .AspectsContainer, .Template  .ConsequencesContainer, .Template .InformationContainer {
     border: 1px solid black;
     margin-bottom: 10px;
 }
@@ -147,7 +147,7 @@ span.ConsequencesTitle, span.FateTitle {
     text-align: center;
 }
 
-.SkillsContainer {
+.Template .SkillsContainer {
     display: inline-block !important;
     float: none !important;
 }
@@ -216,7 +216,7 @@ img.MiddleSeparatorSymbol{
     width: 75px;
 }
 
-.row {
+.Template .row {
     padding-left: 10px;
     padding-right: 10px;
     margin-right: 10px !important;
