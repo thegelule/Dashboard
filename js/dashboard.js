@@ -1376,12 +1376,8 @@ function EmbedPDF(PDFurl){
 
 /*********** PDF Sheet Generator *****************/
 
-var form = $('.bootbox-body .form');
-var cache_width = form.width();
-var a4 = [595.28, 841.89]; // for a4 size paper width and height
-
 function ConvertToPDF(docName){
-    $('.bootbox-body').scrollTop(0);
+    $('.Template').scrollTop(0);
     createPDF(docName);
 }
 
@@ -1393,6 +1389,9 @@ function createPDF(docName){
             unit: 'px',
             format: 'a4'
             });
+        var form = $('.Template');
+        var cache_width = form.width();
+        
         doc.addImage(img, 'JPEG', 20, 20);
         doc.save(docName + '.pdf');
         form.width(cache_width);
@@ -1400,6 +1399,8 @@ function createPDF(docName){
 }
 
 function getCanvas() {
+    var form = $('.Template');
+    var a4 = [595.28, 841.89]; // for a4 size paper width and height
     form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
     return html2canvas(form[0], {
         imageTimeout: 2000,
