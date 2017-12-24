@@ -540,7 +540,8 @@ function DisplayTemplateChoiceUI(character){
                              },
                              callback: function (result) {
                                  if(result){
-                                    ConvertToPDF(chName);
+                                    /*ConvertToPDF(chName);*/
+                                    printElem("Template");
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
@@ -1426,7 +1427,7 @@ function getCanvas(pageSelector) {
 
 
 function printElem(divId) {
-    var content = document.getElementById(divId).innerHTML;
+    var content = document.getElementsByClassName(divId)[0].innerHTML;
     var mywindow = window.open('', 'Print', 'height=600,width=800');
 
     mywindow.document.write('<html><head><title>Print</title>');

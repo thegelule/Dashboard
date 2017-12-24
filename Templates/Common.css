@@ -12,8 +12,8 @@
 }
 
 .CharacterPicture, .Frame{
-    width: 107px;
-    height: 141px;
+    width: 140px;
+    height: 175px;
     position: absolute;
     top: 0;
     margin-left: calc(50% - 70px);
