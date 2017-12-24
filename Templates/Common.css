@@ -12,11 +12,11 @@
 }
 
 .CharacterPicture, .Frame{
-    width: 140px;
-    height: 175px;
+    width: 107px;
+    height: 141px;
     position: absolute;
     top: 0;
-    margin-left: calc(50% - 70px);
+    margin-left: calc(50% - 54px);
 }
 
 .Frame{
@@ -35,7 +35,7 @@
 
 .form.Template {
     font-size: 18px;
-    /*width: 595.28px;*/
+    width: 595.28px;
  }
 
  .AspectsTitleContainer {
