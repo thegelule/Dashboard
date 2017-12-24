@@ -527,6 +527,7 @@ function DisplayTemplateChoiceUI(character){
                          
                          bootbox.confirm({
                              message: bufferElement.innerHTML,
+                             size:"large",
                              buttons: {
                                  confirm: {
                                      label: 'Download Sheet',
