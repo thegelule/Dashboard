@@ -540,8 +540,8 @@ function DisplayTemplateChoiceUI(character){
                              },
                              callback: function (result) {
                                  if(result){
-                                    ConvertToPDF(chName);
-                                    /*printElem("Template");*/
+                                    /*ConvertToPDF(chName);*/
+                                    printElem("Template");
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
