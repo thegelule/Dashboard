@@ -541,7 +541,7 @@ function DisplayTemplateChoiceUI(character){
                              callback: function (result) {
                                  if(result){
                                     ConvertToPDF(chName);
-                                    /*printElem("Template");
+                                    /*printElem("Template");*/
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
