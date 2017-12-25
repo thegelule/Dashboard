@@ -1433,8 +1433,8 @@ function printElem(divId,templateName) {
     var mywindow = window.open('', 'Print', 'height=600,width=800');
 
     mywindow.document.write('<html><head><title>Print</title>');
-    mywindow.document.write( "<link rel=\"stylesheet\" href=\"../Common.css\" type=\"text/css\"/>" );
-    mywindow.document.write( "<link rel=\"stylesheet\" href=\"" + templateName + ".css\" type=\"text/css\"/>" );
+    mywindow.document.write( "<link rel='stylesheet' href='../Common.css' type='text/css'/>" );
+    mywindow.document.write( "<link rel='stylesheet' href='" + templateName + ".css' type='text/css'/>" );
     mywindow.document.write('</head><body >');
     mywindow.document.write(content);
     mywindow.document.write('</body></html>');
