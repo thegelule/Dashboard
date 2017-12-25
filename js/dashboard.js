@@ -516,10 +516,12 @@ function DisplayTemplateChoiceUI(character){
             }
         ],
         callback: function (result) {
+            var templateName = result;
             $.ajax({
                 url: "https://thegelule.github.io/Dashboard/Templates/" + result + "/" + result + "Template.html",
                  type: "GET",
                  success : function(result){
+                     var tempName = templateName;
                      bufferElement = document.createElement("div");
                      bufferElement.innerHTML = result; 
                      if(character != null){
@@ -541,7 +543,7 @@ function DisplayTemplateChoiceUI(character){
                              callback: function (result) {
                                  if(result){
                                     /*ConvertToPDF(chName);*/
-                                    printElem("Template");
+                                    printElem("Template",tempName);
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
@@ -1426,11 +1428,13 @@ function getCanvas(pageSelector) {
 }
 
 
-function printElem(divId) {
+function printElem(divId,templateName) {
     var content = document.getElementsByClassName(divId)[0].innerHTML;
     var mywindow = window.open('', 'Print', 'height=600,width=800');
 
     mywindow.document.write('<html><head><title>Print</title>');
+    mywindow.document.write( "<link rel=\"stylesheet\" href=\"../Common.css\" type=\"text/css\"/>" );
+    mywindow.document.write( "<link rel=\"stylesheet\" href=\"" + templateName + ".css\" type=\"text/css\"/>" );
     mywindow.document.write('</head><body >');
     mywindow.document.write(content);
     mywindow.document.write('</body></html>');
