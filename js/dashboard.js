@@ -1412,7 +1412,7 @@ function createPDF(docName){
 			var cache_width = form.width();
 			var img = canvas.toDataURL("image/png");
 
-			doc2.addImage(img, 'PNG',20,20);
+			doc2.addImage(img, 'PNG',10,10);
 			doc2.save(name + '.pdf');
 			form.width(cache_width);
 		});
