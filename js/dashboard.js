@@ -1498,23 +1498,25 @@ function createPDF(docName){
 
     getCanvas(".Page1").then(function(canvas){
 		var form = $(".Template");
-		var cache_width = form.width();
-		var img = canvas.toDataURL("image/jpeg",1);
+        var cache_width = form.width();
+        setDPI(canvas,300);
+		var img = canvas.toDataURL("image/png");
         var doc2 = doc;
         
         /*var fileNameToSaveAs = "img1.txt";
         var textFileAsBlob = new Blob([img],{type:'text/plain;charset=utf-8'});
         saveAs(textFileAsBlob, fileNameToSaveAs);*/
 
-		doc.addImage(img, 'JPG',20,20);
+		doc.addImage(img, 'PNG',20,20);
 		doc.addPage();
 
 		page2Promise.then(function(canvas){
 			var form = $(".Template");
-			var cache_width = form.width();
-			var img = canvas.toDataURL("image/jpeg",1);
+            var cache_width = form.width();
+            setDPI(canvas,300);
+			var img = canvas.toDataURL("image/png");
 
-			doc2.addImage(img, 'JPG',10,10);
+			doc2.addImage(img, 'PNG',10,10);
 			doc2.save(name + '.pdf');
 			form.width(cache_width);
 		});
@@ -1533,6 +1535,33 @@ function getCanvas(pageSelector) {
         removeContainer: false,
         useCORS: true
     });
+}
+
+function setDPI(canvas, dpi) {
+    // Set up CSS size.
+    canvas.style.width = canvas.style.width || canvas.width + 'px';
+    canvas.style.height = canvas.style.height || canvas.height + 'px';
+
+    // Get size information.
+    var scaleFactor = dpi / 96;
+    var width = parseFloat(canvas.style.width);
+    var height = parseFloat(canvas.style.height);
+
+    // Backup the canvas contents.
+    var oldScale = canvas.width / width;
+    var backupScale = scaleFactor / oldScale;
+    var backup = canvas.cloneNode(false);
+    backup.getContext('2d').drawImage(canvas, 0, 0);
+
+    // Resize the canvas.
+    var ctx = canvas.getContext('2d');
+    canvas.width = Math.ceil(width * scaleFactor);
+    canvas.height = Math.ceil(height * scaleFactor);
+
+    // Redraw the canvas image and scale future draws.
+    ctx.setTransform(backupScale, 0, 0, backupScale, 0, 0);
+    ctx.drawImage(backup, 0, 0);
+    ctx.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
 }
 
 
