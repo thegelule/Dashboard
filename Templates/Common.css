@@ -239,7 +239,7 @@ img.MiddleSeparatorSymbol{
 }
 
 .Page1, .Page2 {
-    max-height: 860px;
+   /* max-height: 860px;*/
 }
 
 .Template .StuntsContainer{
