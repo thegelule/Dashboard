@@ -14,11 +14,11 @@
 }
 
 .CharacterPicture, .Frame{
-    width: 107px;
-    height: 141px;
+    width: 126px;
+    height: 158px;
     position: absolute;
     top: 0;
-    margin-left: calc(50% - 54px);
+    margin-left: calc(50% - 63px);
     left: 0;
 }
 
@@ -31,13 +31,13 @@
 }
 
 .FrameContainer{
-    height: 141px;
+    height: 158px;
     position: relative;
     
 }
 
 .form.Template {
-    font-size: 14px;
+    font-size: 16px;
     width: 714.28px;
  }
 
@@ -173,8 +173,8 @@ span.ConsequencesTitle, span.FateTitle {
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 7px;
-    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-bottom: 4px;
     padding-left: 6px;
     padding-right: 6px;
 }
@@ -239,7 +239,7 @@ img.MiddleSeparatorSymbol{
 }
 
 .Page1, .Page2 {
-    max-height: 840px;
+    max-height: 860px;
 }
 
 .Template .StuntsContainer{
