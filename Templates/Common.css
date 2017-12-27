@@ -2,10 +2,6 @@
     footer {
         page-break-after: always;
     }
-
-    .container{
-        display: block !important;
-    }
 }
 
 .TemplateSheetBody{
