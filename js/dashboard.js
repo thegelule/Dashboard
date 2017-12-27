@@ -1531,7 +1531,7 @@ function getCanvas(pageSelector) {
     return html2canvas(page[0], {
         imageTimeout: 2000,
         removeContainer: false,
-        allowTaint: true
+        useCORS: true
     });
 }
 
