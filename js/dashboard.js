@@ -107,7 +107,58 @@ function OpenCampaignStory(campString){
     
 }
 
+//Appelée lors de la consultation de fiches de perosnnages dans les camapgnes
+function FillForms(e,ch){
+    FillName(e.find(".name")[0],ch.name);
+    GM_FillAspectsFromObject(e.find(".AspectsContainer")[0],ch.aspects);
+    FillSkills(e.find(".SkillsContainer")[0],ch.skills);
+    FillStunts(e.find(".StuntsContainer")[0],ch.stunts);
+    FillAbilities(e.find(".AbilitiesContainer")[0],ch.abilities);
+}
 
+function FillSkills(e,skills){    
+    for(var i = 0; i < skills.length; i++){
+        var skillLevelTab = skills[i];
+        var increment = 5 - (i+1);
+        var level = ".level" + increment;
+        var levelContainerElement = $(e).find(level);
+        var skillsElements = $(levelContainerElement[0]).find(".skills");
+        
+        for(var j = 0; j < skillLevelTab.length; j++){
+            var skill = skillLevelTab[j];
+            var skillElement = skillsElements[j];
+            
+            if(skill != undefined){
+                skillElement.innerText = skill;
+            }
+        } 
+    }
+}
+
+function FillStunts(e,stunts){
+    var formStunts = $(e).find(".form")[0];
+    
+    for(var i = 0; i < stunts.length; i++){
+        var stunt = stunts[i];
+        var stuntElement = NewStuntElement(stunt);
+        formStunts.appendChild(stuntElement);
+    }
+}
+
+function FillAbilities(e,abilities){
+    for(var i = 0; i < abilities.length; i++){
+        var levelTab = abilities[i];
+        var classParameter = ".AbilityLevel" + (i+1);
+        var levelElement = $(e).find(classParameter)[0];
+        var abilitiesContainer = $(levelElement).find(".form")[0];
+        
+        for(var j = 0; j < levelTab.length; j++){
+            var ability = levelTab[j];
+            var abilityElement = NewAbilityElement(ability);
+            abilitiesContainer.appendChild(abilityElement);
+        }
+    }
+}
 
 function resizeIframe(obj) {
 	var pageContentHeight = window.getComputedStyle(document.getElementsByClassName("page-content")[0]).height.replace("px","");
@@ -645,6 +696,12 @@ function GM_FillPDFTemplate(page,character){
     }
 
     //Filling Stunts. More subtle as it need to fit within the allocated height of the template
+    var allocatedHeight = 400;
+    for(var i = 0; i < Stunts.length; i++){
+        var stuntName = Stunts[i].name;
+        var stuntContent = Stunts[i].content;
+
+    }
     /*for(var i = 0; i < aspects.length;i++){
         var aspect = aspects[i];
         var element = aspectsElements[i];
