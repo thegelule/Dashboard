@@ -252,3 +252,7 @@ img.MiddleSeparatorSymbol{
     padding: 15px;
     margin-bottom: 10px;
 }
+
+.StuntsContentContainer .StuntContainer{
+    font-size: 12px;
+}
