@@ -1432,6 +1432,8 @@ function printElem(divId,templateName) {
     var content = document.getElementsByClassName(divId)[0].innerHTML;
     var mywindow = window.open('', 'Print', 'height=600,width=800');
 
+    mywindow.document.open();
+
     mywindow.document.write('<html><head><title>Print</title>');
     mywindow.document.write( "<link rel='stylesheet' href='Templates/Common.css' type='text/css'/>" );
     mywindow.document.write( "<link rel='stylesheet' href='Templates/"  + templateName + "/"+ templateName + ".css' type='text/css'/>" );
@@ -1442,6 +1444,5 @@ function printElem(divId,templateName) {
     mywindow.document.close();
     mywindow.focus()
     mywindow.print();
-    mywindow.close();
     return true;
 }
