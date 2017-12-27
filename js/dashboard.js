@@ -1400,7 +1400,7 @@ function createPDF(docName){
 		var img = canvas.toDataURL("image/png");
 		var doc2 = doc;
 
-		doc.addImage(img, 'PNG', 20, 20);
+		doc.addImage(img, 'PNG', 20, 20,190,277);
 		doc.addPage();
 
 		page2Promise.then(function(canvas){
@@ -1408,7 +1408,7 @@ function createPDF(docName){
 			var cache_width = form.width();
 			var img = canvas.toDataURL("image/png");
 
-			doc2.addImage(img, 'PNG', 20, 20);
+			doc2.addImage(img, 'PNG', 20, 20,190,277);
 			doc2.save(name + '.pdf');
 			form.width(cache_width);
 		});
