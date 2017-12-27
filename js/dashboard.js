@@ -727,7 +727,7 @@ function GM_FillPDFTemplate(page,character){
             stuntContainer.appendChild(textContainer);
 
             //Prise en compte de la taille du stunt container : sa taille ne doit pas excéder celle de la ligne, à savoir 400/3.On diminue sa police si c'est le cas
-            while(parseInt($(stuntWrapper).height().replace("px","")) > 400/3){
+            while($(stuntWrapper).height() > 400/3){
                var currentFontSize = parseInt($(stuntContainer).css("font-size").replace("px",""));
                var newFontSize = currentFontSize - 1;
                $(stuntContainer).css("font-size", newFontSize + "px");
