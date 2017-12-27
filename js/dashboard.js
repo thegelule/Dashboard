@@ -1393,6 +1393,7 @@ function createPDF(docName){
 
     var name = (docName != "") ? docName : "Sheet";
     $(".Page1").css("padding-top","200px"); //html2canvas crops the first top 200px-ish. No idea why...
+    $(".Page2").css("padding-top","100px"); //html2canvas crops the first top 200px-ish. No idea why...
     var page2Promise = getCanvas(".Page2");
 
     getCanvas(".Page1").then(function(canvas){
