@@ -624,14 +624,20 @@ function DisplayTemplateChoiceUI(character){
 function GM_FillPDFTemplate(page,character){
     var aspectsElements = $(page).find(".Aspect");
     var aspects = character.Aspects;
-    var CharacterNameElement = $(page).find("#CharacterName");
+    var CharacterNameElement = $(page).find(".CharacterNameInside");
     var CharacterName = character.Name;
-    var SkillsElements = $(page).find(".Skill");
+    var Picture = character.Picture;
+    var PictureElement = $(page).find(".CharacterPicture");
+    var SkillsElements = $(page).find(".SkillInside");
     var Skills = character.Skills; //array of object : levels go 4, 3 2 and 1
     var SkillsTab = [];
     var Abilities = character.Abilities; //array of object : level,power, specs (array)
     var StuntsContainer = $(page).find(".StuntsContentContainer");
     var Stunts = character.Stunts; //array of object : title, content
+
+
+    //Filling character picture
+    PictureElement[0].src = Picture;
 
     //Getting lazy. All filling functions are being concatenated here
     //Filling Aspects
@@ -664,7 +670,7 @@ function GM_FillPDFTemplate(page,character){
     }
     
     //Filling Name
-    CharacterNameElement.innerHTML += CharacterName;
+    CharacterNameElement[0].innerHTML = CharacterName;
 
     //Filling Abililites
     for(var i = 0; i < Abilities.length;i++){
@@ -714,6 +720,7 @@ function GM_FillPDFTemplate(page,character){
             StuntsContainer[0].appendChild(stuntWrapper);
             var stuntContainer = document.createElement("div");
             $(stuntContainer).addClass("StuntContainer");
+            stuntWrapper.appendChild(stuntContainer);
             var stuntTitleSpan = document.createElement("span");
             $(stuntTitleSpan).addClass("StuntTitleText");
             stuntTitleSpan.innerHTML = stuntName;

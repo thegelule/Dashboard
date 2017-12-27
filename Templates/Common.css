@@ -256,3 +256,11 @@ img.MiddleSeparatorSymbol{
 .StuntsContentContainer .StuntContainer{
     font-size: 12px;
 }
+
+.CharacterNameInside{
+    font-weight: normal;
+}
+
+.SkillInside{
+    font-size: 14px;
+}
