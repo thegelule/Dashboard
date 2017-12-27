@@ -1499,7 +1499,7 @@ function createPDF(docName){
     getCanvas(".Page1").then(function(canvas){
 		var form = $(".Template");
         var cache_width = form.width();
-        setDPI(canvas,300);
+        /*setDPI(canvas,300);*/
 		var img = canvas.toDataURL("image/png");
         var doc2 = doc;
         
@@ -1513,7 +1513,7 @@ function createPDF(docName){
 		page2Promise.then(function(canvas){
 			var form = $(".Template");
             var cache_width = form.width();
-            setDPI(canvas,300);
+            /*setDPI(canvas,300);*/
 			var img = canvas.toDataURL("image/png");
 
 			doc2.addImage(img, 'PNG',10,10);
