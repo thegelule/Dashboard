@@ -14,12 +14,12 @@
 }
 
 .CharacterPicture, .Frame{
-    width: 126px;
-    height: 158px;
+    /*width: 126px;
+    height: 158px;*/
     position: absolute;
     top: 0;
-    margin-left: calc(50% - 63px);
-    left: 0;
+    /*margin-left: calc(50% - 63px);*/
+    right: 0;
 }
 
 .Frame{
@@ -31,9 +31,9 @@
 }
 
 .FrameContainer{
-    height: 158px;
+    height: 153px;
     position: relative;
-    
+    margin-bottom: 5px;
 }
 
 .form.Template {
