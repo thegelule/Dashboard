@@ -1400,9 +1400,9 @@ function createPDF(docName){
 		var img = canvas.toDataURL("image/png");
         var doc2 = doc;
         
-        var fileNameToSaveAs = "img1.txt";
+        /*var fileNameToSaveAs = "img1.txt";
         var textFileAsBlob = new Blob([img],{type:'text/plain;charset=utf-8'});
-        saveAs(textFileAsBlob, fileNameToSaveAs);
+        saveAs(textFileAsBlob, fileNameToSaveAs);*/
 
 		doc.addImage(img, 'PNG',0,0);
 		doc.addPage();
