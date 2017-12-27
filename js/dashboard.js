@@ -630,7 +630,7 @@ function GM_FillPDFTemplate(page,character){
     var Skills = character.Skills; //array of object : levels go 4, 3 2 and 1
     var SkillsTab = [];
     var Abilities = character.Abilities; //array of object : level,power, specs (array)
-    var StuntContainer = $(page).find(".StuntsContentContainer");
+    var StuntsContainer = $(page).find(".StuntsContentContainer");
     var Stunts = character.Stunts; //array of object : title, content
 
     //Getting lazy. All filling functions are being concatenated here
@@ -698,9 +698,31 @@ function GM_FillPDFTemplate(page,character){
     //Filling Stunts. More subtle as it need to fit within the allocated height of the template
     var allocatedHeight = 400;
     for(var i = 0; i < Stunts.length; i++){
-        var stuntName = Stunts[i].name;
+        var stuntName = Stunts[i].title;
         var stuntContent = Stunts[i].content;
 
+        if(Stunts.length <= 9){//On prévoit de base 9 stunts à rentrer dans l'espace réservé
+            var stuntWrapper = document.createElement("div");
+            $(stuntWrapper).addClass("col-lg-4 col-md-4");
+            StuntsContainer[0].appendChild(stuntWrapper);
+            var stuntContainer = document.createElement("div");
+            $(stuntContainer).addClass("StuntContainer");
+            var stuntTitleSpan = document.createElement("span");
+            $(stuntTitleSpan).addClass("StuntTitleText");
+            stuntTitleSpan.innerHTML = stuntName;
+            var titleContainer = document.createElement("div");
+            $(titleContainer).addClass("StuntTitleContainer");
+            titleContainer.style.marginBottom = "5px";
+            titleContainer.appendChild(stuntTitleSpan);
+            stuntContainer.appendChild(titleContainer);
+            var textContainer = document.createElement("div");
+            textContainer.classList.add("stuntText");
+            textContainer.innerHTML = stuntContent;
+            textContainerParent.appendChild(textContainer);
+        }
+        else{ //Pour les personnages de plus haut niveau, il se peut que plus de 9 stunts soient accumulés. Il faut prévoir de réduire les dimensions de chaque stunt pour pouvoir les faire tous rentrer dans l'espace alloué.
+            //TODO quand le cas se présentera
+        }
     }
     /*for(var i = 0; i < aspects.length;i++){
         var aspect = aspects[i];
