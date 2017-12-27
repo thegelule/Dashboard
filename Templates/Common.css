@@ -264,3 +264,7 @@ img.MiddleSeparatorSymbol{
 .SkillInside{
     font-size: 14px;
 }
+
+.Template .Ability {
+    font-size: 12px;
+}
