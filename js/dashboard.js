@@ -684,6 +684,7 @@ function GM_FillPDFTemplate(page,character){
         }
         else{
             var subListContainer = document.createElement("ul");
+            listItem.innerHTML = power;
 
             for(var j = 0; j < specs.length; j++){
                 var subListItem = document.createElement("li");
