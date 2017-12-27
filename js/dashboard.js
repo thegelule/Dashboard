@@ -1404,7 +1404,7 @@ function createPDF(docName){
         var textFileAsBlob = new Blob([img],{type:'text/plain;charset=utf-8'});
         saveAs(textFileAsBlob, fileNameToSaveAs);*/
 
-		doc.addImage(img, 'PNG',0,0);
+		doc.addImage(img, 'PNG',20,20);
 		doc.addPage();
 
 		page2Promise.then(function(canvas){
@@ -1412,7 +1412,7 @@ function createPDF(docName){
 			var cache_width = form.width();
 			var img = canvas.toDataURL("image/png");
 
-			doc2.addImage(img, 'PNG',0,0);
+			doc2.addImage(img, 'PNG',20,20);
 			doc2.save(name + '.pdf');
 			form.width(cache_width);
 		});

@@ -38,7 +38,7 @@
 
 .form.Template {
     font-size: 14px;
-    /*width: 595.28px;*/
+    width: 720.28px;
  }
 
  .AspectsTitleContainer {
@@ -203,11 +203,6 @@ footer.TemplateFooter {
     margin-right: 10px;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-img.MiddleLogo {
-    margin-left: 15px;
-    margin-right: 20px;
 }
 
 img.MiddleSeparatorSymbol{
