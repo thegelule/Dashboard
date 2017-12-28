@@ -564,6 +564,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Aesir - Norse Gods',
                 value: 'Aesir',
+            },
+            {
+                text: 'Amatsukami - Japanese Gods',
+                value: 'Amatsukami',
             }
         ],
         callback: function (result) {
@@ -705,7 +709,7 @@ function GM_FillPDFTemplate(page,character){
         }
     }
 
-    //Filling Stunts. More subtle as it need to fit within the allocated height of the template
+    //Filling Stunts. More subtle as it needs to fit within the allocated height of the template
     var allocatedHeight = 400;
     var rowElement = null;
     for(var i = 0; i < Stunts.length; i++){
