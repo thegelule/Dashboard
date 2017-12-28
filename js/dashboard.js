@@ -679,10 +679,13 @@ function GM_FillPDFTemplate(page,character){
         var power = ability.power;
         var specs = ability.specs;
         var ConcernedPortlet = $(page).find(".Level" + level);
+        var listWrapper = document.createElement("div");
         var listContainer = document.createElement("ul");
         var listItem = document.createElement("li");
 
-        listContainer.appendChild(listItem);
+        $(listWrapper).addClass("col-lg-4 col-md-4 col-sm-12 col-xs-12");
+        listWrapper.appendChild(listItem);
+        listContainer.appendChild(listWrapper);
         ConcernedPortlet[0].appendChild(listContainer);
 
         if(level == 1){
