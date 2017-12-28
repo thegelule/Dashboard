@@ -685,6 +685,7 @@ function GM_FillPDFTemplate(page,character){
 
         $(listWrapper).addClass("col-lg-4 col-md-4 col-sm-12 col-xs-12 AbilityDiv");
         listWrapper.appendChild(listContainer);
+        listContainer.appendChild(listItem);
         ConcernedPortlet[0].appendChild(listWrapper);
 
         if(level == 1){
