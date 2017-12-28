@@ -572,6 +572,8 @@ function DisplayTemplateChoiceUI(character){
         ],
         callback: function (result) {
             var templateName = result;
+            var CSSinclude = $("#TemplateCSS");
+            CSSinclude[0].src = "Templates/" + result + "/" + result + ".css";
             $.ajax({
                 url: "https://thegelule.github.io/Dashboard/Templates/" + result + "/" + result + "Template.html",
                  type: "GET",
