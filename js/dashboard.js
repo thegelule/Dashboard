@@ -568,6 +568,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Amatsukami - Japanese Gods',
                 value: 'Amatsukami',
+            },
+            {
+                text: 'Ayllus - Incan Gods',
+                value: 'Ayllus',
             }
         ],
         callback: function (result) {
