@@ -268,3 +268,8 @@ img.MiddleSeparatorSymbol{
 .Template .Ability {
     font-size: 12px;
 }
+
+.Template .AbilityDiv{
+    float: none !important;
+    display: inline-block;
+}

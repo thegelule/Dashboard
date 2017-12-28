@@ -665,7 +665,7 @@ function GM_FillPDFTemplate(page,character){
             Skill.innerHTML += SkillsTab[i];
         }
         else{
-            bootbox.alert("An unknown error occured while filling the skills. Please try again or contact the admin;")
+            bootbox.alert("An unknown error occured while filling the skills. Please try again or contact the admin");
         }
     }
     
@@ -683,10 +683,9 @@ function GM_FillPDFTemplate(page,character){
         var listContainer = document.createElement("ul");
         var listItem = document.createElement("li");
 
-        $(listWrapper).addClass("col-lg-4 col-md-4 col-sm-12 col-xs-12");
-        listWrapper.appendChild(listItem);
-        listContainer.appendChild(listWrapper);
-        ConcernedPortlet[0].appendChild(listContainer);
+        $(listWrapper).addClass("col-lg-4 col-md-4 col-sm-12 col-xs-12 AbilityDiv");
+        listWrapper.appendChild(listContainer);
+        ConcernedPortlet[0].appendChild(listWrapper);
 
         if(level == 1){
             listItem.innerHTML = power + " - " + specs;
