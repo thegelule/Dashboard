@@ -272,6 +272,7 @@ img.MiddleSeparatorSymbol{
 }
 
 .Template .StuntContainer{
+    border: none;
     border-bottom: 1px solid rgb(126, 126, 126);
     padding: 2px;
     margin-bottom: 2px;
@@ -300,4 +301,8 @@ img.MiddleSeparatorSymbol{
 
 .Template .StuntTitleText{
     font-weight: bold;
+}
+
+.Template .stuntText{
+    font-weight: normal;
 }

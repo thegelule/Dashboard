@@ -735,7 +735,7 @@ function GM_FillPDFTemplate(page,character){
             stuntWrapper.appendChild(stuntContainer);
             var stuntTitleSpan = document.createElement("span");
             $(stuntTitleSpan).addClass("StuntTitleText");
-            stuntTitleSpan.innerHTML = stuntName + ":";
+            stuntTitleSpan.innerHTML = stuntName + ": ";
             var titleContainer = document.createElement("div");
             $(titleContainer).addClass("StuntTitleContainer");
             titleContainer.appendChild(stuntTitleSpan);
