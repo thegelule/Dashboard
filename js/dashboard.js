@@ -1596,7 +1596,6 @@ function printElem(divId,templateName) {
     $(mywindow).load(function(){
         mywindow.focus();
         mywindow.print();
-        mywindow.close();
 
     });
 
