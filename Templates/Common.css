@@ -63,6 +63,19 @@ span.AspectsTitle {
     width: calc(50% - 20px);
 }
 
+.PrintBody .LeftPart {
+    padding: 10px;
+    margin-right: 10px;
+    vertical-align: top;
+    width: calc(49% - 20px);
+}
+
+.PrintBody .RightPart {
+    padding: 10px;
+    -webkit-margin-bottom-collapse: 10px;
+    width: calc(48% - 20px);
+}
+
 .Template .AspectsContainer, .Template  .ConsequencesContainer, .Template .InformationContainer {
     border: 1px solid black;
     margin-bottom: 10px;
