@@ -729,23 +729,21 @@ function GM_FillPDFTemplate(page,character){
 
         if(Stunts.length <= 9){//On prévoit de base 9 stunts à rentrer dans l'espace réservé
             var stuntWrapper = document.createElement("div");
-            $(stuntWrapper).addClass("col-lg-4 col-md-4");
             StuntsContainer[0].appendChild(stuntWrapper);
             var stuntContainer = document.createElement("div");
             $(stuntContainer).addClass("StuntContainer");
             stuntWrapper.appendChild(stuntContainer);
             var stuntTitleSpan = document.createElement("span");
             $(stuntTitleSpan).addClass("StuntTitleText");
-            stuntTitleSpan.innerHTML = stuntName;
+            stuntTitleSpan.innerHTML = stuntName + ":";
             var titleContainer = document.createElement("div");
             $(titleContainer).addClass("StuntTitleContainer");
-            titleContainer.style.marginBottom = "5px";
             titleContainer.appendChild(stuntTitleSpan);
             stuntContainer.appendChild(titleContainer);
-            var textContainer = document.createElement("div");
+            var textContainer = document.createElement("span");
             textContainer.classList.add("stuntText");
             textContainer.innerHTML = stuntContent;
-            stuntContainer.appendChild(textContainer);
+            stuntTitleSpan.appendChild(textContainer);
 
             //Prise en compte de la taille du stunt container : sa taille ne doit pas excéder celle de la ligne, à savoir 400/3.On diminue sa police si c'est le cas
             while($(stuntWrapper).height() > 400/3){

@@ -235,7 +235,12 @@ img.MiddleSeparatorSymbol{
 }
 
 .StuntsContentContainer.row {
-    height: 400px;
+    height: 300px;
+    font-size: 14px;
+}
+
+.PrintBody .StuntsContentContainer.row {
+    height: 300px;
     font-size: 14px;
 }
 
@@ -261,9 +266,9 @@ img.MiddleSeparatorSymbol{
 }
 
 .StuntContainer{
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(126, 126, 126);
+    padding: 2px;
+    margin-bottom: 2px;
 }
 
 .StuntsContentContainer .StuntContainer{
@@ -285,4 +290,8 @@ img.MiddleSeparatorSymbol{
 .Template .AbilityDiv{
     float: none !important;
     display: inline-block;
+}
+
+.Template .StuntTitleText{
+    font-weight: bold;
 }
