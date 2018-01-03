@@ -604,7 +604,7 @@ function DisplayTemplateChoiceUI(character){
                              callback: function (result) {
                                  if(result){
                                     /*ConvertToPDF(chName);*/
-                                    printElem("modal-body",tempName);
+                                    printElem("bootbox-body",tempName);
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
@@ -1592,7 +1592,10 @@ function printElem(divId,templateName) {
     mywindow.document.write('</body></html>');
 
     mywindow.document.close();
-    mywindow.focus()
+
+    mywindow.focus();
     mywindow.print();
+    mywindow.close();
+
     return true;
 }
