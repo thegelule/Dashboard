@@ -603,8 +603,8 @@ function DisplayTemplateChoiceUI(character){
                              },
                              callback: function (result) {
                                  if(result){
-                                    ConvertToPDF(chName);
-                                    /*printElem("Template",tempName);*/
+                                    /*ConvertToPDF(chName);*/
+                                    printElem("modal-body",tempName);
                                  }
                                  else{
                                     DisplayTemplateChoiceUI(character);
