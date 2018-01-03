@@ -1582,20 +1582,24 @@ function printElem(divId,templateName) {
     var content = document.getElementsByClassName(divId)[0].innerHTML;
     var mywindow = window.open('', 'Print');
 
-    mywindow.document.open();
+    $(mywindow).load(function(){
+        
+        mywindow.document.open();
 
-    mywindow.document.write('<html><head><title>Print</title>');
-    mywindow.document.write( "<link rel='stylesheet' href='Templates/Common.css' type='text/css'/>" );
-    mywindow.document.write( "<link rel='stylesheet' href='Templates/"  + templateName + "/"+ templateName + ".css' type='text/css'/>" );
-    mywindow.document.write('</head><body>');
-    mywindow.document.write(content);
-    mywindow.document.write('</body></html>');
+        mywindow.document.write('<html><head><title>Print</title>');
+        mywindow.document.write( "<link rel='stylesheet' href='Templates/Common.css' type='text/css'/>" );
+        mywindow.document.write( "<link rel='stylesheet' href='Templates/"  + templateName + "/"+ templateName + ".css' type='text/css'/>" );
+        mywindow.document.write('</head><body>');
+        mywindow.document.write(content);
+        mywindow.document.write('</body></html>');
 
-    mywindow.document.close();
+        mywindow.document.close();
 
-    mywindow.focus();
-    mywindow.print();
-    mywindow.close();
+        mywindow.focus();
+        mywindow.print();
+        mywindow.close();
+
+    });
 
     return true;
 }
