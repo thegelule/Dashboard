@@ -192,6 +192,10 @@ span.ConsequencesTitle, span.FateTitle {
     padding-right: 6px;
 }
 
+.PrintBody .SkillLevelLabel{
+    -webkit-print-color-adjust: exact;
+}
+
 .SkillPart{
     margin-bottom: 10px;
 }
