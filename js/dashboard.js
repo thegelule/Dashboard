@@ -1586,6 +1586,7 @@ function printElem(divId,templateName) {
 
     mywindow.document.write('<html><head><title>Print</title>');
     mywindow.document.write("<link href='css/bootstrap.min.css' rel='stylesheet' type='text/css' />'");
+    mywindow.document.write("<link href='css/components.min.css' rel='stylesheet' type='text/css' />'");
     mywindow.document.write( "<link rel='stylesheet' href='Templates/Common.css' type='text/css'/>" );
     mywindow.document.write( "<link rel='stylesheet' href='Templates/"  + templateName + "/"+ templateName + ".css' type='text/css'/>" );
     mywindow.document.write('</head><body class="PrintBody">');
