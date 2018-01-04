@@ -7,15 +7,21 @@ img.MiddleLogo {
     /* vertical-align: middle; */
     /*padding-top: 9px;*/
     margin-left: 73px;
+    transform: rotate(90deg);
 }
 
 img.MiddleSeparatorSymbol {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-img.BogiSideLogo {
-    width: 65px;
-    margin-right: 35px;
+img.DevaSideLogo {
+    transform: rotate(90deg);
+    width: 60px;
     margin-left: 35px;
+    margin-right: 35px;
+}
+
+img.MiddleSeparatorSymbol {
+    width: 120px;
 }
