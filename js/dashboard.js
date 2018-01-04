@@ -580,6 +580,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Celestial Bureaucracy - Chinese Gods',
                 value: 'Bureaucracy',
+            },
+            {
+                text: 'Deva - Hindu Gods',
+                value: 'Deva',
             }
         ],
         callback: function (result) {
