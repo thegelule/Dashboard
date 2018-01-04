@@ -11,8 +11,8 @@ img.MiddleLogo {
 }
 
 img.MiddleSeparatorSymbol {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 img.DevaSideLogo {
@@ -20,8 +20,4 @@ img.DevaSideLogo {
     width: 60px;
     margin-left: 35px;
     margin-right: 35px;
-}
-
-img.MiddleSeparatorSymbol {
-    width: 115px;
 }
