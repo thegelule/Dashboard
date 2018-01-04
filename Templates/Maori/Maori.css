@@ -3,17 +3,18 @@
 }
 
 img.MiddleLogo {
-    width: 91px;
+    width: 190px;
     /* vertical-align: middle; */
     /*padding-top: 9px;*/
-    margin-left: 128px;
 }
 
 img.MiddleSeparatorSymbol {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 27px;
+    margin-right: 27px;
 }
 
-img.BureaucracySideLogo {
-    width: 150px;
+img.MaoriSideLogo {
+    width: 250px;
+    /* margin-left: 20px; */
+    /* transform: scale(2,2); */
 }
