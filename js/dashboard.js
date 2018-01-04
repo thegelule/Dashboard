@@ -576,6 +576,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Bogi Lyudei - Slavic Gods',
                 value: 'Bogi',
+            },
+            {
+                text: 'Celestial Bureaucracy - Chinese Gods',
+                value: 'Bureaucracy',
             }
         ],
         callback: function (result) {
