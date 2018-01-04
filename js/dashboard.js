@@ -584,6 +584,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Deva - Hindu Gods',
                 value: 'Deva',
+            },
+            {
+                text: 'Nga Tama a Rangi - Maori Gods',
+                value: 'Maori',
             }
         ],
         callback: function (result) {

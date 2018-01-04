@@ -1,0 +1,19 @@
+.inline-block{
+    display: inline-block;
+}
+
+img.MiddleLogo {
+    width: 91px;
+    /* vertical-align: middle; */
+    /*padding-top: 9px;*/
+    margin-left: 128px;
+}
+
+img.MiddleSeparatorSymbol {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+img.BureaucracySideLogo {
+    width: 150px;
+}
