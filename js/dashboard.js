@@ -572,6 +572,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Ayllus - Incan Gods',
                 value: 'Ayllus',
+            },
+            {
+                text: 'Bogi Lyudei - Slavic Gods',
+                value: 'Bogi',
             }
         ],
         callback: function (result) {
