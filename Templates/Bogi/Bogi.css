@@ -3,10 +3,10 @@
 }
 
 img.MiddleLogo {
-    width: 91px;
+    width: 50px;
     /* vertical-align: middle; */
     /*padding-top: 9px;*/
-    margin-left: 128px;
+    margin-left: 73px;
 }
 
 img.MiddleSeparatorSymbol {
@@ -14,6 +14,8 @@ img.MiddleSeparatorSymbol {
     margin-right: 20px;
 }
 
-img.AyllusSideLogo {
-    width: 149px;
+img.BogiSideLogo {
+    width: 65px;
+    margin-right: 35px;
+    margin-left: 35px;
 }
