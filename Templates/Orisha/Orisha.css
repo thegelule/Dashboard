@@ -3,10 +3,11 @@
 }
 
 img.MiddleLogo {
-    width: 190px;
+    width: 45px;
     /* vertical-align: middle; */
-    /*padding-top: 9px;*/
-    margin-left: 60px;
+    /* padding-top: 9px; */
+    margin-left: 136px;
+    transform: rotate(90deg);
 }
 
 img.MiddleSeparatorSymbol {
