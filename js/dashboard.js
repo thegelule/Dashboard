@@ -323,7 +323,26 @@ function GM_CreateCharacterContainerOnLoad(character){
     deleteCharacterAction.addEventListener("click",function(){
         var characterName = $(this).closest(".dropdown").find(".LibraryCharacterName")[0].innerText;
         var characterElement = $(this).closest(".dropdown");
-        DeleteCharacterFromLibrary(characterName,characterElement);
+
+        bootbox.confirm({
+            message: "Are you sure you want to delete this character ?<br>This operation is final",
+            buttons:{
+                confirm:{
+                    label:"Delete",
+                    className:"btn-outline red-soft"
+                },
+                cancel:{
+                    label: "Cancel",
+                    className:"btn-outline black"
+                }
+            },
+            callback:function(result){
+                if(result){
+                    DeleteCharacterFromLibrary(characterName,characterElement);
+                }
+            }
+        });
+        
     });
 }
 
