@@ -6,6 +6,7 @@ img.MiddleLogo {
     width: 190px;
     /* vertical-align: middle; */
     /*padding-top: 9px;*/
+    margin-left: 60px;
 }
 
 img.MiddleSeparatorSymbol {
