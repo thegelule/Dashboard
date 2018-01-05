@@ -588,6 +588,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Nga Tama a Rangi - Maori Gods',
                 value: 'Maori',
+            },
+            {
+                text: 'Neter - Egyptian Gods',
+                value: 'Neter',
             }
         ],
         callback: function (result) {
