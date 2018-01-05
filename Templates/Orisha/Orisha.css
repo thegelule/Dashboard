@@ -6,7 +6,7 @@ img.MiddleLogo {
     width: 45px;
     /* vertical-align: middle; */
     /* padding-top: 9px; */
-    margin-left: 136px;
+    margin-left: 110px;
     transform: rotate(90deg);
 }
 
@@ -15,8 +15,7 @@ img.MiddleSeparatorSymbol {
     margin-right: 27px;
 }
 
-img.NeterSideLogo {
-    width: 250px;
-    /* margin-left: 20px; */
-    /* transform: scale(2,2); */
+img.OrishaSideLogo {
+    width: 65px;
+    transform: rotate(90deg);
 }
