@@ -562,6 +562,10 @@ function DisplayTemplateChoiceUI(character){
                 value: '',
             },
             {
+                text: 'Neutral template',
+                value: 'Neutre',
+            },
+            {
                 text: 'Aesir - Norse Gods',
                 value: 'Aesir',
             },
@@ -1616,7 +1620,7 @@ function printElem(divId,templateName) {
     $(mywindow).load(function(){
         mywindow.focus();
         mywindow.print();
-
+        /*mywindow.close();*/
     });
 
     return true;
