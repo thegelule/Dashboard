@@ -616,6 +616,11 @@ function DisplayTemplateChoiceUI(character){
                 text: 'Neter - Egyptian Gods',
                 value: 'Neter',
             }
+            ,
+            {
+                text: 'Orisha - African Gods',
+                value: 'Orisha',
+            }
         ],
         callback: function (result) {
             var templateName = result;
