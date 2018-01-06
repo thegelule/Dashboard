@@ -623,6 +623,10 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Teotl - Aztec Gods',
                 value: 'Teotl',
+            },
+            {
+                text: 'Tuatha Dé Danann - Celtic Gods',
+                value: 'Tuatha',
             }
         ],
         callback: function (result) {
