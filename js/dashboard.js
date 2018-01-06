@@ -615,11 +615,14 @@ function DisplayTemplateChoiceUI(character){
             {
                 text: 'Neter - Egyptian Gods',
                 value: 'Neter',
-            }
-            ,
+            },
             {
                 text: 'Orisha - African Gods',
                 value: 'Orisha',
+            },
+            {
+                text: 'Teotl - Aztec Gods',
+                value: 'Teotl',
             }
         ],
         callback: function (result) {
