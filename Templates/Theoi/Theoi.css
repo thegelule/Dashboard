@@ -3,8 +3,9 @@
 }
 
 img.MiddleLogo {
-    width: 45px;
-    transform:rotate(45deg);
+    width: 251px;
+    transform: scale(2,1);
+    margin-left: 162px;
 }
 
 img.MiddleSeparatorSymbol {
@@ -13,4 +14,5 @@ img.MiddleSeparatorSymbol {
 }
 
 img.TheoiSideLogo {
+    width: 238px;
 }
