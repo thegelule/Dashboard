@@ -1,0 +1,16 @@
+.inline-block{
+    display: inline-block;
+}
+
+img.MiddleLogo {
+    width: 45px;
+    transform:rotate(45deg);
+}
+
+img.MiddleSeparatorSymbol {
+    margin-left: 27px;
+    margin-right: 27px;
+}
+
+img.TheoiSideLogo {
+}

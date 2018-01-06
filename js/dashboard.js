@@ -625,6 +625,10 @@ function DisplayTemplateChoiceUI(character){
                 value: 'Teotl',
             },
             {
+                text: 'Theoi - Greek Gods',
+                value: 'Theoi',
+            },
+            {
                 text: 'Tuatha Dé Danann - Celtic Gods',
                 value: 'Tuatha',
             }
